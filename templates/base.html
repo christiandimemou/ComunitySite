@@ -1,0 +1,143 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+        {% block title %}Com’Unity{% endblock %}
+    </title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+      
+    <!-- CSS principal -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    {% block extra_css %}
+    {% endblock %}
+
+</head>
+
+<body>
+
+    <!-- =========================
+         NAVBAR
+    ========================== -->
+
+    <header class="site-header">
+
+        <nav class="navbar">
+
+            <div class="navbar-container">
+
+                <!-- LOGO -->
+
+                <a href="{% url 'home' %}" class="navbar-logo">
+
+                    <img src="{% static 'images/logo-comunity.jpeg' %}"
+                         alt="Com’Unity">
+
+                </a>
+
+
+                <!-- MENU DESKTOP -->
+
+                <div class="navbar-menu" id="navbarMenu">
+
+                    <a href="{% url 'home' %}"
+                       class="nav-link active">
+                        Accueil
+                    </a>
+
+                    <a href="#" class="nav-link">
+                        À propos
+                    </a>
+
+                    <a href="#" class="nav-link">
+                        Projets
+                    </a>
+
+                    <a href="#" class="nav-link">
+                        Services
+                    </a>
+
+                    <a href="#" class="nav-link">
+                        Galerie
+                    </a>
+
+                    <a href="#" class="nav-link">
+                        Devenir bénévole
+                    </a>
+
+                    <a href="#" class="nav-link">
+                        Contact
+                    </a>
+
+                    <a href="#" class="don-button">
+                        Faire un don
+                    </a>
+
+                </div>
+
+
+                <!-- BOUTON MENU MOBILE -->
+
+                <button class="navbar-toggle"
+                        id="navbarToggle"
+                        type="button"
+                        aria-label="Ouvrir le menu">
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                </button>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+
+    <!-- =========================
+         CONTENU PRINCIPAL
+    ========================== -->
+
+    <main>
+
+        {% block content %}
+        {% endblock %}
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    {% include "includes/footer.html" %}
+
+
+    <!-- JavaScript principal -->
+
+    <script src="{% static 'js/main.js' %}"></script>
+
+    {% block extra_js %}
+    {% endblock %}
+
+</body>
+
+</html>
