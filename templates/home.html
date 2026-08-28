@@ -1,18 +1,121 @@
 {% extends "base.html" %}
 
+{% load static %}
+
+
 {% block title %}
 Accueil | Com’Unity
 {% endblock %}
 
+
 {% block content %}
 
-<section style="min-height: 100vh; padding: 80px 5%;">
+<!-- =====================================================
+     HERO
+====================================================== -->
 
-    <h1>Com’Unity</h1>
+<section class="hero-section">
 
-    <p>
-        Transformer par l’histoire, inspirer par l’action.
-    </p>
+    <div class="hero-overlay"></div>
+
+    <div class="hero-container">
+
+        <div class="hero-content">
+
+            <h1 class="hero-title">
+
+                Transformer par l’histoire,
+
+                <span>
+                    inspirer par l’action.
+                </span>
+
+            </h1>
+
+
+            <p class="hero-description">
+
+                Com’Unity agit pour une Afrique plus solidaire,
+                plus responsable et durable. Ensemble, transformons
+                nos communautés et construisons un avenir meilleur.
+
+            </p>
+
+
+            <div class="hero-actions">
+
+                <!-- Faire un don -->
+
+                <a href="#"
+                   class="hero-button hero-button-primary">
+
+                    <i class="fas fa-hand-holding-heart"></i>
+
+                    <span>
+                        Faire un don
+                    </span>
+
+                </a>
+
+
+                <!-- Découvrir les actions -->
+
+                <a href="#actions"
+                   class="hero-button hero-button-secondary">
+
+                    <span>
+                        Découvrir nos actions
+                    </span>
+
+                    <i class="fas fa-arrow-right"></i>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =================================================
+         INDICATEURS DU SLIDER
+    ================================================== -->
+
+    <div class="hero-slider-dots">
+
+        <button class="hero-dot active"
+                aria-label="Slide 1">
+        </button>
+
+        <button class="hero-dot"
+                aria-label="Slide 2">
+        </button>
+
+        <button class="hero-dot"
+                aria-label="Slide 3">
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     SECTION TEMPORAIRE
+     Sera développée lors de la prochaine étape
+====================================================== -->
+
+<section id="actions"
+         class="home-placeholder-section">
+
+    <div class="home-placeholder-container">
+
+        <p>
+            Découvrez prochainement les actions de Com’Unity.
+        </p>
+
+    </div>
 
 </section>
 

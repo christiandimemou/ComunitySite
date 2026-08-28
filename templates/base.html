@@ -21,7 +21,7 @@
 
     <link rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-      
+
     <!-- CSS principal -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
@@ -57,11 +57,12 @@
                 <div class="navbar-menu" id="navbarMenu">
 
                     <a href="{% url 'home' %}"
-                       class="nav-link active">
+                        class="nav-link {% if request.resolver_match.url_name == 'home' %}active{% endif %}">
                         Accueil
                     </a>
 
-                    <a href="#" class="nav-link">
+                    <a href="{% url 'about' %}"
+                        class="nav-link {% if request.resolver_match.url_name == 'about' %}active{% endif %}">
                         À propos
                     </a>
 
