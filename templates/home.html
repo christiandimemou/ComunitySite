@@ -57,6 +57,19 @@ Accueil | Com’Unity
 
                 </a>
 
+                <div class="home-image-wrapper">
+
+                    <div class="home-image-accent"></div>
+
+                    {% if home_image %}
+                        <img
+                            src="{{ home_image.image.url }}"
+                            alt="Com’Unity"
+                        >
+                    {% endif %}
+
+                </div>
+
 
                 <!-- Découvrir les actions -->
 

@@ -1,100 +1,54 @@
 from django.db import models
 
-class HomeHero(models.Model):
-
-    title = models.CharField(
-        max_length=200,
-        verbose_name="Titre"
-    )
-
-    subtitle = models.TextField(
-        blank=True,
-        verbose_name="Description"
-    )
+class HomeImage(models.Model):
 
     image = models.ImageField(
-        upload_to="home/hero/",
+        upload_to="home/",
         verbose_name="Image"
     )
 
-    button_text = models.CharField(
-        max_length=100,
-        default="Découvrir nos actions",
-        verbose_name="Texte du bouton"
+    is_active = models.BooleanField(
+        default=True,
+        verbose_name="Image active"
     )
 
-    button_link = models.CharField(
-        max_length=200,
-        blank=True,
-        verbose_name="Lien du bouton"
+    def __str__(self):
+        return "Image Accueil"
+
+    class Meta:
+        verbose_name = "Image de l'accueil"
+        verbose_name_plural = "Image de l'accueil"
+
+
+class AboutImage(models.Model):
+
+    IMAGE_TYPES = [
+        ("header", "Image en-tête"),
+        ("main", "Image principale"),
+    ]
+
+    image_type = models.CharField(
+        max_length=20,
+        choices=IMAGE_TYPES,
+        verbose_name="Type d'image"
     )
 
-    order = models.PositiveIntegerField(
-        default=0,
-        verbose_name="Ordre"
+    image = models.ImageField(
+        upload_to="about/",
+        verbose_name="Image"
     )
 
     is_active = models.BooleanField(
         default=True,
-        verbose_name="Actif"
+        verbose_name="Image active"
     )
 
     class Meta:
-
-        ordering = ["order"]
-
-        verbose_name = "Slide de l'accueil"
-
-        verbose_name_plural = "Slides de l'accueil"
-
+        verbose_name = "Image de la page À propos"
+        verbose_name_plural = "Images de la page À propos"
 
     def __str__(self):
-
-        return self.title
-    
-
-class AboutPage(models.Model):
-
-    title = models.CharField(
-        max_length=200,
-        default="À propos de Com’Unity",
-        verbose_name="Titre"
-    )
-
-    header_image = models.ImageField(
-        upload_to="about/header/",
-        verbose_name="Image d'en-tête"
-    )
-
-    main_image = models.ImageField(
-        upload_to="about/main/",
-        verbose_name="Image principale"
-    )
-
-    introduction = models.TextField(
-        verbose_name="Présentation"
-    )
-
-    mission = models.TextField(
-        verbose_name="Mission"
-    )
-
-    is_active = models.BooleanField(
-        default=True,
-        verbose_name="Actif"
-    )
-
-
-    class Meta:
-
-        verbose_name = "Page À propos"
-
-        verbose_name_plural = "Page À propos"
-
-
-    def __str__(self):
-
-        return self.title
+        return self.get_image_type_display()
     
 
 class TeamMember(models.Model):

@@ -1,31 +1,26 @@
 from django.contrib import admin
 
-from .models import HomeHero, AboutPage, TeamMember
+from .models import HomeImage, AboutImage, TeamMember
 
-@admin.register(HomeHero)
-class HomeHeroAdmin(admin.ModelAdmin):
+
+@admin.register(HomeImage)
+class HomeImageAdmin(admin.ModelAdmin):
 
     list_display = (
-        "title",
-        "order",
+        "image",
         "is_active",
     )
 
     list_editable = (
-        "order",
         "is_active",
     )
 
-    ordering = (
-        "order",
-    )
 
-
-@admin.register(AboutPage)
-class AboutPageAdmin(admin.ModelAdmin):
+@admin.register(AboutImage)
+class AboutImageAdmin(admin.ModelAdmin):
 
     list_display = (
-        "title",
+        "image",
         "is_active",
     )
 

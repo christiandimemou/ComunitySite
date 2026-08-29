@@ -61,11 +61,26 @@
 
                 <div class="about-image-accent"></div>
 
-                <img
-                    src="{% static 'images/about-community.jpg' %}"
-                    alt="Communauté Com’Unity"
-                    class="about-main-image"
-                >
+                {% if about_header_image %}
+                    <section
+                        class="page-header about-header"
+                        style="background-image: url('{{ about_header_image.image.url }}');"
+                    >
+                        ...
+                    </section>
+                {% else %}
+                    <section class="page-header about-header">
+                        ...
+                    </section>
+                {% endif %}
+
+                {% if about_main_image %}
+                    <img
+                        src="{{ about_main_image.image.url }}"
+                        alt="Com’Unity"
+                        class="about-main-image"
+                    >
+                {% endif %}
 
             </div>
 
