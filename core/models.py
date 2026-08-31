@@ -12,12 +12,12 @@ class HomeImage(models.Model):
         verbose_name="Image active"
     )
 
-    def __str__(self):
-        return "Image Accueil"
-
     class Meta:
         verbose_name = "Image de l'accueil"
         verbose_name_plural = "Image de l'accueil"
+
+    def __str__(self):
+        return "Image Accueil"
 
 
 class AboutImage(models.Model):

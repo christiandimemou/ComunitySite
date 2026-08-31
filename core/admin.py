@@ -20,7 +20,13 @@ class HomeImageAdmin(admin.ModelAdmin):
 class AboutImageAdmin(admin.ModelAdmin):
 
     list_display = (
+        "image_type",
         "image",
+        "is_active",
+    )
+
+    list_filter = (
+        "image_type",
         "is_active",
     )
 

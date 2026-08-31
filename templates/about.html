@@ -10,11 +10,17 @@
 
 {% block content %}
 
+
 <!-- =====================================================
-     PAGE HEADER
+     PAGE HEADER — À PROPOS DE NOUS
 ====================================================== -->
 
-<section class="page-header about-header">
+<section
+    class="page-header about-header"
+    {% if about_header_image %}
+        style="background-image: url('{{ about_header_image.image.url }}');"
+    {% endif %}
+>
 
     <div class="page-header-overlay"></div>
 
@@ -44,8 +50,9 @@
 </section>
 
 
+
 <!-- =====================================================
-     PRÉSENTATION
+     PRÉSENTATION — QUI SOMMES-NOUS ?
 ====================================================== -->
 
 <section class="about-introduction">
@@ -55,37 +62,32 @@
         <div class="about-introduction-grid">
 
 
-            <!-- IMAGE -->
+            <!-- =========================================
+                 IMAGE PRINCIPALE
+                 Gérée depuis Django Admin
+            ========================================== -->
 
             <div class="about-image-wrapper">
 
                 <div class="about-image-accent"></div>
 
-                {% if about_header_image %}
-                    <section
-                        class="page-header about-header"
-                        style="background-image: url('{{ about_header_image.image.url }}');"
-                    >
-                        ...
-                    </section>
-                {% else %}
-                    <section class="page-header about-header">
-                        ...
-                    </section>
-                {% endif %}
-
                 {% if about_main_image %}
+
                     <img
                         src="{{ about_main_image.image.url }}"
-                        alt="Com’Unity"
+                        alt="Qui sommes-nous ?"
                         class="about-main-image"
                     >
+
                 {% endif %}
 
             </div>
 
 
-            <!-- TEXTE -->
+
+            <!-- =========================================
+                 TEXTE STATIQUE
+            ========================================== -->
 
             <div class="about-introduction-content">
 
@@ -93,10 +95,12 @@
                     QUI SOMMES-NOUS ?
                 </span>
 
+
                 <h2>
                     Une communauté engagée
                     pour le changement.
                 </h2>
+
 
                 <p>
                     Com’Unity est une association engagée en faveur
@@ -104,12 +108,14 @@
                     et de l’économie sociale et solidaire.
                 </p>
 
+
                 <p>
                     Elle accorde une attention particulière à
                     l’éducation citoyenne et à la participation
                     des communautés au développement de leurs
                     territoires.
                 </p>
+
 
                 <p>
                     Son ambition est de contribuer à la construction
@@ -120,8 +126,11 @@
                     environnementales.
                 </p>
 
-                <a href="#mission"
-                   class="about-read-more">
+
+                <a
+                    href="#mission"
+                    class="about-read-more"
+                >
 
                     Découvrir notre mission
 
@@ -138,12 +147,15 @@
 </section>
 
 
+
 <!-- =====================================================
      NOTRE MISSION
 ====================================================== -->
 
-<section id="mission"
-         class="about-mission">
+<section
+    id="mission"
+    class="about-mission"
+>
 
     <div class="about-container">
 
@@ -152,6 +164,7 @@
             <span class="section-label section-label-light">
                 NOTRE MISSION
             </span>
+
 
             <h2>
                 Transformer la prise de conscience
@@ -182,6 +195,7 @@
 </section>
 
 
+
 <!-- =====================================================
      NOS TROIS AXES
 ====================================================== -->
@@ -190,16 +204,21 @@
 
     <div class="about-container">
 
+
+        <!-- TITRE -->
+
         <div class="about-section-heading centered">
 
             <span class="section-label">
                 NOS AXES D'INTERVENTION
             </span>
 
+
             <h2>
                 Trois axes pour agir
                 durablement.
             </h2>
+
 
             <p>
                 Notre action s’articule autour de trois axes
@@ -211,10 +230,17 @@
         </div>
 
 
+
+        <!-- =============================================
+             GRILLE DES AXES
+        ============================================== -->
+
         <div class="axes-grid">
 
 
-            <!-- AXE 1 -->
+            <!-- =========================================
+                 AXE 1
+            ========================================== -->
 
             <article class="axis-card">
 
@@ -222,13 +248,18 @@
                     01
                 </div>
 
+
                 <div class="axis-icon">
+
                     <i class="fas fa-leaf"></i>
+
                 </div>
+
 
                 <h3>
                     Transition écologique
                 </h3>
+
 
                 <p>
                     Renforcer la sensibilisation environnementale,
@@ -239,12 +270,16 @@
                     des territoires.
                 </p>
 
+
                 <span class="axis-line"></span>
 
             </article>
 
 
-            <!-- AXE 2 -->
+
+            <!-- =========================================
+                 AXE 2
+            ========================================== -->
 
             <article class="axis-card">
 
@@ -252,13 +287,18 @@
                     02
                 </div>
 
+
                 <div class="axis-icon">
+
                     <i class="fas fa-hand-holding-dollar"></i>
+
                 </div>
+
 
                 <h3>
                     Économie sociale et solidaire
                 </h3>
+
 
                 <p>
                     Favoriser l’autonomisation économique,
@@ -267,12 +307,16 @@
                     valeur au bénéfice des communautés.
                 </p>
 
+
                 <span class="axis-line"></span>
 
             </article>
 
 
-            <!-- AXE 3 -->
+
+            <!-- =========================================
+                 AXE 3
+            ========================================== -->
 
             <article class="axis-card">
 
@@ -280,13 +324,18 @@
                     03
                 </div>
 
+
                 <div class="axis-icon">
+
                     <i class="fas fa-users"></i>
+
                 </div>
+
 
                 <h3>
                     Éducation citoyenne
                 </h3>
+
 
                 <p>
                     Développer l’engagement, le leadership,
@@ -294,15 +343,18 @@
                     citoyens à la vie de leurs communautés.
                 </p>
 
+
                 <span class="axis-line"></span>
 
             </article>
+
 
         </div>
 
     </div>
 
 </section>
+
 
 
 <!-- =====================================================
@@ -316,16 +368,22 @@
         <div class="values-grid">
 
 
+            <!-- =========================================
+                 INTRODUCTION
+            ========================================== -->
+
             <div class="values-introduction">
 
                 <span class="section-label">
                     NOS VALEURS
                 </span>
 
+
                 <h2>
                     Agir ensemble,
                     autrement.
                 </h2>
+
 
                 <p>
                     Com’Unity entend créer des passerelles durables
@@ -334,6 +392,7 @@
                     entreprises, collectivités, institutions et
                     porteurs d’initiatives.
                 </p>
+
 
                 <p>
                     Notre approche repose sur la coopération,
@@ -345,20 +404,31 @@
             </div>
 
 
+
+            <!-- =========================================
+                 LISTE DES VALEURS
+            ========================================== -->
+
             <div class="values-list">
 
+
+                <!-- SOLIDARITÉ -->
 
                 <div class="value-card">
 
                     <div class="value-card-icon">
+
                         <i class="fas fa-hands-helping"></i>
+
                     </div>
+
 
                     <div>
 
                         <h3>
                             Solidarité
                         </h3>
+
 
                         <p>
                             Favoriser la coopération et
@@ -370,17 +440,24 @@
                 </div>
 
 
+
+                <!-- DURABILITÉ -->
+
                 <div class="value-card">
 
                     <div class="value-card-icon">
+
                         <i class="fas fa-seedling"></i>
+
                     </div>
+
 
                     <div>
 
                         <h3>
                             Durabilité
                         </h3>
+
 
                         <p>
                             Construire des territoires
@@ -393,17 +470,24 @@
                 </div>
 
 
+
+                <!-- ENGAGEMENT -->
+
                 <div class="value-card">
 
                     <div class="value-card-icon">
+
                         <i class="fas fa-bullhorn"></i>
+
                     </div>
+
 
                     <div>
 
                         <h3>
                             Engagement
                         </h3>
+
 
                         <p>
                             Encourager le passage de la
@@ -415,17 +499,24 @@
                 </div>
 
 
+
+                <!-- INCLUSION -->
+
                 <div class="value-card">
 
                     <div class="value-card-icon">
+
                         <i class="fas fa-people-group"></i>
+
                     </div>
+
 
                     <div>
 
                         <h3>
                             Inclusion
                         </h3>
+
 
                         <p>
                             Mettre les citoyens, notamment
@@ -437,6 +528,7 @@
 
                 </div>
 
+
             </div>
 
         </div>
@@ -444,6 +536,7 @@
     </div>
 
 </section>
+
 
 
 <!-- =====================================================
@@ -454,16 +547,23 @@
 
     <div class="about-container">
 
+
+        <!-- =============================================
+             TITRE
+        ============================================== -->
+
         <div class="about-section-heading centered">
 
             <span class="section-label">
                 NOTRE ÉQUIPE
             </span>
 
+
             <h2>
                 Des femmes et des hommes
                 engagés pour le changement.
             </h2>
+
 
             <p>
                 Découvrez les personnes qui portent la vision
@@ -473,19 +573,34 @@
         </div>
 
 
+
+        <!-- =============================================
+             MEMBRES
+             Gérés depuis Django Admin
+        ============================================== -->
+
         {% if team_members %}
 
         <div class="team-carousel">
 
+
+            <!-- MEMBRE PRÉCÉDENT -->
+
             <button
                 type="button"
                 class="team-arrow team-prev"
-                aria-label="Membre précédent">
+                aria-label="Membre précédent"
+            >
 
                 <i class="fas fa-arrow-left"></i>
 
             </button>
 
+
+
+            <!-- =========================================
+                 SLIDES
+            ========================================== -->
 
             <div class="team-slides">
 
@@ -493,20 +608,33 @@
 
                 <article
                     class="team-member {% if forloop.first %}active{% endif %}"
-                    data-index="{{ forloop.counter0 }}">
+                    data-index="{{ forloop.counter0 }}"
+                >
 
+
+                    <!-- PHOTO -->
 
                     <div class="team-member-image">
+
+                        {% if member.photo %}
 
                         <img
                             src="{{ member.photo.url }}"
                             alt="{{ member.name }}"
                         >
 
+                        {% endif %}
+
                     </div>
 
 
+
+                    <!-- INFORMATIONS -->
+
                     <div class="team-member-content">
+
+
+                        <!-- RÔLE -->
 
                         <span class="team-member-role">
 
@@ -515,10 +643,16 @@
                         </span>
 
 
+
+                        <!-- NOM -->
+
                         <h3>
                             {{ member.name }}
                         </h3>
 
+
+
+                        <!-- POSTE -->
 
                         <p class="team-member-position">
 
@@ -527,14 +661,19 @@
                         </p>
 
 
+
                         <div class="team-member-line"></div>
 
+
+
+                        <!-- DESCRIPTION -->
 
                         <p class="team-member-description">
 
                             {{ member.description }}
 
                         </p>
+
 
                     </div>
 
@@ -545,17 +684,27 @@
             </div>
 
 
+
+            <!-- MEMBRE SUIVANT -->
+
             <button
                 type="button"
                 class="team-arrow team-next"
-                aria-label="Membre suivant">
+                aria-label="Membre suivant"
+            >
 
                 <i class="fas fa-arrow-right"></i>
 
             </button>
 
+
         </div>
 
+
+
+        <!-- =============================================
+             COMPTEUR
+        ============================================== -->
 
         <div class="team-counter">
 
@@ -573,11 +722,26 @@
 
         </div>
 
+
+        {% else %}
+
+        <!-- Aucun membre dans l'Admin -->
+
+        <div class="team-empty">
+
+            <p>
+                Notre équipe sera bientôt présentée ici.
+            </p>
+
+        </div>
+
         {% endif %}
 
     </div>
 
 </section>
+
+
 
 <!-- =====================================================
      APPEL À L'ACTION
@@ -587,29 +751,48 @@
 
     <div class="about-cta-overlay"></div>
 
+
     <div class="about-container">
 
         <div class="about-cta-content">
 
+
             <span class="section-label section-label-light">
+
                 AGISSONS ENSEMBLE
+
             </span>
 
+
+
             <h2>
+
                 Vous aussi, participez
                 au changement.
+
             </h2>
 
+
+
             <p>
+
                 Rejoignez une communauté engagée pour construire
                 des territoires africains plus durables,
                 inclusifs, solidaires et résilients.
+
             </p>
+
+
 
             <div class="about-cta-buttons">
 
-                <a href="#"
-                   class="hero-button hero-button-primary">
+
+                <!-- BÉNÉVOLE -->
+
+                <a
+                    href="#"
+                    class="hero-button hero-button-primary"
+                >
 
                     Devenir bénévole
 
@@ -617,14 +800,21 @@
 
                 </a>
 
-                <a href="#"
-                   class="hero-button hero-button-secondary">
+
+
+                <!-- DON -->
+
+                <a
+                    href="#"
+                    class="hero-button hero-button-secondary"
+                >
 
                     Faire un don
 
                     <i class="fas fa-heart"></i>
 
                 </a>
+
 
             </div>
 
@@ -633,5 +823,6 @@
     </div>
 
 </section>
+
 
 {% endblock %}

@@ -2074,6 +2074,97 @@ main {
 }
 
 
+/* =====================================================
+   HERO — ACCUEIL
+   Image en arrière-plan + contenu au premier plan
+===================================================== */
+
+.hero-section {
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* =====================================================
+   IMAGE DE FOND
+===================================================== */
+
+.hero-section .hero-image {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    z-index: 0;
+}
+
+
+/* =====================================================
+   VOILE AU-DESSUS DE L'IMAGE
+===================================================== */
+
+.hero-section .hero-overlay {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: 1;
+}
+
+
+/* =====================================================
+   CONTENEUR DU CONTENU
+===================================================== */
+
+.hero-section .hero-container {
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* =====================================================
+   CONTENU TEXTE
+===================================================== */
+
+.hero-section .hero-content {
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* =====================================================
+   BOUTONS
+===================================================== */
+
+.hero-section .hero-actions {
+    position: relative;
+
+    z-index: 3;
+}
+
+
+/* =====================================================
+   INDICATEURS
+===================================================== */
+
+.hero-section .hero-slider-dots {
+    position: absolute;
+
+    z-index: 4;
+}
+
 /* IMAGE */
 
 .about-image-wrapper {
@@ -3285,3 +3376,4 @@ main {
     }
 
 }
+

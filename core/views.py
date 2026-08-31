@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from .models import AboutImage, TeamMember, HomeImage
+from .models import HomeImage, AboutImage, TeamMember
 
 
 def home(request):

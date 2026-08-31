@@ -16,7 +16,19 @@ Accueil | Com’Unity
 
 <section class="hero-section">
 
+    <!-- IMAGE DU HERO -->
+    {% if home_image %}
+        <img
+            src="{{ home_image.image.url }}"
+            alt="Com’Unity - Transformer par l'histoire, inspirer par l'action."
+            class="hero-image"
+        >
+    {% endif %}
+
+
+    <!-- VOILE DE PROTECTION SUR L'IMAGE -->
     <div class="hero-overlay"></div>
+
 
     <div class="hero-container">
 
@@ -44,7 +56,7 @@ Accueil | Com’Unity
 
             <div class="hero-actions">
 
-                <!-- Faire un don -->
+                <!-- FAIRE UN DON -->
 
                 <a href="#"
                    class="hero-button hero-button-primary">
@@ -57,21 +69,8 @@ Accueil | Com’Unity
 
                 </a>
 
-                <div class="home-image-wrapper">
 
-                    <div class="home-image-accent"></div>
-
-                    {% if home_image %}
-                        <img
-                            src="{{ home_image.image.url }}"
-                            alt="Com’Unity"
-                        >
-                    {% endif %}
-
-                </div>
-
-
-                <!-- Découvrir les actions -->
+                <!-- DÉCOUVRIR LES ACTIONS -->
 
                 <a href="#actions"
                    class="hero-button hero-button-secondary">
@@ -97,16 +96,19 @@ Accueil | Com’Unity
 
     <div class="hero-slider-dots">
 
-        <button class="hero-dot active"
-                aria-label="Slide 1">
+        <button
+            class="hero-dot active"
+            aria-label="Slide 1">
         </button>
 
-        <button class="hero-dot"
-                aria-label="Slide 2">
+        <button
+            class="hero-dot"
+            aria-label="Slide 2">
         </button>
 
-        <button class="hero-dot"
-                aria-label="Slide 3">
+        <button
+            class="hero-dot"
+            aria-label="Slide 3">
         </button>
 
     </div>
@@ -119,8 +121,9 @@ Accueil | Com’Unity
      Sera développée lors de la prochaine étape
 ====================================================== -->
 
-<section id="actions"
-         class="home-placeholder-section">
+<section
+    id="actions"
+    class="home-placeholder-section">
 
     <div class="home-placeholder-container">
 
@@ -131,5 +134,6 @@ Accueil | Com’Unity
     </div>
 
 </section>
+
 
 {% endblock %}
