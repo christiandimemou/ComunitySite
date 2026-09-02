@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import HomeImage, AboutImage, TeamMember
+from .models import HomeImage, AboutImage, TeamMember, Project, ProjectHeaderImage, Service
 
 
 @admin.register(HomeImage)
@@ -55,6 +55,81 @@ class TeamMemberAdmin(admin.ModelAdmin):
         "order",
         "is_active",
     )
+
+    ordering = (
+        "order",
+    )
+
+
+@admin.register(ProjectHeaderImage)
+class ProjectHeaderImageAdmin(admin.ModelAdmin):
+
+    list_display = (
+        "image",
+    )
+
+
+@admin.register(Project)
+class ProjectAdmin(admin.ModelAdmin):
+
+    list_display = (
+        "title",
+        "category",
+        "status",
+        "location",
+        "order",
+        "is_active",
+    )
+
+    list_filter = (
+        "category",
+        "status",
+        "is_active",
+    )
+
+    search_fields = (
+        "title",
+        "short_description",
+        "description",
+        "location",
+    )
+
+    list_editable = (
+        "status",
+        "order",
+        "is_active",
+    )
+
+    prepopulated_fields = {
+        "slug": ("title",)
+    }
+
+    ordering = (
+        "order",
+        "-created_at",
+    )
+
+@admin.register(Service)
+class ServiceAdmin(admin.ModelAdmin):
+
+    list_display = (
+        "title",
+        "order",
+        "is_active",
+    )
+
+    list_filter = (
+        "is_active",
+    )
+
+    search_fields = (
+        "title",
+        "short_description",
+    )
+
+    prepopulated_fields = {
+        "slug": ("title",)
+    }
 
     ordering = (
         "order",

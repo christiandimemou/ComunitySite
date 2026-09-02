@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from .models import HomeImage, AboutImage, TeamMember
+from .models import HomeImage, AboutImage, TeamMember, Project, ProjectHeaderImage, Service
 
 
 def home(request):
@@ -41,5 +41,37 @@ def about(request):
             "about_header_image": about_header_image,
             "about_main_image": about_main_image,
             "team_members": team_members,
+        }
+    )
+
+
+def projects(request):
+    projects_list = Project.objects.filter(
+        is_active=True
+    )
+
+    project_header = ProjectHeaderImage.objects.first()
+
+    return render(
+        request,
+        "projects.html",
+        {
+            "projects": projects_list,
+            "project_header": project_header,
+        }
+    )
+
+
+def services(request):
+
+    services_list = Service.objects.filter(
+        is_active=True
+    )
+
+    return render(
+        request,
+        "services.html",
+        {
+            "services": services_list,
         }
     )

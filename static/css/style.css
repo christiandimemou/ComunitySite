@@ -14,6 +14,15 @@
 
     --navbar-height: 105px;
 
+    --services-dark: #111111;
+    --services-white: #ffffff;
+
+    --services-blue: #00788D;
+
+    --services-orange: #EC5401;
+
+    --services-light: #f5f5f1;
+    --services-gray: #666666;
 }
 
 
@@ -127,9 +136,9 @@ a {
 
 .navbar-logo img {
 
-    width: 230px;
+    width: 190px;
 
-    max-width: 100%;
+    max-width: 75%;
 
     height: auto;
 
@@ -3377,3 +3386,2015 @@ main {
 
 }
 
+
+
+/* =====================================================
+   PAGE PROJETS — COM'UNITY
+===================================================== */
+
+
+/* =====================================================
+   1. EN-TÊTE DE LA PAGE
+===================================================== */
+
+
+.projects-header {
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* =====================================================
+   IMAGE D'EN-TÊTE
+===================================================== */
+
+.projects-header-image {
+    position: absolute;
+
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    z-index: 0;
+}
+
+/* =====================================================
+   VOILE SUR L'IMAGE
+===================================================== */
+
+.projects-header .page-header-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+}
+
+
+/* =====================================================
+   CONTENU AU-DESSUS DE L'IMAGE
+===================================================== */
+
+.projects-header .page-header-container {
+    position: relative;
+    z-index: 2;
+}
+
+
+
+
+.projects-header .page-header-content {
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* =====================================================
+   2. INTRODUCTION
+===================================================== */
+
+.projects-introduction {
+    padding: 100px 0;
+    background: #ffffff;
+}
+
+
+.projects-introduction-content {
+    max-width: 850px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+
+.projects-introduction-content .section-label {
+    display: inline-block;
+    margin-bottom: 18px;
+}
+
+
+.projects-introduction-content h2 {
+    margin-bottom: 25px;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 800;
+    line-height: 1.15;
+}
+
+
+.projects-introduction-content p {
+    max-width: 780px;
+    margin: 0 auto 16px;
+    color: #555;
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+
+/* =====================================================
+   3. SECTION DES PROJETS
+===================================================== */
+
+.projects-list-section {
+    padding: 100px 0;
+    background: #f7f8f6;
+}
+
+
+.projects-list-section .about-section-heading {
+    margin-bottom: 60px;
+}
+
+
+/* =====================================================
+   4. GRILLE DES PROJETS
+===================================================== */
+
+.projects-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 30px;
+
+    align-items: stretch;
+}
+
+
+/* =====================================================
+   5. CARTE PROJET
+===================================================== */
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+
+    height: 100%;
+
+    overflow: hidden;
+
+    background: #ffffff;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 10px 35px rgba(0, 0, 0, 0.08);
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+
+.project-card:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 18px 45px rgba(0, 0, 0, 0.14);
+}
+
+
+/* =====================================================
+   6. IMAGE DU PROJET
+===================================================== */
+
+.project-card-image {
+    position: relative;
+
+    width: 100%;
+    height: 240px;
+
+    overflow: hidden;
+
+    background: #e9eeee;
+}
+
+
+.project-card-image img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.5s ease;
+}
+
+
+.project-card:hover .project-card-image img {
+    transform: scale(1.06);
+}
+
+
+/* =====================================================
+   7. CATÉGORIE
+===================================================== */
+
+.project-category {
+    position: absolute;
+
+    left: 20px;
+    bottom: 18px;
+
+    display: inline-flex;
+
+    padding: 8px 14px;
+
+    color: #ffffff;
+
+    background: #ec5401;
+
+    border-radius: 30px;
+
+    font-size: 0.78rem;
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.04em;
+}
+
+
+/* =====================================================
+   8. CONTENU DE LA CARTE
+===================================================== */
+
+.project-card-content {
+    display: flex;
+    flex-direction: column;
+
+    flex: 1;
+
+    padding: 28px;
+}
+
+
+.project-status {
+    display: inline-block;
+
+    margin-bottom: 10px;
+
+    color: #00788d;
+
+    font-size: 0.78rem;
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.08em;
+}
+
+
+.project-card-content h3 {
+    margin: 0 0 15px;
+
+    color: #1f2933;
+
+    font-size: 1.45rem;
+    font-weight: 800;
+
+    line-height: 1.25;
+}
+
+
+.project-card-content > p {
+    margin-bottom: 20px;
+
+    color: #606b70;
+
+    font-size: 0.98rem;
+    line-height: 1.7;
+}
+
+
+/* =====================================================
+   9. INFORMATIONS DU PROJET
+===================================================== */
+
+.project-card-meta {
+    margin-top: auto;
+    margin-bottom: 22px;
+}
+
+
+.project-card-meta span {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    color: #667277;
+
+    font-size: 0.88rem;
+}
+
+
+.project-card-meta i {
+    color: #ec5401;
+}
+
+
+/* =====================================================
+   10. LIEN "EN SAVOIR PLUS"
+===================================================== */
+
+.project-link {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    width: fit-content;
+
+    color: #00788d;
+
+    font-size: 0.95rem;
+    font-weight: 700;
+
+    text-decoration: none;
+
+    transition:
+        color 0.3s ease,
+        gap 0.3s ease;
+}
+
+
+.project-link:hover {
+    color: #ec5401;
+
+    gap: 15px;
+}
+
+
+.project-link i {
+    transition:
+        transform 0.3s ease;
+}
+
+
+.project-link:hover i {
+    transform: translateX(3px);
+}
+
+
+/* =====================================================
+   11. AUCUN PROJET
+===================================================== */
+
+.projects-empty {
+    grid-column: 1 / -1;
+
+    padding: 60px 30px;
+
+    text-align: center;
+
+    background: #ffffff;
+
+    border-radius: 18px;
+}
+
+
+.projects-empty p {
+    margin: 0;
+
+    color: #687378;
+
+    font-size: 1.05rem;
+}
+
+
+/* =====================================================
+   12. DOMAINES D'INTERVENTION
+===================================================== */
+
+.projects-axes {
+    padding: 100px 0;
+
+    background: #00788d;
+}
+
+
+.projects-axes .about-section-heading {
+    margin-bottom: 60px;
+}
+
+
+.projects-axes .about-section-heading h2 {
+    color: #ffffff;
+}
+
+
+.projects-axes .about-section-heading p {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+
+/* =====================================================
+   13. CARTES DES AXES
+===================================================== */
+
+.projects-axes .axis-card {
+    position: relative;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    border: 1px solid rgba(255, 255, 255, 0.16);
+
+    transition:
+        transform 0.35s ease,
+        background 0.35s ease,
+        border-color 0.35s ease;
+}
+
+
+.projects-axes .axis-card:hover {
+    transform: translateY(-8px);
+
+    background: rgba(255, 255, 255, 0.14);
+
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+
+.projects-axes .axis-card h3 {
+    color: #ffffff;
+}
+
+
+.projects-axes .axis-card p {
+    color: rgba(255, 255, 255, 0.82);
+}
+
+
+.projects-axes .axis-icon {
+    color: #ec5401;
+}
+
+
+/* =====================================================
+   14. RESPONSIVE — TABLETTE
+===================================================== */
+
+@media (max-width: 992px) {
+
+    .projects-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .projects-introduction,
+    .projects-list-section,
+    .projects-axes {
+        padding: 80px 0;
+    }
+
+}
+
+
+/* =====================================================
+   15. RESPONSIVE — MOBILE
+===================================================== */
+
+@media (max-width: 680px) {
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .projects-introduction,
+    .projects-list-section,
+    .projects-axes {
+        padding: 65px 0;
+    }
+
+
+    .project-card-image {
+        height: 220px;
+    }
+
+
+    .project-card-content {
+        padding: 24px;
+    }
+
+
+    .project-card-content h3 {
+        font-size: 1.3rem;
+    }
+
+
+    .project-category {
+        left: 15px;
+        bottom: 15px;
+    }
+
+}
+
+
+
+/* =========================================================
+   PAGE SERVICES — COM'UNITY
+========================================================= */
+
+
+/* =========================================================
+   VARIABLES
+========================================================= */
+
+:root {
+    --services-dark: #111111;
+    --services-white: #ffffff;
+    --services-green: #1f7a4d;
+    --services-orange: #f28c28;
+    --services-light: #f5f5f1;
+    --services-gray: #666666;
+}
+
+
+/* =========================================================
+   CONTENEUR
+========================================================= */
+
+.services-container {
+    width: min(1180px, 90%);
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   HERO SERVICES
+========================================================= */
+
+.services-hero {
+    position: relative;
+    min-height: 680px;
+
+    display: flex;
+    align-items: center;
+
+    background: var(--services-light);
+
+    overflow: hidden;
+}
+
+
+.services-hero-decoration {
+    position: absolute;
+
+    width: 520px;
+    height: 520px;
+
+    right: -180px;
+    top: -180px;
+
+    border-radius: 50%;
+
+    background: var(--services-orange);
+
+    opacity: 0.12;
+}
+
+
+.services-hero-decoration::after {
+    content: "";
+
+    position: absolute;
+
+    width: 280px;
+    height: 280px;
+
+    left: -140px;
+    bottom: -180px;
+
+    border-radius: 50%;
+
+    background: var(--services-green);
+
+    opacity: 0.15;
+}
+
+
+/* =========================================================
+   HERO — STRUCTURE
+========================================================= */
+
+.services-hero .services-container {
+    display: grid;
+
+    grid-template-columns: 1fr 0.9fr;
+
+    gap: 80px;
+
+    align-items: center;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* =========================================================
+   HERO — TEXTE
+========================================================= */
+
+.services-hero-content {
+    max-width: 650px;
+}
+
+
+.services-label {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 25px;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    letter-spacing: 3px;
+
+    color: var(--services-orange);
+}
+
+
+.services-label::before {
+    content: "";
+
+    width: 38px;
+    height: 3px;
+
+    background: var(--services-orange);
+}
+
+
+.services-hero h1 {
+    margin: 0;
+
+    font-family: "Anton", sans-serif;
+
+    font-size: clamp(48px, 6vw, 82px);
+
+    line-height: 0.98;
+
+    text-transform: uppercase;
+
+    color: var(--services-dark);
+}
+
+
+.services-hero h1 span {
+    display: block;
+
+    color: var(--services-green);
+}
+
+
+.services-hero p {
+    max-width: 570px;
+
+    margin: 30px 0 35px;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+
+    color: var(--services-gray);
+}
+
+
+/* =========================================================
+   HERO — BOUTON
+========================================================= */
+
+.services-hero-button {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 16px 25px;
+
+    background: var(--services-dark);
+
+    color: var(--services-white);
+
+    text-decoration: none;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease;
+}
+
+
+.services-hero-button:hover {
+    transform: translateY(-4px);
+
+    background: var(--services-orange);
+
+    color: var(--services-white);
+}
+
+
+.services-hero-button i {
+    transition: transform 0.3s ease;
+}
+
+
+.services-hero-button:hover i {
+    transform: translateY(5px);
+}
+
+
+/* =========================================================
+   HERO — IMAGE
+========================================================= */
+
+.services-hero-visual {
+    position: relative;
+
+    height: 520px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+}
+
+
+.services-hero-visual img {
+    position: relative;
+
+    width: 78%;
+    height: 88%;
+
+    object-fit: cover;
+
+    border-radius: 160px 20px 160px 20px;
+
+    z-index: 2;
+
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
+
+    transition: transform 0.5s ease;
+}
+
+
+.services-hero-visual:hover img {
+    transform: scale(1.025);
+}
+
+
+.services-hero-shape {
+    position: absolute;
+
+    width: 82%;
+    height: 88%;
+
+    border: 3px solid var(--services-orange);
+
+    border-radius: 160px 20px 160px 20px;
+
+    transform: translate(28px, 28px);
+
+    z-index: 1;
+}
+
+
+.services-hero-number {
+    position: absolute;
+
+    bottom: 15px;
+    left: 0;
+
+    font-family: "Anton", sans-serif;
+
+    font-size: 100px;
+
+    line-height: 1;
+
+    color: var(--services-orange);
+
+    z-index: 3;
+}
+
+
+/* =========================================================
+   INTRODUCTION
+========================================================= */
+
+.services-introduction {
+    padding: 120px 0;
+
+    background: var(--services-white);
+}
+
+
+.services-introduction-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 100px;
+
+    align-items: start;
+}
+
+
+.services-introduction h2 {
+    margin: 18px 0 0;
+
+    max-width: 550px;
+
+    font-family: "Anton", sans-serif;
+
+    font-size: clamp(38px, 4vw, 58px);
+
+    line-height: 1.05;
+
+    text-transform: uppercase;
+
+    color: var(--services-dark);
+}
+
+
+.services-introduction p {
+    margin: 0 0 22px;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 15px;
+
+    line-height: 1.9;
+
+    color: var(--services-gray);
+}
+
+
+/* =========================================================
+   LISTE DES SERVICES
+========================================================= */
+
+.services-list-section {
+    padding: 120px 0;
+
+    background: var(--services-light);
+}
+
+
+.services-heading {
+    max-width: 650px;
+
+    margin-bottom: 75px;
+}
+
+
+.services-heading.centered {
+    margin-left: auto;
+    margin-right: auto;
+
+    text-align: center;
+}
+
+
+.services-heading h2 {
+    margin: 18px 0 0;
+
+    font-family: "Anton", sans-serif;
+
+    font-size: clamp(42px, 5vw, 65px);
+
+    line-height: 1;
+
+    text-transform: uppercase;
+
+    color: var(--services-dark);
+}
+
+
+/* =========================================================
+   SERVICE ITEM
+========================================================= */
+
+.services-list {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 45px;
+}
+
+
+.service-item {
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns: 80px 0.9fr 1fr;
+
+    min-height: 480px;
+
+    background: var(--services-white);
+
+    overflow: hidden;
+
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.06);
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+
+.service-item:hover {
+    transform: translateY(-8px);
+
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.11);
+}
+
+
+/* =========================================================
+   SERVICE — ALTERNANCE
+========================================================= */
+
+.service-item-reverse {
+    grid-template-columns: 80px 1fr 0.9fr;
+}
+
+
+.service-item-reverse .service-image {
+    order: 3;
+}
+
+
+.service-item-reverse .service-content {
+    order: 2;
+}
+
+
+/* =========================================================
+   NUMÉRO
+========================================================= */
+
+.service-number {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: flex-start;
+
+    padding-top: 35px;
+
+    font-family: "Anton", sans-serif;
+
+    font-size: 28px;
+
+    color: var(--services-orange);
+
+    background: var(--services-dark);
+}
+
+
+/* =========================================================
+   IMAGE SERVICE
+========================================================= */
+
+.service-image {
+    position: relative;
+
+    min-height: 480px;
+
+    overflow: hidden;
+}
+
+
+.service-image::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.05),
+        rgba(0, 0, 0, 0)
+    );
+}
+
+
+.service-image img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition: transform 0.6s ease;
+}
+
+
+.service-item:hover .service-image img {
+    transform: scale(1.06);
+}
+
+
+/* =========================================================
+   CONTENU SERVICE
+========================================================= */
+
+.service-content {
+    padding: 65px 60px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+}
+
+
+.service-icon {
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 25px;
+
+    border: 2px solid var(--services-orange);
+
+    color: var(--services-orange);
+
+    font-size: 22px;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+.service-item:hover .service-icon {
+    background: var(--services-orange);
+
+    color: var(--services-white);
+
+    transform: rotate(5deg);
+}
+
+
+.service-small-label {
+    margin-bottom: 8px;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 3px;
+
+    color: var(--services-green);
+}
+
+
+.service-content h3 {
+    margin: 0 0 20px;
+
+    font-family: "Anton", sans-serif;
+
+    font-size: clamp(34px, 4vw, 52px);
+
+    line-height: 1;
+
+    text-transform: uppercase;
+
+    color: var(--services-dark);
+}
+
+
+.service-short-description {
+    margin: 0 0 18px;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    line-height: 1.6;
+
+    color: var(--services-dark);
+}
+
+
+.service-description {
+    margin: 0;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+
+    color: var(--services-gray);
+}
+
+
+/* =========================================================
+   INTERVENTIONS
+========================================================= */
+
+.service-interventions {
+    margin-top: 25px;
+}
+
+
+.service-interventions strong {
+    display: block;
+
+    margin-bottom: 12px;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+    color: var(--services-dark);
+}
+
+
+.service-tags {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+}
+
+
+.service-tags span {
+    display: inline-block;
+
+    padding: 7px 11px;
+
+    background: var(--services-light);
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    color: var(--services-dark);
+}
+
+
+/* =========================================================
+   LIEN SERVICE
+========================================================= */
+
+.service-link {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    width: fit-content;
+
+    margin-top: 28px;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+    color: var(--services-dark);
+
+    text-decoration: none;
+
+    transition: color 0.3s ease;
+}
+
+
+.service-link i {
+    transition: transform 0.3s ease;
+}
+
+
+.service-link:hover {
+    color: var(--services-orange);
+}
+
+
+.service-link:hover i {
+    transform: translateX(7px);
+}
+
+
+/* =========================================================
+   AUCUN SERVICE
+========================================================= */
+
+.services-empty {
+    padding: 100px 30px;
+
+    text-align: center;
+
+    background: var(--services-white);
+}
+
+
+.services-empty i {
+    margin-bottom: 20px;
+
+    font-size: 45px;
+
+    color: var(--services-orange);
+}
+
+
+.services-empty h3 {
+    margin: 0 0 10px;
+
+    font-family: "Anton", sans-serif;
+
+    font-size: 35px;
+
+    text-transform: uppercase;
+}
+
+
+.services-empty p {
+    margin: 0;
+
+    font-family: "Montserrat", sans-serif;
+
+    color: var(--services-gray);
+}
+
+
+/* =========================================================
+   NOTRE APPROCHE
+========================================================= */
+
+/* =========================================================
+   NOTRE APPROCHE — COULEUR COM'UNITY
+========================================================= */
+
+.services-approach {
+    position: relative;
+
+    padding: 120px 0;
+
+    background: #00788D;
+
+    color: #FFFFFF;
+
+    overflow: hidden;
+}
+
+/* Décoration */
+
+.services-approach::before {
+    content: "";
+
+    position: absolute;
+
+    width: 420px;
+    height: 420px;
+
+    right: -180px;
+    top: -180px;
+
+    border-radius: 50%;
+
+    border: 80px solid rgba(255, 255, 255, 0.06);
+}
+
+
+.services-approach::after {
+    content: "";
+
+    position: absolute;
+
+    width: 250px;
+    height: 250px;
+
+    left: -130px;
+    bottom: -130px;
+
+    border-radius: 50%;
+
+    background: rgba(242, 140, 40, 0.15);
+}
+
+
+/* Contenu au-dessus des décorations */
+
+.services-approach .services-container {
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* Titre */
+
+.services-approach .services-heading h2 {
+    color: var(--services-white);
+}
+
+
+/* Label */
+
+.services-approach .services-label {
+    color: var(--services-orange);
+}
+
+
+.services-approach .services-label::before {
+    background: var(--services-orange);
+}
+
+
+/* =========================================================
+   BLOCS DE L'APPROCHE
+========================================================= */
+
+.approach-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    margin-top: 75px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+
+.approach-step {
+    position: relative;
+
+    padding: 45px 30px 25px;
+
+    border-right: 1px solid rgba(255, 255, 255, 0.25);
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+.approach-step:last-child {
+    border-right: none;
+}
+
+
+.approach-step:hover {
+    background: rgba(255, 255, 255, 0.08);
+
+    transform: translateY(-5px);
+}
+
+
+/* Numéro */
+
+.approach-number {
+    position: absolute;
+
+    top: 15px;
+    right: 20px;
+
+    font-family: "Anton", sans-serif;
+
+    font-size: 25px;
+
+    color: var(--services-orange);
+}
+
+
+/* Icône */
+
+.approach-step > i {
+    display: block;
+
+    margin-bottom: 25px;
+
+    font-size: 35px;
+
+    color: var(--services-orange);
+}
+
+
+/* Titre */
+
+.approach-step h3 {
+    margin: 0 0 15px;
+
+    font-family: "Anton", sans-serif;
+
+    font-size: 30px;
+
+    font-weight: 400;
+
+    line-height: 1.1;
+
+    text-transform: uppercase;
+
+    color: var(--services-white);
+}
+
+
+/* Texte */
+
+.approach-step p {
+    margin: 0;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 13px;
+
+    line-height: 1.8;
+
+    color: rgba(255, 255, 255, 0.82);
+}
+
+
+.services-approach .services-heading h2 {
+    color: var(--services-white);
+}
+
+
+.approach-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 0;
+
+    margin-top: 75px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+
+.approach-step {
+    position: relative;
+
+    padding: 45px 30px 20px;
+
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+.approach-step:last-child {
+    border-right: none;
+}
+
+
+.approach-step:hover {
+    background: rgba(255, 255, 255, 0.04);
+
+    transform: translateY(-5px);
+}
+
+
+.approach-number {
+    position: absolute;
+
+    top: 15px;
+    right: 20px;
+
+    font-family: "Anton", sans-serif;
+
+    font-size: 25px;
+
+    color: var(--services-orange);
+}
+
+
+.approach-step > i {
+    margin-bottom: 25px;
+
+    font-size: 35px;
+
+    color: var(--services-orange);
+}
+
+
+.approach-step h3 {
+    margin: 0 0 15px;
+
+    font-family: "Anton", sans-serif;
+
+    font-size: 32px;
+
+    text-transform: uppercase;
+}
+
+
+.approach-step p {
+    margin: 0;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 13px;
+
+    line-height: 1.8;
+
+    color: rgba(255, 255, 255, 0.7);
+}
+
+
+/* =========================================================
+   PUBLICS
+========================================================= */
+
+.services-publics {
+    padding: 110px 0;
+
+    background: var(--services-white);
+}
+
+
+.services-publics .services-container {
+    display: grid;
+
+    grid-template-columns: 0.9fr 1.1fr;
+
+    gap: 100px;
+
+    align-items: center;
+}
+
+
+.services-publics-content h2 {
+    margin: 18px 0 0;
+
+    font-family: "Anton", sans-serif;
+
+    font-size: clamp(38px, 4vw, 58px);
+
+    line-height: 1.05;
+
+    text-transform: uppercase;
+
+    color: var(--services-dark);
+}
+
+
+.publics-list {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+}
+
+
+.publics-list span {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 16px 20px;
+
+    border: 1px solid #dddddd;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    color: var(--services-dark);
+
+    transition:
+        border-color 0.3s ease,
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+.publics-list span i {
+    color: var(--services-orange);
+}
+
+
+.publics-list span:hover {
+    background: var(--services-dark);
+
+    border-color: var(--services-dark);
+
+    color: var(--services-white);
+
+    transform: translateY(-4px);
+}
+
+
+/* =========================================================
+   CTA FINAL
+========================================================= */
+
+.services-cta {
+    position: relative;
+
+    padding: 130px 0;
+
+    overflow: hidden;
+
+    background: var(--services-light);
+}
+
+
+.services-cta-decoration {
+    position: absolute;
+
+    width: 450px;
+    height: 450px;
+
+    right: -170px;
+    bottom: -230px;
+
+    border-radius: 50%;
+
+    background: var(--services-orange);
+
+    opacity: 0.16;
+}
+
+
+.services-cta-content {
+    position: relative;
+
+    max-width: 800px;
+
+    z-index: 2;
+}
+
+
+.services-cta h2 {
+    margin: 20px 0;
+
+    font-family: "Anton", sans-serif;
+
+    font-size: clamp(45px, 6vw, 75px);
+
+    line-height: 0.98;
+
+    text-transform: uppercase;
+
+    color: var(--services-dark);
+}
+
+
+.services-cta h2 span {
+    display: block;
+
+    color: var(--services-green);
+}
+
+
+.services-cta p {
+    max-width: 650px;
+
+    margin-bottom: 35px;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+
+    color: var(--services-gray);
+}
+
+
+.services-cta-buttons {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 15px;
+}
+
+
+/* =========================================================
+   RESPONSIVE — TABLETTE
+========================================================= */
+
+@media (max-width: 992px) {
+
+    .services-hero {
+        min-height: auto;
+
+        padding: 100px 0;
+    }
+
+
+    .services-hero .services-container {
+        grid-template-columns: 1fr;
+
+        gap: 70px;
+    }
+
+
+    .services-hero-content {
+        max-width: 750px;
+    }
+
+
+    .services-hero-visual {
+        max-width: 600px;
+
+        width: 100%;
+
+        margin: 0 auto;
+    }
+
+
+    .services-introduction-grid {
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+    }
+
+
+    .service-item,
+    .service-item-reverse {
+        grid-template-columns: 65px 1fr;
+    }
+
+
+    .service-image,
+    .service-item-reverse .service-image {
+        grid-column: 2;
+
+        grid-row: 1;
+
+        order: initial;
+
+        min-height: 400px;
+    }
+
+
+    .service-content,
+    .service-item-reverse .service-content {
+        grid-column: 2;
+
+        grid-row: 2;
+
+        order: initial;
+    }
+
+
+    .service-number {
+        grid-column: 1;
+
+        grid-row: 1 / span 2;
+    }
+
+
+    .approach-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    .approach-step:nth-child(2) {
+        border-right: none;
+    }
+
+
+    .approach-step:nth-child(1),
+    .approach-step:nth-child(2) {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+
+    .services-publics .services-container {
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE — MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .services-container {
+        width: min(92%, 1180px);
+    }
+
+
+    .services-hero {
+        padding: 80px 0;
+    }
+
+
+    .services-hero h1 {
+        font-size: 50px;
+    }
+
+
+    .services-hero-visual {
+        height: 400px;
+    }
+
+
+    .services-hero-visual img {
+        width: 78%;
+
+        height: 85%;
+
+        border-radius: 100px 15px 100px 15px;
+    }
+
+
+    .services-hero-shape {
+        width: 82%;
+
+        height: 85%;
+
+        border-radius: 100px 15px 100px 15px;
+    }
+
+
+    .services-hero-number {
+        font-size: 75px;
+    }
+
+
+    .services-introduction,
+    .services-list-section,
+    .services-approach,
+    .services-publics,
+    .services-cta {
+        padding: 80px 0;
+    }
+
+
+    .services-heading {
+        margin-bottom: 50px;
+    }
+
+
+    .services-heading h2 {
+        font-size: 42px;
+    }
+
+
+    .service-item,
+    .service-item-reverse {
+        display: grid;
+
+        grid-template-columns: 55px 1fr;
+    }
+
+
+    .service-image,
+    .service-item-reverse .service-image {
+        grid-column: 2;
+
+        min-height: 280px;
+    }
+
+
+    .service-content,
+    .service-item-reverse .service-content {
+        grid-column: 2;
+
+        padding: 40px 25px;
+    }
+
+
+    .service-number {
+        font-size: 22px;
+    }
+
+
+    .service-content h3 {
+        font-size: 38px;
+    }
+
+
+    .approach-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .approach-step,
+    .approach-step:nth-child(1),
+    .approach-step:nth-child(2) {
+        border-right: none;
+
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+
+    .approach-step:last-child {
+        border-bottom: none;
+    }
+
+
+    .publics-list {
+        gap: 8px;
+    }
+
+
+    .publics-list span {
+        padding: 13px 15px;
+
+        font-size: 12px;
+    }
+
+
+    .services-cta-buttons {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+}
+
+
+/* =========================================================
+   SERVICES — HARMONISATION TYPOGRAPHIQUE
+========================================================= */
+
+.services-hero h1,
+.services-introduction h2,
+.services-heading h2,
+.service-content h3,
+.services-cta h2,
+.approach-step h3 {
+    font-family: "Anton", sans-serif;
+    font-weight: 400;
+}
+
+.services-hero p,
+.services-introduction p,
+.service-content p,
+.approach-step p,
+.services-cta p,
+.services-hero-button,
+.service-link,
+.service-small-label,
+.services-label,
+.service-tags span,
+.publics-list span {
+    font-family: "Montserrat", sans-serif;
+}

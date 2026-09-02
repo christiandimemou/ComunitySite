@@ -1,0 +1,506 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}
+Services | Com’Unity
+{% endblock %}
+
+
+{% block content %}
+
+
+<!-- =====================================================
+     HERO SERVICES
+====================================================== -->
+
+<section class="services-hero">
+
+    <div class="services-hero-decoration"></div>
+
+    <div class="services-container">
+
+        <div class="services-hero-content">
+
+            <span class="services-label">
+                NOS SERVICES
+            </span>
+
+            <h1>
+                Des solutions pour
+                <span>transformer les idées en impact.</span>
+            </h1>
+
+            <p>
+                Com’Unity accompagne les communautés,
+                organisations et porteurs d'initiatives
+                dans leurs actions en faveur d'un
+                développement plus durable et solidaire.
+            </p>
+
+            <a href="#services-list"
+               class="services-hero-button">
+
+                Découvrir nos services
+
+                <i class="fas fa-arrow-down"></i>
+
+            </a>
+
+        </div>
+
+
+        <div class="services-hero-visual">
+
+            <div class="services-hero-shape"></div>
+
+            {% if services.0.image %}
+
+                <img
+                    src="{{ services.0.image.url }}"
+                    alt="{{ services.0.title }}"
+                >
+
+            {% endif %}
+
+            <div class="services-hero-number">
+                01
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     INTRODUCTION
+====================================================== -->
+
+<section class="services-introduction">
+
+    <div class="services-container">
+
+        <div class="services-introduction-grid">
+
+            <div>
+
+                <span class="section-label">
+                    NOTRE EXPERTISE
+                </span>
+
+                <h2>
+                    Nous transformons les enjeux
+                    en opportunités d'action.
+                </h2>
+
+            </div>
+
+
+            <div>
+
+                <p>
+                    Com’Unity mobilise son expertise pour
+                    accompagner les acteurs des territoires
+                    dans la conception et la mise en œuvre
+                    d'initiatives à impact social,
+                    environnemental et économique.
+                </p>
+
+                <p>
+                    Notre approche privilégie l'écoute,
+                    la participation, la collaboration
+                    et la recherche de solutions adaptées
+                    aux réalités locales.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     SERVICES
+====================================================== -->
+
+<section class="services-list-section"
+         id="services-list">
+
+    <div class="services-container">
+
+        <div class="services-heading">
+
+            <span class="section-label">
+                NOS DOMAINES D'INTERVENTION
+            </span>
+
+            <h2>
+                Nos services au cœur
+                du changement.
+            </h2>
+
+        </div>
+
+
+        <div class="services-list">
+
+            {% for service in services %}
+
+            <article class="service-item
+                {% if forloop.counter|divisibleby:2 %}
+                    service-item-reverse
+                {% endif %}">
+
+
+                <div class="service-number">
+
+                    {% if forloop.counter < 10 %}
+                        0{{ forloop.counter }}
+                    {% else %}
+                        {{ forloop.counter }}
+                    {% endif %}
+
+                </div>
+
+
+                <div class="service-image">
+
+                    {% if service.image %}
+
+                    <img
+                        src="{{ service.image.url }}"
+                        alt="{{ service.title }}"
+                    >
+
+                    {% endif %}
+
+                </div>
+
+
+                <div class="service-content">
+
+                    <div class="service-icon">
+
+                        <i class="fas {{ service.icon }}"></i>
+
+                    </div>
+
+                    <span class="service-small-label">
+                        SERVICE
+                    </span>
+
+                    <h3>
+                        {{ service.title }}
+                    </h3>
+
+                    <p class="service-short-description">
+                        {{ service.short_description }}
+                    </p>
+
+                    <p class="service-description">
+                        {{ service.description }}
+                    </p>
+
+
+                    {% if service.interventions %}
+
+<div class="service-interventions">
+
+    <strong>
+        Nos interventions
+    </strong>
+
+    <div class="service-tags">
+
+        {% for intervention in service.intervention_list %}
+
+            <span>
+                {{ intervention }}
+            </span>
+
+        {% endfor %}
+
+    </div>
+
+</div>
+
+{% endif %}
+
+
+                    <a href="#"
+                       class="service-link">
+
+                        Découvrir le service
+
+                        <i class="fas fa-arrow-right"></i>
+
+                    </a>
+
+                </div>
+
+            </article>
+
+            {% empty %}
+
+            <div class="services-empty">
+
+                <i class="fas fa-layer-group"></i>
+
+                <h3>
+                    Nos services arrivent bientôt.
+                </h3>
+
+                <p>
+                    Com’Unity prépare actuellement la présentation
+                    de ses différents domaines d'intervention.
+                </p>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     NOTRE APPROCHE
+====================================================== -->
+
+<section class="services-approach">
+
+    <div class="services-container">
+
+        <div class="services-heading centered">
+
+            <span class="section-label section-label-light">
+                NOTRE APPROCHE
+            </span>
+
+            <h2>
+                De l'écoute à l'impact.
+            </h2>
+
+        </div>
+
+
+        <div class="approach-grid">
+
+
+            <article class="approach-step">
+
+                <span class="approach-number">
+                    01
+                </span>
+
+                <i class="fas fa-ear-listen"></i>
+
+                <h3>
+                    Écouter
+                </h3>
+
+                <p>
+                    Identifier les besoins et les réalités
+                    des territoires.
+                </p>
+
+            </article>
+
+
+            <article class="approach-step">
+
+                <span class="approach-number">
+                    02
+                </span>
+
+                <i class="fas fa-lightbulb"></i>
+
+                <h3>
+                    Comprendre
+                </h3>
+
+                <p>
+                    Analyser les enjeux et construire
+                    une vision partagée.
+                </p>
+
+            </article>
+
+
+            <article class="approach-step">
+
+                <span class="approach-number">
+                    03
+                </span>
+
+                <i class="fas fa-hands-helping"></i>
+
+                <h3>
+                    Agir
+                </h3>
+
+                <p>
+                    Mettre en œuvre des solutions adaptées
+                    aux réalités locales.
+                </p>
+
+            </article>
+
+
+            <article class="approach-step">
+
+                <span class="approach-number">
+                    04
+                </span>
+
+                <i class="fas fa-chart-line"></i>
+
+                <h3>
+                    Mesurer
+                </h3>
+
+                <p>
+                    Évaluer les résultats et renforcer
+                    l'impact des actions.
+                </p>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PUBLICS
+====================================================== -->
+
+<section class="services-publics">
+
+    <div class="services-container">
+
+        <div class="services-publics-content">
+
+            <span class="section-label">
+                NOUS AGISSONS AVEC
+            </span>
+
+            <h2>
+                Le changement commence
+                avec les acteurs du territoire.
+            </h2>
+
+        </div>
+
+
+        <div class="publics-list">
+
+            <span>
+                <i class="fas fa-user-graduate"></i>
+                Jeunes
+            </span>
+
+            <span>
+                <i class="fas fa-person-dress"></i>
+                Femmes
+            </span>
+
+            <span>
+                <i class="fas fa-people-group"></i>
+                Communautés
+            </span>
+
+            <span>
+                <i class="fas fa-handshake"></i>
+                Associations
+            </span>
+
+            <span>
+                <i class="fas fa-building"></i>
+                Entreprises
+            </span>
+
+            <span>
+                <i class="fas fa-landmark"></i>
+                Institutions
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CTA
+====================================================== -->
+
+<section class="services-cta">
+
+    <div class="services-cta-decoration"></div>
+
+    <div class="services-container">
+
+        <div class="services-cta-content">
+
+            <span class="section-label">
+                AGISSONS ENSEMBLE
+            </span>
+
+            <h2>
+                Vous avez un projet ?
+                <span>Construisons-le ensemble.</span>
+            </h2>
+
+            <p>
+                Parlons de vos besoins, de vos idées et des
+                solutions que nous pouvons construire ensemble
+                pour créer un impact durable.
+            </p>
+
+            <div class="services-cta-buttons">
+
+                <a href="#"
+                   class="hero-button hero-button-primary">
+
+                    Parlons de votre projet
+
+                    <i class="fas fa-arrow-right"></i>
+
+                </a>
+
+                <a href="#"
+                   class="hero-button hero-button-secondary">
+
+                    Faire un don
+
+                    <i class="fas fa-heart"></i>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+{% endblock %}

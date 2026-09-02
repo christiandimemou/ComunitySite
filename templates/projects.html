@@ -1,0 +1,395 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+
+{% block title %}
+Projets | Com’Unity
+{% endblock %}
+
+
+{% block content %}
+
+
+<!-- =====================================================
+     PAGE HEADER
+====================================================== -->
+
+<section class="page-header projects-header">
+
+    {% if project_header %}
+        <img
+            src="{{ project_header.image.url }}"
+            alt="Com’Unity - Nos projets"
+            class="projects-header-image"
+        >
+    {% endif %}
+
+    <div class="page-header-overlay"></div>
+
+    <div class="page-header-container">
+
+        <div class="page-header-content">
+
+            <span class="page-header-label">
+                NOS PROJETS
+            </span>
+
+            <h1>
+                Des initiatives concrètes
+                <span>pour transformer nos territoires.</span>
+            </h1>
+
+            <p>
+                Découvrez les projets portés par Com’Unity
+                pour favoriser une société plus durable,
+                inclusive et solidaire.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     INTRODUCTION
+====================================================== -->
+
+<section class="projects-introduction">
+
+    <div class="about-container">
+
+        <div class="projects-introduction-content">
+
+            <span class="section-label">
+                NOS ACTIONS
+            </span>
+
+            <h2>
+                Transformer les idées
+                en actions concrètes.
+            </h2>
+
+            <p>
+                Com’Unity développe et accompagne des initiatives
+                qui répondent aux enjeux sociaux, économiques et
+                environnementaux de nos territoires.
+            </p>
+
+            <p>
+                À travers ses projets, l’association favorise la
+                mobilisation citoyenne, l’innovation locale,
+                l’autonomisation des communautés et l’émergence
+                de solutions durables.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PROJETS
+====================================================== -->
+
+<section class="projects-list-section">
+
+    <div class="about-container">
+
+
+        <!-- TITRE -->
+
+        <div class="about-section-heading centered">
+
+            <span class="section-label">
+                NOS PROJETS
+            </span>
+
+            <h2>
+                Des projets au service
+                du changement.
+            </h2>
+
+        </div>
+
+
+
+        <!-- GRILLE -->
+
+        <div class="projects-grid">
+
+            {% for project in projects %}
+
+            <article class="project-card">
+
+
+                <!-- IMAGE -->
+
+                <div class="project-card-image">
+
+                    {% if project.image %}
+
+                    <img
+                        src="{{ project.image.url }}"
+                        alt="{{ project.title }}"
+                    >
+
+                    {% endif %}
+
+
+                    <span class="project-category">
+
+                        {{ project.get_category_display }}
+
+                    </span>
+
+                </div>
+
+
+
+                <!-- CONTENU -->
+
+                <div class="project-card-content">
+
+
+                    <span class="project-status">
+
+                        {{ project.get_status_display }}
+
+                    </span>
+
+
+                    <h3>
+                        {{ project.title }}
+                    </h3>
+
+
+                    <p>
+                        {{ project.short_description }}
+                    </p>
+
+
+                    <div class="project-card-meta">
+
+                        {% if project.location %}
+
+                        <span>
+
+                            <i class="fas fa-location-dot"></i>
+
+                            {{ project.location }}
+
+                        </span>
+
+                        {% endif %}
+
+                    </div>
+
+
+                    <a
+                        href="#"
+                        class="project-link"
+                    >
+
+                        En savoir plus
+
+                        <i class="fas fa-arrow-right"></i>
+
+                    </a>
+
+                </div>
+
+            </article>
+
+            {% empty %}
+
+            <div class="projects-empty">
+
+                <p>
+                    Les projets de Com’Unity seront bientôt
+                    présentés ici.
+                </p>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     DOMAINES D'INTERVENTION
+====================================================== -->
+
+<section class="projects-axes">
+
+    <div class="about-container">
+
+        <div class="about-section-heading centered">
+
+            <span class="section-label section-label-light">
+                NOS DOMAINES D'ACTION
+            </span>
+
+            <h2>
+                Trois axes pour
+                un impact durable.
+            </h2>
+
+        </div>
+
+
+        <div class="axes-grid">
+
+
+            <!-- TRANSITION ÉCOLOGIQUE -->
+
+            <article class="axis-card">
+
+                <div class="axis-icon">
+
+                    <i class="fas fa-leaf"></i>
+
+                </div>
+
+                <h3>
+                    Transition écologique
+                </h3>
+
+                <p>
+                    Sensibilisation environnementale, économie
+                    circulaire, pratiques responsables et
+                    résilience des territoires.
+                </p>
+
+            </article>
+
+
+
+            <!-- ESS -->
+
+            <article class="axis-card">
+
+                <div class="axis-icon">
+
+                    <i class="fas fa-hand-holding-dollar"></i>
+
+                </div>
+
+                <h3>
+                    Économie sociale et solidaire
+                </h3>
+
+                <p>
+                    Autonomisation économique, entrepreneuriat
+                    responsable et valorisation des initiatives
+                    locales.
+                </p>
+
+            </article>
+
+
+
+            <!-- ÉDUCATION CITOYENNE -->
+
+            <article class="axis-card">
+
+                <div class="axis-icon">
+
+                    <i class="fas fa-users"></i>
+
+                </div>
+
+                <h3>
+                    Éducation citoyenne
+                </h3>
+
+                <p>
+                    Engagement, leadership, responsabilité et
+                    participation des citoyens à la vie de
+                    leurs communautés.
+                </p>
+
+            </article>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     APPEL À L'ACTION
+====================================================== -->
+
+<section class="about-cta">
+
+    <div class="about-cta-overlay"></div>
+
+    <div class="about-container">
+
+        <div class="about-cta-content">
+
+            <span class="section-label section-label-light">
+                AGISSONS ENSEMBLE
+            </span>
+
+            <h2>
+                Vous aussi, participez
+                au changement.
+            </h2>
+
+            <p>
+                Rejoignez Com’Unity et contribuez à la construction
+                de territoires plus durables, inclusifs et solidaires.
+            </p>
+
+            <div class="about-cta-buttons">
+
+                <a
+                    href="#"
+                    class="hero-button hero-button-primary"
+                >
+
+                    Devenir bénévole
+
+                    <i class="fas fa-arrow-right"></i>
+
+                </a>
+
+
+                <a
+                    href="#"
+                    class="hero-button hero-button-secondary"
+                >
+
+                    Faire un don
+
+                    <i class="fas fa-heart"></i>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+{% endblock %}

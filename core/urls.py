@@ -13,4 +13,16 @@ urlpatterns = [
         name="about"
     ),
 
+    path(
+    "projets/",
+    views.projects,
+    name="projects"
+    ),
+
+    path(
+    "services/",
+    views.services,
+    name="services"
+    ),
+
 ]
