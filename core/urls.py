@@ -25,4 +25,10 @@ urlpatterns = [
     name="services"
     ),
 
+    path(
+    "galerie/",
+    views.gallery,
+    name="gallery"
+),
+
 ]

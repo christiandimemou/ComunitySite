@@ -75,7 +75,8 @@
                         Services
                     </a>
 
-                    <a href="#" class="nav-link">
+                    <a href="{% url 'gallery' %}"
+                        class="nav-link {% if request.resolver_match.url_name == 'gallery' %}active{% endif %}">
                         Galerie
                     </a>
 

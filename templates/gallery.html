@@ -1,0 +1,888 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+
+{% block title %}
+Galerie | Com’Unity
+{% endblock %}
+
+
+{% block content %}
+
+
+<!-- =====================================================
+     HERO GALERIE
+====================================================== -->
+
+<section class="gallery-hero">
+
+    <div class="gallery-hero-overlay"></div>
+
+    <div class="gallery-hero-decoration"></div>
+
+    <div class="gallery-container">
+
+        <div class="gallery-hero-content">
+
+            <span class="gallery-hero-label">
+                NOTRE GALERIE
+            </span>
+
+            <h1>
+                Revivez nos actions
+                <span>en images.</span>
+            </h1>
+
+            <div class="gallery-hero-line"></div>
+
+            <p>
+                Découvrez en images nos actions, nos rencontres
+                et les moments forts qui illustrent notre engagement
+                sur le terrain.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FILTRES
+====================================================== -->
+
+<section class="gallery-section">
+
+    <div class="gallery-container">
+
+        <div class="gallery-filters">
+
+            <button
+                type="button"
+                class="gallery-filter active"
+                data-filter="all"
+            >
+                <i class="fas fa-border-all"></i>
+                Toutes
+            </button>
+
+
+            <button
+                type="button"
+                class="gallery-filter"
+                data-filter="environment"
+            >
+                <i class="fas fa-leaf"></i>
+                Environnement
+            </button>
+
+
+            <button
+                type="button"
+                class="gallery-filter"
+                data-filter="education"
+            >
+                <i class="fas fa-graduation-cap"></i>
+                Éducation
+            </button>
+
+
+            <button
+                type="button"
+                class="gallery-filter"
+                data-filter="entrepreneurship"
+            >
+                <i class="fas fa-briefcase"></i>
+                Entrepreneuriat
+            </button>
+
+
+            <button
+                type="button"
+                class="gallery-filter"
+                data-filter="community"
+            >
+                <i class="fas fa-people-group"></i>
+                Communauté
+            </button>
+
+
+            <button
+                type="button"
+                class="gallery-filter"
+                data-filter="events"
+            >
+                <i class="fas fa-calendar-days"></i>
+                Événements
+            </button>
+
+        </div>
+
+
+
+        <!-- =================================================
+             GALERIE
+        ================================================== -->
+
+        <div class="gallery-grid" id="galleryGrid">
+
+            {% for item in gallery_images %}
+
+            <article
+                class="gallery-item"
+                data-category="{{ item.category }}"
+            >
+
+                <div class="gallery-image-wrapper">
+
+                    <img
+                        src="{{ item.image.url }}"
+                        alt="{{ item.title }}"
+                        loading="lazy"
+                    >
+
+                    <div class="gallery-image-overlay">
+
+                        <div class="gallery-image-info">
+
+                            <span>
+                                {{ item.get_category_display }}
+                            </span>
+
+                            <h3>
+                                {{ item.title }}
+                            </h3>
+
+                        </div>
+
+                        <button
+                            type="button"
+                            class="gallery-view-button"
+                            aria-label="Voir {{ item.title }}"
+                        >
+
+                            <i class="fas fa-expand"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+            {% empty %}
+
+            <div class="gallery-empty">
+
+                <div class="gallery-empty-icon">
+
+                    <i class="fas fa-images"></i>
+
+                </div>
+
+                <h2>
+                    Notre galerie arrive bientôt.
+                </h2>
+
+                <p>
+                    Les photos des actions de Com’Unity seront
+                    prochainement disponibles.
+                </p>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+
+
+        <!-- =================================================
+             BOUTON CHARGER PLUS
+        ================================================== -->
+
+        {% if gallery_images %}
+
+        <div class="gallery-load-more-wrapper">
+
+            <button
+                type="button"
+                class="gallery-load-more"
+                id="galleryLoadMore"
+            >
+
+                Charger plus de photos
+
+                <i class="fas fa-chevron-down"></i>
+
+            </button>
+
+        </div>
+
+        {% endif %}
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     STATISTIQUES
+====================================================== -->
+
+<section class="gallery-stats">
+
+    <div class="gallery-container">
+
+        <div class="gallery-stats-grid">
+
+
+            <div class="gallery-stat">
+
+                <div class="gallery-stat-icon">
+
+                    <i class="far fa-image"></i>
+
+                </div>
+
+                <strong>
+                    {{ gallery_images|length }}+
+                </strong>
+
+                <span>
+                    PHOTOS
+                </span>
+
+                <small>
+                    de nos actions
+                </small>
+
+            </div>
+
+
+            <div class="gallery-stat">
+
+                <div class="gallery-stat-icon">
+
+                    <i class="fas fa-people-group"></i>
+
+                </div>
+
+                <strong>
+                    50+
+                </strong>
+
+                <span>
+                    PROJETS
+                </span>
+
+                <small>
+                    réalisés
+                </small>
+
+            </div>
+
+
+            <div class="gallery-stat">
+
+                <div class="gallery-stat-icon">
+
+                    <i class="far fa-calendar"></i>
+
+                </div>
+
+                <strong>
+                    30+
+                </strong>
+
+                <span>
+                    ÉVÉNEMENTS
+                </span>
+
+                <small>
+                    organisés
+                </small>
+
+            </div>
+
+
+            <div class="gallery-stat">
+
+                <div class="gallery-stat-icon">
+
+                    <i class="far fa-heart"></i>
+
+                </div>
+
+                <strong>
+                    1000+
+                </strong>
+
+                <span>
+                    VIES IMPACTÉES
+                </span>
+
+                <small>
+                    chaque année
+                </small>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CTA PHOTOS
+====================================================== -->
+
+<section class="gallery-share">
+
+    <div class="gallery-share-blue"></div>
+
+    <div class="gallery-share-orange"></div>
+
+    <div class="gallery-container">
+
+        <div class="gallery-share-content">
+
+            <div class="gallery-share-icon">
+
+                <i class="fas fa-camera"></i>
+
+            </div>
+
+
+            <div class="gallery-share-text">
+
+                <span>
+                    PARTICIPEZ À NOTRE GALERIE
+                </span>
+
+                <h2>
+                    Vous avez des photos
+                    de nos actions ?
+                </h2>
+
+                <p>
+                    Partagez vos moments avec nous et contribuez
+                    à faire rayonner les initiatives de Com’Unity.
+                </p>
+
+            </div>
+
+
+            <a
+                href="#"
+                class="gallery-share-button"
+            >
+
+                Partager mes photos
+
+                <i class="fas fa-cloud-arrow-up"></i>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     LIGHTBOX
+====================================================== -->
+
+<div
+    class="gallery-lightbox"
+    id="galleryLightbox"
+>
+
+    <button
+        type="button"
+        class="gallery-lightbox-close"
+        aria-label="Fermer"
+    >
+
+        <i class="fas fa-xmark"></i>
+
+    </button>
+
+
+    <button
+        type="button"
+        class="gallery-lightbox-prev"
+        aria-label="Photo précédente"
+    >
+
+        <i class="fas fa-chevron-left"></i>
+
+    </button>
+
+
+    <div class="gallery-lightbox-content">
+
+        <img
+            src=""
+            alt=""
+            id="galleryLightboxImage"
+        >
+
+        <div class="gallery-lightbox-caption">
+
+            <span id="galleryLightboxCategory"></span>
+
+            <h3 id="galleryLightboxTitle"></h3>
+
+        </div>
+
+    </div>
+
+
+    <button
+        type="button"
+        class="gallery-lightbox-next"
+        aria-label="Photo suivante"
+    >
+
+        <i class="fas fa-chevron-right"></i>
+
+    </button>
+
+</div>
+
+
+{% endblock %}
+
+
+
+{% block extra_js %}
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const items = Array.from(
+        document.querySelectorAll(".gallery-item")
+    );
+
+    const filters = document.querySelectorAll(
+        ".gallery-filter"
+    );
+
+    const loadMoreButton =
+        document.getElementById("galleryLoadMore");
+
+    const lightbox =
+        document.getElementById("galleryLightbox");
+
+    const lightboxImage =
+        document.getElementById("galleryLightboxImage");
+
+    const lightboxTitle =
+        document.getElementById("galleryLightboxTitle");
+
+    const lightboxCategory =
+        document.getElementById("galleryLightboxCategory");
+
+    const closeButton =
+        document.querySelector(".gallery-lightbox-close");
+
+    const previousButton =
+        document.querySelector(".gallery-lightbox-prev");
+
+    const nextButton =
+        document.querySelector(".gallery-lightbox-next");
+
+
+    let currentFilter = "all";
+
+    let visibleCount = 9;
+
+    let currentLightboxIndex = 0;
+
+
+    /* =====================================================
+       AFFICHAGE
+    ===================================================== */
+
+    function updateGallery() {
+
+        let visibleItems = items.filter(function (item) {
+
+            if (currentFilter === "all") {
+                return true;
+            }
+
+            return item.dataset.category === currentFilter;
+
+        });
+
+
+        items.forEach(function (item) {
+
+            item.style.display = "none";
+
+        });
+
+
+        visibleItems.forEach(function (item, index) {
+
+            if (index < visibleCount) {
+
+                item.style.display = "block";
+
+            }
+
+        });
+
+
+        if (
+            loadMoreButton &&
+            visibleItems.length > visibleCount
+        ) {
+
+            loadMoreButton.style.display = "inline-flex";
+
+        } else if (loadMoreButton) {
+
+            loadMoreButton.style.display = "none";
+
+        }
+
+    }
+
+
+    /* =====================================================
+       FILTRES
+    ===================================================== */
+
+    filters.forEach(function (filter) {
+
+        filter.addEventListener(
+            "click",
+            function () {
+
+                filters.forEach(function (button) {
+
+                    button.classList.remove("active");
+
+                });
+
+
+                this.classList.add("active");
+
+
+                currentFilter =
+                    this.dataset.filter;
+
+
+                visibleCount = 9;
+
+
+                updateGallery();
+
+            }
+        );
+
+    });
+
+
+    /* =====================================================
+       CHARGER PLUS
+    ===================================================== */
+
+    if (loadMoreButton) {
+
+        loadMoreButton.addEventListener(
+            "click",
+            function () {
+
+                visibleCount += 6;
+
+                updateGallery();
+
+            }
+        );
+
+    }
+
+
+    /* =====================================================
+       LIGHTBOX
+    ===================================================== */
+
+    function openLightbox(index) {
+
+        const visibleItems =
+            items.filter(function (item) {
+
+                return item.style.display !== "none";
+
+            });
+
+
+        if (!visibleItems.length) {
+            return;
+        }
+
+
+        currentLightboxIndex = index;
+
+
+        const item =
+            visibleItems[currentLightboxIndex];
+
+        const image =
+            item.querySelector("img");
+
+        const title =
+            image.alt;
+
+
+        lightboxImage.src =
+            image.src;
+
+        lightboxImage.alt =
+            title;
+
+        lightboxTitle.textContent =
+            title;
+
+
+        const category =
+            item.querySelector(
+                ".gallery-image-info span"
+            );
+
+
+        if (category) {
+
+            lightboxCategory.textContent =
+                category.textContent;
+
+        }
+
+
+        lightbox.classList.add("open");
+
+        document.body.style.overflow =
+            "hidden";
+
+    }
+
+
+    function closeLightbox() {
+
+        lightbox.classList.remove("open");
+
+        document.body.style.overflow =
+            "";
+
+    }
+
+
+    function changeLightbox(direction) {
+
+        const visibleItems =
+            items.filter(function (item) {
+
+                return item.style.display !== "none";
+
+            });
+
+
+        if (!visibleItems.length) {
+            return;
+        }
+
+
+        currentLightboxIndex += direction;
+
+
+        if (
+            currentLightboxIndex < 0
+        ) {
+
+            currentLightboxIndex =
+                visibleItems.length - 1;
+
+        }
+
+
+        if (
+            currentLightboxIndex >=
+            visibleItems.length
+        ) {
+
+            currentLightboxIndex = 0;
+
+        }
+
+
+        const item =
+            visibleItems[currentLightboxIndex];
+
+        const image =
+            item.querySelector("img");
+
+
+        lightboxImage.src =
+            image.src;
+
+        lightboxImage.alt =
+            image.alt;
+
+        lightboxTitle.textContent =
+            image.alt;
+
+
+        const category =
+            item.querySelector(
+                ".gallery-image-info span"
+            );
+
+
+        if (category) {
+
+            lightboxCategory.textContent =
+                category.textContent;
+
+        }
+
+    }
+
+
+    items.forEach(function (item) {
+
+        const button =
+            item.querySelector(
+                ".gallery-view-button"
+            );
+
+
+        if (button) {
+
+            button.addEventListener(
+                "click",
+                function () {
+
+                    const visibleItems =
+                        items.filter(function (galleryItem) {
+
+                            return galleryItem.style.display !== "none";
+
+                        });
+
+
+                    const index =
+                        visibleItems.indexOf(item);
+
+
+                    openLightbox(index);
+
+                }
+            );
+
+        }
+
+    });
+
+
+    closeButton.addEventListener(
+        "click",
+        closeLightbox
+    );
+
+
+    previousButton.addEventListener(
+        "click",
+        function () {
+
+            changeLightbox(-1);
+
+        }
+    );
+
+
+    nextButton.addEventListener(
+        "click",
+        function () {
+
+            changeLightbox(1);
+
+        }
+    );
+
+
+    lightbox.addEventListener(
+        "click",
+        function (event) {
+
+            if (
+                event.target === lightbox
+            ) {
+
+                closeLightbox();
+
+            }
+
+        }
+    );
+
+
+    document.addEventListener(
+        "keydown",
+        function (event) {
+
+            if (
+                !lightbox.classList.contains("open")
+            ) {
+
+                return;
+
+            }
+
+
+            if (event.key === "Escape") {
+
+                closeLightbox();
+
+            }
+
+
+            if (event.key === "ArrowLeft") {
+
+                changeLightbox(-1);
+
+            }
+
+
+            if (event.key === "ArrowRight") {
+
+                changeLightbox(1);
+
+            }
+
+        }
+    );
+
+
+    updateGallery();
+
+});
+
+</script>
+
+{% endblock %}

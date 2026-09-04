@@ -1,7 +1,7 @@
 from django.shortcuts import render
 
 from .models import HomeImage, AboutImage, TeamMember, Project, ProjectHeaderImage, Service
-
+from .models import GalleryImage
 
 def home(request):
 
@@ -75,3 +75,22 @@ def services(request):
             "services": services_list,
         }
     )
+
+
+def gallery(request):
+
+    gallery_images = GalleryImage.objects.filter(
+        is_active=True
+    ).order_by(
+        "order",
+        "-created_at"
+    )
+
+    return render(
+        request,
+        "gallery.html",
+        {
+            "gallery_images": gallery_images,
+        }
+    )
+

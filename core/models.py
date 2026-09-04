@@ -280,3 +280,63 @@ class Service(models.Model):
             for intervention in self.interventions.split(",")
             if intervention.strip()
         ]
+    
+
+class GalleryImage(models.Model):
+
+    CATEGORY_CHOICES = [
+
+        ("environment", "Environnement"),
+        ("education", "Éducation"),
+        ("entrepreneurship", "Entrepreneuriat"),
+        ("community", "Communauté"),
+        ("events", "Événements"),
+
+    ]
+
+    title = models.CharField(
+        max_length=200,
+        verbose_name="Titre"
+    )
+
+    image = models.ImageField(
+        upload_to="gallery/",
+        verbose_name="Image"
+    )
+
+    category = models.CharField(
+        max_length=30,
+        choices=CATEGORY_CHOICES,
+        default="community",
+        verbose_name="Catégorie"
+    )
+
+    description = models.TextField(
+        blank=True,
+        verbose_name="Description"
+    )
+
+    order = models.PositiveIntegerField(
+        default=0,
+        verbose_name="Ordre"
+    )
+
+    is_active = models.BooleanField(
+        default=True,
+        verbose_name="Afficher sur le site"
+    )
+
+    created_at = models.DateTimeField(
+        auto_now_add=True
+    )
+
+    class Meta:
+
+        ordering = ["order", "-created_at"]
+
+        verbose_name = "Photo de la galerie"
+        verbose_name_plural = "Photos de la galerie"
+
+    def __str__(self):
+
+        return self.title

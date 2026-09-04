@@ -2,6 +2,8 @@ from django.contrib import admin
 
 from .models import HomeImage, AboutImage, TeamMember, Project, ProjectHeaderImage, Service
 
+from .models import GalleryImage
+
 
 @admin.register(HomeImage)
 class HomeImageAdmin(admin.ModelAdmin):
@@ -134,3 +136,35 @@ class ServiceAdmin(admin.ModelAdmin):
     ordering = (
         "order",
     )
+
+@admin.register(GalleryImage)
+class GalleryImageAdmin(admin.ModelAdmin):
+
+    list_display = (
+        "title",
+        "category",
+        "order",
+        "is_active",
+        "created_at",
+    )
+
+    list_filter = (
+        "category",
+        "is_active",
+    )
+
+    search_fields = (
+        "title",
+        "description",
+    )
+
+    list_editable = (
+        "order",
+        "is_active",
+    )
+
+    ordering = (
+        "order",
+        "-created_at",
+    )
+

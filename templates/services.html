@@ -2,6 +2,7 @@
 
 {% load static %}
 
+
 {% block title %}
 Services | Com’Unity
 {% endblock %}
@@ -16,56 +17,28 @@ Services | Com’Unity
 
 <section class="services-hero">
 
-    <div class="services-hero-decoration"></div>
+    <div class="services-hero-overlay"></div>
 
     <div class="services-container">
 
         <div class="services-hero-content">
 
-            <span class="services-label">
+            <span class="services-hero-label">
                 NOS SERVICES
             </span>
 
             <h1>
-                Des solutions pour
-                <span>transformer les idées en impact.</span>
+                Des solutions concrètes
+                <span>pour accompagner le changement.</span>
             </h1>
 
+            <div class="services-hero-line"></div>
+
             <p>
-                Com’Unity accompagne les communautés,
-                organisations et porteurs d'initiatives
-                dans leurs actions en faveur d'un
-                développement plus durable et solidaire.
+                Com’Unity accompagne les citoyens, les organisations
+                et les porteurs d’initiatives dans la construction
+                de territoires plus durables, inclusifs et solidaires.
             </p>
-
-            <a href="#services-list"
-               class="services-hero-button">
-
-                Découvrir nos services
-
-                <i class="fas fa-arrow-down"></i>
-
-            </a>
-
-        </div>
-
-
-        <div class="services-hero-visual">
-
-            <div class="services-hero-shape"></div>
-
-            {% if services.0.image %}
-
-                <img
-                    src="{{ services.0.image.url }}"
-                    alt="{{ services.0.title }}"
-                >
-
-            {% endif %}
-
-            <div class="services-hero-number">
-                01
-            </div>
 
         </div>
 
@@ -85,35 +58,34 @@ Services | Com’Unity
 
         <div class="services-introduction-grid">
 
-            <div>
+            <div class="services-introduction-label">
 
-                <span class="section-label">
-                    NOTRE EXPERTISE
+                <span>
+                    NOTRE SAVOIR-FAIRE
                 </span>
-
-                <h2>
-                    Nous transformons les enjeux
-                    en opportunités d'action.
-                </h2>
 
             </div>
 
 
-            <div>
+            <div class="services-introduction-content">
+
+                <h2>
+                    Des actions pensées
+                    <span>pour créer de l’impact.</span>
+                </h2>
 
                 <p>
-                    Com’Unity mobilise son expertise pour
-                    accompagner les acteurs des territoires
-                    dans la conception et la mise en œuvre
-                    d'initiatives à impact social,
-                    environnemental et économique.
+                    À travers ses différents services, Com’Unity
+                    accompagne les acteurs du changement dans la
+                    conception, la mise en œuvre et la valorisation
+                    d’initiatives à impact social, économique et
+                    environnemental.
                 </p>
 
                 <p>
-                    Notre approche privilégie l'écoute,
-                    la participation, la collaboration
-                    et la recherche de solutions adaptées
-                    aux réalités locales.
+                    Notre approche repose sur l’écoute, la
+                    collaboration, la transmission des compétences
+                    et la mobilisation des communautés.
                 </p>
 
             </div>
@@ -127,146 +99,155 @@ Services | Com’Unity
 
 
 <!-- =====================================================
-     SERVICES
+     LISTE DES SERVICES
 ====================================================== -->
 
-<section class="services-list-section"
-         id="services-list">
+<section class="services-list">
 
     <div class="services-container">
 
-        <div class="services-heading">
 
-            <span class="section-label">
-                NOS DOMAINES D'INTERVENTION
-            </span>
+        {% for service in services %}
 
-            <h2>
-                Nos services au cœur
-                du changement.
-            </h2>
-
-        </div>
+        <article class="service-row
+            {% if forloop.counter|divisibleby:2 %}
+                service-row-reverse
+            {% endif %}
+        ">
 
 
-        <div class="services-list">
+            <!-- =================================================
+                 IMAGE
+            ================================================== -->
 
-            {% for service in services %}
+            <div class="service-image">
 
-            <article class="service-item
-                {% if forloop.counter|divisibleby:2 %}
-                    service-item-reverse
-                {% endif %}">
-
-
-                <div class="service-number">
-
-                    {% if forloop.counter < 10 %}
-                        0{{ forloop.counter }}
-                    {% else %}
-                        {{ forloop.counter }}
-                    {% endif %}
-
-                </div>
-
-
-                <div class="service-image">
-
-                    {% if service.image %}
+                {% if service.image %}
 
                     <img
                         src="{{ service.image.url }}"
                         alt="{{ service.title }}"
                     >
 
-                    {% endif %}
+                {% else %}
 
-                </div>
-
-
-                <div class="service-content">
-
-                    <div class="service-icon">
+                    <div class="service-image-placeholder">
 
                         <i class="fas {{ service.icon }}"></i>
 
                     </div>
 
-                    <span class="service-small-label">
-                        SERVICE
-                    </span>
-
-                    <h3>
-                        {{ service.title }}
-                    </h3>
-
-                    <p class="service-short-description">
-                        {{ service.short_description }}
-                    </p>
-
-                    <p class="service-description">
-                        {{ service.description }}
-                    </p>
-
-
-                    {% if service.interventions %}
-
-<div class="service-interventions">
-
-    <strong>
-        Nos interventions
-    </strong>
-
-    <div class="service-tags">
-
-        {% for intervention in service.intervention_list %}
-
-            <span>
-                {{ intervention }}
-            </span>
-
-        {% endfor %}
-
-    </div>
-
-</div>
-
-{% endif %}
-
-
-                    <a href="#"
-                       class="service-link">
-
-                        Découvrir le service
-
-                        <i class="fas fa-arrow-right"></i>
-
-                    </a>
-
-                </div>
-
-            </article>
-
-            {% empty %}
-
-            <div class="services-empty">
-
-                <i class="fas fa-layer-group"></i>
-
-                <h3>
-                    Nos services arrivent bientôt.
-                </h3>
-
-                <p>
-                    Com’Unity prépare actuellement la présentation
-                    de ses différents domaines d'intervention.
-                </p>
+                {% endif %}
 
             </div>
 
-            {% endfor %}
+
+
+            <!-- =================================================
+                 BANDEAU ORANGE
+            ================================================== -->
+
+            <div class="service-number-panel">
+
+                <span class="service-number">
+                    {{ forloop.counter|stringformat:"02d" }}
+                </span>
+
+                <div class="service-number-line"></div>
+
+                <i class="fas {{ service.icon }}"></i>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 CONTENU
+            ================================================== -->
+
+            <div class="service-content">
+
+                <span class="service-small-label">
+                    SERVICE {{ forloop.counter|stringformat:"02d" }}
+                </span>
+
+
+                <h2>
+                    {{ service.title }}
+                </h2>
+
+
+                <p class="service-description">
+                    {{ service.short_description }}
+                </p>
+
+
+                {% if service.technologies %}
+
+                <div class="service-points">
+
+                    {% for technology in service.technologies.splitlines %}
+
+                    {% if technology %}
+
+                    <span>
+                        <i class="fas fa-circle-check"></i>
+                        {{ technology }}
+                    </span>
+
+                    {% endif %}
+
+                    {% endfor %}
+
+                </div>
+
+                {% endif %}
+
+
+                <a
+                    href="#"
+                    class="service-button"
+                >
+
+                    <span>
+                        En savoir plus
+                    </span>
+
+                    <i class="fas fa-arrow-right"></i>
+
+                </a>
+
+            </div>
+
+        </article>
+
+        {% empty %}
+
+
+        <!-- =================================================
+             AUCUN SERVICE
+        ================================================== -->
+
+        <div class="services-empty">
+
+            <div class="services-empty-icon">
+
+                <i class="fas fa-layer-group"></i>
+
+            </div>
+
+            <h2>
+                Nos services arrivent bientôt.
+            </h2>
+
+            <p>
+                Les services de Com’Unity seront prochainement
+                présentés sur cette page.
+            </p>
 
         </div>
+
+        {% endfor %}
 
     </div>
 
@@ -282,21 +263,30 @@ Services | Com’Unity
 
     <div class="services-container">
 
-        <div class="services-heading centered">
+        <div class="services-heading">
 
-            <span class="section-label section-label-light">
+            <span class="services-label">
                 NOTRE APPROCHE
             </span>
 
             <h2>
-                De l'écoute à l'impact.
+                De l’idée
+                <span>à l’impact.</span>
             </h2>
+
+            <p>
+                Nous privilégions une approche participative,
+                collaborative et orientée vers des résultats
+                durables.
+            </p>
 
         </div>
 
 
         <div class="approach-grid">
 
+
+            <!-- 01 -->
 
             <article class="approach-step">
 
@@ -311,12 +301,15 @@ Services | Com’Unity
                 </h3>
 
                 <p>
-                    Identifier les besoins et les réalités
-                    des territoires.
+                    Comprendre les besoins, les réalités et les
+                    aspirations des communautés et des acteurs
+                    locaux.
                 </p>
 
             </article>
 
+
+            <!-- 02 -->
 
             <article class="approach-step">
 
@@ -327,16 +320,18 @@ Services | Com’Unity
                 <i class="fas fa-lightbulb"></i>
 
                 <h3>
-                    Comprendre
+                    Concevoir
                 </h3>
 
                 <p>
-                    Analyser les enjeux et construire
-                    une vision partagée.
+                    Construire ensemble des solutions adaptées
+                    aux réalités et aux enjeux des territoires.
                 </p>
 
             </article>
 
+
+            <!-- 03 -->
 
             <article class="approach-step">
 
@@ -344,19 +339,22 @@ Services | Com’Unity
                     03
                 </span>
 
-                <i class="fas fa-hands-helping"></i>
+                <i class="fas fa-people-group"></i>
 
                 <h3>
                     Agir
                 </h3>
 
                 <p>
-                    Mettre en œuvre des solutions adaptées
-                    aux réalités locales.
+                    Mobiliser les compétences, les ressources et
+                    les communautés pour passer de l’idée à
+                    l’action.
                 </p>
 
             </article>
 
+
+            <!-- 04 -->
 
             <article class="approach-step">
 
@@ -367,77 +365,16 @@ Services | Com’Unity
                 <i class="fas fa-chart-line"></i>
 
                 <h3>
-                    Mesurer
+                    Valoriser
                 </h3>
 
                 <p>
-                    Évaluer les résultats et renforcer
-                    l'impact des actions.
+                    Mesurer, partager et valoriser les résultats
+                    afin de favoriser la pérennisation des
+                    initiatives.
                 </p>
 
             </article>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     PUBLICS
-====================================================== -->
-
-<section class="services-publics">
-
-    <div class="services-container">
-
-        <div class="services-publics-content">
-
-            <span class="section-label">
-                NOUS AGISSONS AVEC
-            </span>
-
-            <h2>
-                Le changement commence
-                avec les acteurs du territoire.
-            </h2>
-
-        </div>
-
-
-        <div class="publics-list">
-
-            <span>
-                <i class="fas fa-user-graduate"></i>
-                Jeunes
-            </span>
-
-            <span>
-                <i class="fas fa-person-dress"></i>
-                Femmes
-            </span>
-
-            <span>
-                <i class="fas fa-people-group"></i>
-                Communautés
-            </span>
-
-            <span>
-                <i class="fas fa-handshake"></i>
-                Associations
-            </span>
-
-            <span>
-                <i class="fas fa-building"></i>
-                Entreprises
-            </span>
-
-            <span>
-                <i class="fas fa-landmark"></i>
-                Institutions
-            </span>
 
         </div>
 
@@ -453,42 +390,44 @@ Services | Com’Unity
 
 <section class="services-cta">
 
-    <div class="services-cta-decoration"></div>
-
     <div class="services-container">
 
         <div class="services-cta-content">
 
-            <span class="section-label">
-                AGISSONS ENSEMBLE
-            </span>
+            <div>
 
-            <h2>
-                Vous avez un projet ?
-                <span>Construisons-le ensemble.</span>
-            </h2>
+                <span class="services-cta-label">
+                    VOUS AVEZ UN PROJET ?
+                </span>
 
-            <p>
-                Parlons de vos besoins, de vos idées et des
-                solutions que nous pouvons construire ensemble
-                pour créer un impact durable.
-            </p>
+                <h2>
+                    Construisons-le
+                    <span>ensemble.</span>
+                </h2>
+
+                <p>
+                    Parlons de vos idées, de vos besoins et des
+                    solutions que nous pouvons construire ensemble
+                    pour un impact durable.
+                </p>
+
+            </div>
+
 
             <div class="services-cta-buttons">
 
-                <a href="#"
-                   class="hero-button hero-button-primary">
+                <a href="#" class="services-cta-primary">
 
-                    Parlons de votre projet
+                    Parler de votre projet
 
                     <i class="fas fa-arrow-right"></i>
 
                 </a>
 
-                <a href="#"
-                   class="hero-button hero-button-secondary">
 
-                    Faire un don
+                <a href="#" class="services-cta-secondary">
+
+                    Nous soutenir
 
                     <i class="fas fa-heart"></i>
 
