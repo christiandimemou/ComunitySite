@@ -2,7 +2,7 @@ from django.contrib import admin
 
 from .models import HomeImage, AboutImage, TeamMember, Project, ProjectHeaderImage, Service
 
-from .models import GalleryImage
+from .models import GalleryImage, VolunteerApplication, VolunteerHeaderImage
 
 
 @admin.register(HomeImage)
@@ -165,6 +165,57 @@ class GalleryImageAdmin(admin.ModelAdmin):
 
     ordering = (
         "order",
+        "-created_at",
+    )
+
+@admin.register(VolunteerApplication)
+class VolunteerApplicationAdmin(admin.ModelAdmin):
+
+    list_display = (
+        "first_name",
+        "last_name",
+        "email",
+        "domain",
+        "status",
+        "created_at",
+    )
+
+    list_filter = (
+        "domain",
+        "status",
+        "created_at",
+    )
+
+    search_fields = (
+        "first_name",
+        "last_name",
+        "email",
+        "phone",
+        "message",
+    )
+
+    ordering = (
+        "-created_at",
+    )
+
+    readonly_fields = (
+        "created_at",
+    )
+
+@admin.register(VolunteerHeaderImage)
+class VolunteerHeaderImageAdmin(admin.ModelAdmin):
+
+    list_display = (
+        "image",
+        "is_active",
+        "created_at",
+    )
+
+    list_filter = (
+        "is_active",
+    )
+
+    ordering = (
         "-created_at",
     )
 

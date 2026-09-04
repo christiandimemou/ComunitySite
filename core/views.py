@@ -1,7 +1,7 @@
 from django.shortcuts import render
 
 from .models import HomeImage, AboutImage, TeamMember, Project, ProjectHeaderImage, Service
-from .models import GalleryImage
+from .models import GalleryImage, VolunteerApplication, VolunteerHeaderImage
 
 def home(request):
 
@@ -94,3 +94,59 @@ def gallery(request):
         }
     )
 
+def volunteer(request):
+
+    if request.method == "POST":
+
+        VolunteerApplication.objects.create(
+            first_name=request.POST.get("first_name"),
+            last_name=request.POST.get("last_name"),
+            email=request.POST.get("email"),
+            phone=request.POST.get("phone"),
+            domain=request.POST.get("domain"),
+            message=request.POST.get("message"),
+        )
+
+        return render(
+            request,
+            "volunteer.html",
+            {
+                "success": True
+            }
+        )
+
+    return render(request, "volunteer.html")
+
+def volunteer(request):
+
+    volunteer_header = VolunteerHeaderImage.objects.filter(
+        is_active=True
+    ).first()
+
+    if request.method == "POST":
+
+        VolunteerApplication.objects.create(
+            first_name=request.POST.get("first_name"),
+            last_name=request.POST.get("last_name"),
+            email=request.POST.get("email"),
+            phone=request.POST.get("phone"),
+            domain=request.POST.get("domain"),
+            message=request.POST.get("message"),
+        )
+
+        return render(
+            request,
+            "volunteer.html",
+            {
+                "volunteer_header": volunteer_header,
+                "success": True,
+            }
+        )
+
+    return render(
+        request,
+        "volunteer.html",
+        {
+            "volunteer_header": volunteer_header,
+        }
+    )

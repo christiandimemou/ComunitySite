@@ -1,0 +1,685 @@
+{% extends "base.html" %}
+
+{% block title %}Devenir bénévole | Com’Unity{% endblock %}
+
+{% block content %}
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<section class="volunteer-hero">
+
+    {% if volunteer_header %}
+        <img
+            src="{{ volunteer_header.image.url }}"
+            alt="Devenir bénévole — Com’Unity"
+            class="volunteer-hero-image"
+        >
+    {% endif %}
+
+    <div class="volunteer-hero-overlay"></div>
+
+    <div class="volunteer-container">
+
+        <div class="volunteer-hero-content">
+
+            <span class="volunteer-label">
+                DEVENEZ ACTEUR DU CHANGEMENT
+            </span>
+
+            <h1>
+                Devenir
+                <span>bénévole</span>
+            </h1>
+
+            <p>
+                Rejoignez Com’Unity et mettez votre énergie,
+                vos compétences et votre engagement au service
+                de communautés plus durables, inclusives et solidaires.
+            </p>
+
+            <a href="#candidature" class="volunteer-button">
+                Je deviens bénévole
+                <i class="fas fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     INTRODUCTION
+========================================================= -->
+
+<section class="volunteer-introduction">
+
+    <div class="volunteer-container">
+
+        <div class="volunteer-intro-grid">
+
+            <div class="volunteer-intro-heading">
+
+                <span class="section-label">
+                    POURQUOI NOUS REJOINDRE ?
+                </span>
+
+                <h2>
+                    Votre engagement peut
+                    <span>faire la différence.</span>
+                </h2>
+
+            </div>
+
+            <div class="volunteer-intro-text">
+
+                <p>
+                    Chez Com’Unity, nous sommes convaincus que le changement
+                    commence par l'engagement de chacun.
+                </p>
+
+                <p>
+                    En devenant bénévole, vous participez concrètement à des
+                    initiatives sociales, environnementales et citoyennes
+                    qui contribuent à transformer durablement nos territoires.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     AVANTAGES
+========================================================= -->
+
+<section class="volunteer-benefits">
+
+    <div class="volunteer-container">
+
+        <div class="volunteer-section-heading">
+
+            <span class="section-label">
+                VOTRE ENGAGEMENT
+            </span>
+
+            <h2>
+                Pourquoi devenir bénévole ?
+            </h2>
+
+            <p>
+                Rejoindre Com’Unity, c’est bien plus que donner de son temps.
+                C’est participer à une dynamique collective porteuse de sens.
+            </p>
+
+        </div>
+
+
+        <div class="volunteer-benefits-grid">
+
+            <article class="volunteer-benefit-card">
+
+                <div class="volunteer-benefit-icon">
+                    <i class="fas fa-hand-holding-heart"></i>
+                </div>
+
+                <h3>
+                    Agir concrètement
+                </h3>
+
+                <p>
+                    Participez à des actions qui répondent directement
+                    aux besoins des communautés et des territoires.
+                </p>
+
+            </article>
+
+
+            <article class="volunteer-benefit-card">
+
+                <div class="volunteer-benefit-icon">
+                    <i class="fas fa-seedling"></i>
+                </div>
+
+                <h3>
+                    Contribuer à la transition
+                </h3>
+
+                <p>
+                    Prenez part à des initiatives en faveur de
+                    l'environnement et d'un développement plus durable.
+                </p>
+
+            </article>
+
+
+            <article class="volunteer-benefit-card">
+
+                <div class="volunteer-benefit-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+
+                <h3>
+                    Rejoindre une communauté
+                </h3>
+
+                <p>
+                    Rencontrez des personnes engagées et construisez
+                    ensemble des solutions pour votre communauté.
+                </p>
+
+            </article>
+
+
+            <article class="volunteer-benefit-card">
+
+                <div class="volunteer-benefit-icon">
+                    <i class="fas fa-lightbulb"></i>
+                </div>
+
+                <h3>
+                    Développer vos compétences
+                </h3>
+
+                <p>
+                    Valorisez vos talents et développez de nouvelles
+                    compétences à travers des expériences concrètes.
+                </p>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     MISSIONS
+========================================================= -->
+
+<section class="volunteer-missions">
+
+    <div class="volunteer-container">
+
+        <div class="volunteer-section-heading">
+
+            <span class="section-label section-label-light">
+                NOS MISSIONS
+            </span>
+
+            <h2>
+                Comment pouvez-vous contribuer?
+            </h2>
+
+        </div>
+
+
+        <div class="volunteer-missions-grid">
+
+            <div class="volunteer-mission">
+
+                <span class="mission-number">01</span>
+
+                <div>
+                    <h3>Sensibilisation</h3>
+
+                    <p>
+                        Participer aux campagnes de sensibilisation
+                        environnementale, sociale et citoyenne.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="volunteer-mission">
+
+                <span class="mission-number">02</span>
+
+                <div>
+                    <h3>Mobilisation communautaire</h3>
+
+                    <p>
+                        Mobiliser les citoyens et accompagner les
+                        communautés dans leurs initiatives.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="volunteer-mission">
+
+                <span class="mission-number">03</span>
+
+                <div>
+                    <h3>Communication</h3>
+
+                    <p>
+                        Contribuer à la création de contenus et à la
+                        valorisation des actions de Com’Unity.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="volunteer-mission">
+
+                <span class="mission-number">04</span>
+
+                <div>
+                    <h3>Actions environnementales</h3>
+
+                    <p>
+                        Participer aux activités liées à la protection
+                        de l'environnement et à la transition écologique.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="volunteer-mission">
+
+                <span class="mission-number">05</span>
+
+                <div>
+                    <h3>Éducation citoyenne</h3>
+
+                    <p>
+                        Contribuer aux actions d'éducation, de formation
+                        et d'engagement citoyen.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="volunteer-mission">
+
+                <span class="mission-number">06</span>
+
+                <div>
+                    <h3>Appui aux projets</h3>
+
+                    <p>
+                        Mettre vos compétences au service des projets
+                        et initiatives accompagnés par Com’Unity.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     PROCESSUS
+========================================================= -->
+
+<section class="volunteer-process">
+
+    <div class="volunteer-container">
+
+        <div class="volunteer-section-heading centered">
+
+            <span class="section-label">
+                COMMENT ÇA MARCHE ?
+            </span>
+
+            <h2>
+                Quatre étapes pour nous rejoindre.
+            </h2>
+
+        </div>
+
+
+        <div class="volunteer-process-grid">
+
+            <div class="volunteer-process-item">
+
+                <div class="process-number">
+                    01
+                </div>
+
+                <h3>
+                    Je candidate
+                </h3>
+
+                <p>
+                    Remplissez le formulaire de candidature
+                    et présentez-nous votre motivation.
+                </p>
+
+            </div>
+
+
+            <div class="volunteer-process-item">
+
+                <div class="process-number">
+                    02
+                </div>
+
+                <h3>
+                    Nous échangeons
+                </h3>
+
+                <p>
+                    Notre équipe prend contact avec vous pour
+                    mieux connaître vos envies et vos compétences.
+                </p>
+
+            </div>
+
+
+            <div class="volunteer-process-item">
+
+                <div class="process-number">
+                    03
+                </div>
+
+                <h3>
+                    Je rejoins une action
+                </h3>
+
+                <p>
+                    Nous identifions ensemble les actions auxquelles
+                    vous pouvez contribuer.
+                </p>
+
+            </div>
+
+
+            <div class="volunteer-process-item">
+
+                <div class="process-number">
+                    04
+                </div>
+
+                <h3>
+                    Je passe à l'action
+                </h3>
+
+                <p>
+                    Vous participez pleinement à la dynamique
+                    Com’Unity et contribuez au changement.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     FORMULAIRE
+========================================================= -->
+
+<section class="volunteer-application" id="candidature">
+
+    <div class="volunteer-container">
+
+        <div class="volunteer-application-grid">
+
+            <div class="volunteer-application-info">
+
+                <span class="section-label section-label-light">
+                    REJOIGNEZ-NOUS
+                </span>
+
+                <h2>
+                    Prêt(e) à
+                    <span>vous engager ?</span>
+                </h2>
+
+                <p>
+                    Faites-nous connaître votre motivation, vos compétences
+                    et les domaines dans lesquels vous souhaitez contribuer.
+                </p>
+
+                <div class="volunteer-contact-point">
+
+                    <i class="fas fa-heart"></i>
+
+                    <span>
+                        Chaque contribution compte.
+                    </span>
+
+                </div>
+
+                <div class="volunteer-contact-point">
+
+                    <i class="fas fa-users"></i>
+
+                    <span>
+                        Ensemble, nous avons plus d'impact.
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="volunteer-form-wrapper">
+
+                {% if success %}
+                    <div class="volunteer-success-message">
+                        <i class="fas fa-circle-check"></i>
+
+                        <div>
+                            <strong>Candidature envoyée !</strong>
+
+                            <p>
+                                Merci pour votre engagement.
+                                Notre équipe reviendra vers vous prochainement.
+                            </p>
+                        </div>
+                    </div>
+                {% endif %}
+
+                <form class="volunteer-form" method="post">
+
+                    {% csrf_token %}
+
+                    <div class="volunteer-form-row">
+
+                        <div class="volunteer-form-group">
+
+                            <label for="first_name">
+                                Prénom
+                            </label>
+
+                            <input
+                                type="text"
+                                id="first_name"
+                                name="first_name"
+                                placeholder="Votre prénom"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="volunteer-form-group">
+
+                            <label for="last_name">
+                                Nom
+                            </label>
+
+                            <input
+                                type="text"
+                                id="last_name"
+                                name="last_name"
+                                placeholder="Votre nom"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="volunteer-form-row">
+
+                        <div class="volunteer-form-group">
+
+                            <label for="email">
+                                Adresse e-mail
+                            </label>
+
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="votre@email.com"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="volunteer-form-group">
+
+                            <label for="phone">
+                                Téléphone
+                            </label>
+
+                            <input
+                                type="tel"
+                                id="phone"
+                                name="phone"
+                                placeholder="+237 ..."
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="volunteer-form-group">
+
+                        <label for="domain">
+                            Domaine dans lequel vous souhaitez contribuer
+                        </label>
+
+                        <select id="domain" name="domain" required>
+
+                            <option value="">
+                                Sélectionnez un domaine
+                            </option>
+
+                            <option value="ecologie">
+                                Transition écologique
+                            </option>
+
+                            <option value="ess">
+                                Économie sociale et solidaire
+                            </option>
+
+                            <option value="citoyennete">
+                                Éducation citoyenne
+                            </option>
+
+                            <option value="communication">
+                                Communication
+                            </option>
+
+                            <option value="autre">
+                                Autre
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="volunteer-form-group">
+
+                        <label for="message">
+                            Pourquoi souhaitez-vous devenir bénévole ?
+                        </label>
+
+                        <textarea
+                            id="message"
+                            name="message"
+                            rows="5"
+                            placeholder="Présentez-nous votre motivation..."
+                            required
+                        ></textarea>
+
+                    </div>
+
+
+                    <button type="submit" class="volunteer-submit">
+
+                        Envoyer ma candidature
+
+                        <i class="fas fa-arrow-right"></i>
+
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     CTA
+========================================================= -->
+
+<section class="volunteer-cta">
+
+    <div class="volunteer-container">
+
+        <div class="volunteer-cta-content">
+
+            <span class="section-label section-label-light">
+                AGISSONS ENSEMBLE
+            </span>
+
+            <h2>
+                Le changement commence
+                <span>avec vous.</span>
+            </h2>
+
+            <p>
+                Une idée, une compétence, quelques heures ou simplement
+                l'envie d'agir : chaque geste peut contribuer à construire
+                un avenir plus solidaire.
+            </p>
+
+            <a href="#candidature" class="volunteer-button">
+                Rejoindre Com’Unity
+                <i class="fas fa-heart"></i>
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

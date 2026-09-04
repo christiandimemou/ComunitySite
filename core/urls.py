@@ -29,6 +29,12 @@ urlpatterns = [
     "galerie/",
     views.gallery,
     name="gallery"
-),
+    ),
+
+    path(
+    "devenir-benevole/",
+    views.volunteer,
+    name="volunteer"
+    ),
 
 ]

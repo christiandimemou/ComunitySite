@@ -340,3 +340,95 @@ class GalleryImage(models.Model):
     def __str__(self):
 
         return self.title
+    
+
+class VolunteerApplication(models.Model):
+
+    DOMAIN_CHOICES = [
+        ("ecologie", "Transition écologique"),
+        ("ess", "Économie sociale et solidaire"),
+        ("citoyennete", "Éducation citoyenne"),
+        ("communication", "Communication"),
+        ("autre", "Autre"),
+    ]
+
+    STATUS_CHOICES = [
+        ("new", "Nouvelle"),
+        ("processing", "En cours"),
+        ("accepted", "Acceptée"),
+        ("rejected", "Refusée"),
+    ]
+
+    first_name = models.CharField(
+        max_length=100,
+        verbose_name="Prénom"
+    )
+
+    last_name = models.CharField(
+        max_length=100,
+        verbose_name="Nom"
+    )
+
+    email = models.EmailField(
+        verbose_name="Adresse e-mail"
+    )
+
+    phone = models.CharField(
+        max_length=30,
+        blank=True,
+        verbose_name="Téléphone"
+    )
+
+    domain = models.CharField(
+        max_length=30,
+        choices=DOMAIN_CHOICES,
+        verbose_name="Domaine"
+    )
+
+    message = models.TextField(
+        verbose_name="Motivation"
+    )
+
+    status = models.CharField(
+        max_length=20,
+        choices=STATUS_CHOICES,
+        default="new",
+        verbose_name="Statut"
+    )
+
+    created_at = models.DateTimeField(
+        auto_now_add=True,
+        verbose_name="Date de candidature"
+    )
+
+    class Meta:
+        ordering = ["-created_at"]
+        verbose_name = "Candidature bénévole"
+        verbose_name_plural = "Candidatures bénévoles"
+
+    def __str__(self):
+        return f"{self.first_name} {self.last_name}"
+    
+
+class VolunteerHeaderImage(models.Model):
+
+    image = models.ImageField(
+        upload_to="volunteer/",
+        verbose_name="Image de l'en-tête"
+    )
+
+    is_active = models.BooleanField(
+        default=True,
+        verbose_name="Image active"
+    )
+
+    created_at = models.DateTimeField(
+        auto_now_add=True
+    )
+
+    class Meta:
+        verbose_name = "Image en-tête bénévole"
+        verbose_name_plural = "Image en-tête bénévole"
+
+    def __str__(self):
+        return "Image en-tête — Devenir bénévole"

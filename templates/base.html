@@ -80,7 +80,8 @@
                         Galerie
                     </a>
 
-                    <a href="#" class="nav-link">
+                    <a href="{% url 'volunteer' %}"
+                        class="nav-link {% if request.resolver_match.url_name == 'volunteer' %}active{% endif %}">
                         Devenir bénévole
                     </a>
 
