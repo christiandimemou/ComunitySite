@@ -85,11 +85,15 @@
                         Devenir bénévole
                     </a>
 
-                    <a href="#" class="nav-link">
+                    <a href="{% url 'contact' %}"
+                        class="nav-link {% if request.resolver_match.url_name == 'contact' %}active{% endif %}">
                         Contact
                     </a>
 
-                    <a href="#" class="don-button">
+                    <a
+                        href="{% url 'donation' %}"
+                        class="don-button {% if request.resolver_match.url_name == 'donation' %}active{% endif %}"
+                        >
                         Faire un don
                     </a>
 

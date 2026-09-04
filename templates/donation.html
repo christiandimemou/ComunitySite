@@ -1,0 +1,697 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Faire un don — Com’Unity{% endblock %}
+
+{% block content %}
+
+<!-- =========================================================
+     HERO DON
+========================================================= -->
+
+<section class="donation-hero">
+
+    {% if donation_header %}
+        <img
+            src="{{ donation_header.image.url }}"
+            alt="Soutenir Com’Unity"
+            class="donation-hero-image"
+        >
+    {% endif %}
+
+    <div class="donation-hero-overlay"></div>
+
+    <div class="donation-hero-container">
+
+        <div class="donation-hero-content">
+
+            <span class="donation-hero-label">
+                VOTRE SOUTIEN, NOTRE FORCE
+            </span>
+
+            <h1>
+                ENSEMBLE, CONSTRUISONS
+                <span>UN AVENIR MEILLEUR.</span>
+            </h1>
+
+            <div class="donation-hero-line"></div>
+
+            <p>
+                Chaque don, petit ou grand, nous permet d’agir davantage
+                et d’avoir un impact concret dans les communautés.
+                Merci de faire partie du changement.
+            </p>
+
+        </div>
+
+        <div class="donation-hero-message">
+            <i class="fas fa-seedling"></i>
+
+            <span>
+                Votre générosité<br>
+                change des vies !
+            </span>
+
+            <div class="donation-dots">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     POURQUOI FAIRE UN DON
+========================================================= -->
+
+<section class="donation-why">
+
+    <div class="donation-container">
+
+        <div class="donation-section-heading centered">
+
+            <span class="donation-section-label">
+                POURQUOI FAIRE UN DON ?
+            </span>
+
+            <h2>
+                Votre soutien fait toute la différence
+            </h2>
+
+        </div>
+
+
+        <div class="donation-benefits-grid">
+
+            <article class="donation-benefit-card">
+
+                <div class="donation-benefit-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+
+                <h3>Un impact concret</h3>
+
+                <p>
+                    Vos dons financent des projets durables qui
+                    améliorent la vie des communautés.
+                </p>
+
+            </article>
+
+
+            <article class="donation-benefit-card">
+
+                <div class="donation-benefit-icon">
+                    <i class="fas fa-leaf"></i>
+                </div>
+
+                <h3>Un avenir durable</h3>
+
+                <p>
+                    Vous contribuez à bâtir un monde plus écologique,
+                    solidaire et responsable.
+                </p>
+
+            </article>
+
+
+            <article class="donation-benefit-card">
+
+                <div class="donation-benefit-icon">
+                    <i class="fas fa-handshake"></i>
+                </div>
+
+                <h3>Une transparence totale</h3>
+
+                <p>
+                    Nous nous engageons à utiliser chaque don de manière
+                    éthique et responsable.
+                </p>
+
+            </article>
+
+
+            <article class="donation-benefit-card">
+
+                <div class="donation-benefit-icon">
+                    <i class="fas fa-heart"></i>
+                </div>
+
+                <h3>Un geste solidaire</h3>
+
+                <p>
+                    Ensemble, nous créons des opportunités et redonnons
+                    de l’espoir.
+                </p>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     IMPACT
+========================================================= -->
+
+<section class="donation-impact">
+
+    <div class="donation-container">
+
+        <div class="donation-section-heading centered">
+
+            <span class="donation-section-label">
+                NOTRE IMPACT GRÂCE À VOUS
+            </span>
+
+            <h2>
+                Des actions qui transforment des vies
+            </h2>
+
+        </div>
+
+
+        <div class="donation-impact-card">
+
+            <div class="donation-impact-item">
+
+                <i class="fas fa-users"></i>
+
+                <div>
+                    <strong>+2 500</strong>
+                    <span>Bénéficiaires<br>soutenus</span>
+                </div>
+
+            </div>
+
+
+            <div class="donation-impact-item">
+
+                <i class="fas fa-seedling"></i>
+
+                <div>
+                    <strong>25</strong>
+                    <span>Projets<br>réalisés</span>
+                </div>
+
+            </div>
+
+
+            <div class="donation-impact-item">
+
+                <i class="fas fa-handshake"></i>
+
+                <div>
+                    <strong>15</strong>
+                    <span>Partenaires<br>engagés</span>
+                </div>
+
+            </div>
+
+
+            <div class="donation-impact-item">
+
+                <i class="fas fa-heart"></i>
+
+                <div>
+                    <strong>8</strong>
+                    <span>Années d’impact<br>positif</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     DON
+========================================================= -->
+
+<section class="donation-form-section">
+
+    <div class="donation-container">
+
+        <div class="donation-form-grid">
+
+
+            <!-- MOYENS DE DON -->
+
+            <div class="donation-methods">
+
+                <span class="donation-section-label">
+                    COMMENT FAIRE UN DON ?
+                </span>
+
+                <h2>
+                    Choisissez le moyen
+                    <br>
+                    qui vous convient
+                </h2>
+
+
+                <div class="donation-method">
+
+                    <div class="donation-method-icon">
+                        <i class="fas fa-mobile-screen-button"></i>
+                    </div>
+
+                    <div>
+                        <h3>Mobile Money</h3>
+
+                        <p>
+                            Payez facilement avec MTN, Orange Money,
+                            Moov Money
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="donation-method">
+
+                    <div class="donation-method-icon orange">
+                        <i class="fas fa-building-columns"></i>
+                    </div>
+
+                    <div>
+                        <h3>Virement bancaire</h3>
+
+                        <p>
+                            Effectuez un virement direct sur notre
+                            compte bancaire
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="donation-method">
+
+                    <div class="donation-method-icon">
+                        <i class="fas fa-credit-card"></i>
+                    </div>
+
+                    <div>
+                        <h3>Carte bancaire</h3>
+
+                        <p>
+                            Payez en ligne en toute sécurité avec
+                            votre carte
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- FORMULAIRE -->
+
+            <div class="donation-form-card">
+
+                <div class="donation-form-header">
+                    <h3>
+                        Je fais un don
+                    </h3>
+                </div>
+
+
+                <div class="donation-form-body">
+
+                    <div class="donation-field-group">
+
+                        <label>
+                            Montant du don
+                        </label>
+
+                        <div class="donation-amounts">
+
+                            <button
+                                type="button"
+                                class="donation-amount"
+                                data-amount="5000"
+                            >
+                                5 000 FCFA
+                            </button>
+
+                            <button
+                                type="button"
+                                class="donation-amount active"
+                                data-amount="10000"
+                            >
+                                10 000 FCFA
+                            </button>
+
+                            <button
+                                type="button"
+                                class="donation-amount"
+                                data-amount="25000"
+                            >
+                                25 000 FCFA
+                            </button>
+
+                            <button
+                                type="button"
+                                class="donation-amount"
+                                data-amount="50000"
+                            >
+                                50 000 FCFA
+                            </button>
+
+                            <button
+                                type="button"
+                                class="donation-amount"
+                                data-amount="other"
+                            >
+                                Autre montant
+                            </button>
+
+                        </div>
+
+                        <input
+                            type="hidden"
+                            id="donationAmount"
+                            value="10000"
+                        >
+
+                    </div>
+
+
+                    <div class="donation-field-group">
+
+                        <label>
+                            Informations du donateur
+                        </label>
+
+                        <div class="donation-input-grid">
+
+                            <input
+                                type="text"
+                                placeholder="Nom complet *"
+                                class="donation-input"
+                            >
+
+                            <input
+                                type="email"
+                                placeholder="E-mail *"
+                                class="donation-input"
+                            >
+
+                            <input
+                                type="tel"
+                                placeholder="Téléphone"
+                                class="donation-input"
+                            >
+
+                            <input
+                                type="text"
+                                placeholder="Message (optionnel)"
+                                class="donation-input"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <label class="donation-anonymous">
+
+                        <input
+                            type="checkbox"
+                        >
+
+                        <span>
+                            Je souhaite rester anonyme
+                        </span>
+
+                    </label>
+
+
+                    <button
+                        type="button"
+                        class="donation-submit"
+                    >
+                        Faire mon don maintenant
+
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+
+
+                    <div class="donation-security">
+
+                        <i class="fas fa-lock"></i>
+
+                        Paiement 100% sécurisé et vos données
+                        sont protégées.
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     TEMOIGNAGES
+========================================================= -->
+
+<section class="donation-testimonials">
+
+    <div class="donation-container">
+
+        <div class="donation-section-heading centered">
+
+            <span class="donation-section-label">
+                ILS NOUS FONT CONFIANCE
+            </span>
+
+            <h2>
+                Des partenaires et donateurs engagés
+            </h2>
+
+        </div>
+
+
+        <div class="donation-testimonials-grid">
+
+
+            <article class="donation-testimonial">
+
+                <span class="donation-quote">
+                    “
+                </span>
+
+                <p>
+                    Com’Unity est une organisation sérieuse et
+                    transparente. Je suis fier de soutenir leurs
+                    actions qui changent des vies.
+                </p>
+
+                <div class="donation-testimonial-author">
+
+                    <div class="donation-author-icon">
+                        <i class="far fa-user"></i>
+                    </div>
+
+                    <div>
+                        <strong>Marie K.</strong>
+                        <span>Donatrice régulière</span>
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <article class="donation-testimonial">
+
+                <span class="donation-quote">
+                    “
+                </span>
+
+                <p>
+                    Grâce à Com’Unity, notre entreprise contribue à
+                    des projets concrets et durables au sein des
+                    communautés.
+                </p>
+
+                <div class="donation-testimonial-author">
+
+                    <div class="donation-author-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+
+                    <div>
+                        <strong>Entreprise Solidaire SARL</strong>
+                        <span>Partenaire</span>
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <article class="donation-testimonial">
+
+                <span class="donation-quote">
+                    “
+                </span>
+
+                <p>
+                    Chaque don compte. Ensemble, nous pouvons
+                    construire un avenir meilleur pour les
+                    générations futures.
+                </p>
+
+                <div class="donation-testimonial-author">
+
+                    <div class="donation-author-icon">
+                        <i class="far fa-user"></i>
+                    </div>
+
+                    <div>
+                        <strong>Jean D.</strong>
+                        <span>Bénévole &amp; Donateur</span>
+                    </div>
+
+                </div>
+
+            </article>
+
+        </div>
+
+
+        <div class="donation-slider-dots">
+            <span class="active"></span>
+            <span></span>
+            <span></span>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     CTA FINAL
+========================================================= -->
+
+<section class="donation-final-cta">
+
+    <div class="donation-final-blue">
+
+        <div class="donation-final-icon">
+            <i class="fas fa-leaf"></i>
+        </div>
+
+        <div>
+            <h2>
+                REJOIGNEZ-NOUS DANS
+                <br>
+                CETTE BELLE AVENTURE !
+            </h2>
+
+            <p>
+                Votre soutien d’aujourd’hui construit l’impact
+                de demain.
+                <br>
+                Merci pour votre générosité !
+            </p>
+        </div>
+
+    </div>
+
+
+    <div class="donation-final-orange">
+
+        <div class="donation-final-icon">
+            <i class="fas fa-heart"></i>
+        </div>
+
+        <div>
+
+            <h3>
+                Autres façons de soutenir
+            </h3>
+
+            <p>
+                Devenez bénévole, partagez nos actions
+                ou parlez de nous autour de vous.
+            </p>
+
+            <a
+                href="{% url 'volunteer' %}"
+                class="donation-discover-button"
+            >
+                Découvrir nos actions
+                <i class="fas fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}
+
+
+{% block extra_js %}
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const amounts = document.querySelectorAll(
+        ".donation-amount"
+    );
+
+    const amountInput = document.getElementById(
+        "donationAmount"
+    );
+
+    amounts.forEach(function (button) {
+
+        button.addEventListener("click", function () {
+
+            amounts.forEach(function (item) {
+                item.classList.remove("active");
+            });
+
+            this.classList.add("active");
+
+            amountInput.value =
+                this.dataset.amount;
+
+        });
+
+    });
+
+});
+
+</script>
+
+{% endblock %}

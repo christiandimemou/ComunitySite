@@ -2,7 +2,7 @@ from django.contrib import admin
 
 from .models import HomeImage, AboutImage, TeamMember, Project, ProjectHeaderImage, Service
 
-from .models import GalleryImage, VolunteerApplication, VolunteerHeaderImage
+from .models import GalleryImage, VolunteerApplication, VolunteerHeaderImage, ContactHeaderImage, DonationHeaderImage
 
 
 @admin.register(HomeImage)
@@ -204,6 +204,40 @@ class VolunteerApplicationAdmin(admin.ModelAdmin):
 
 @admin.register(VolunteerHeaderImage)
 class VolunteerHeaderImageAdmin(admin.ModelAdmin):
+
+    list_display = (
+        "image",
+        "is_active",
+        "created_at",
+    )
+
+    list_filter = (
+        "is_active",
+    )
+
+    ordering = (
+        "-created_at",
+    )
+
+@admin.register(ContactHeaderImage)
+class ContactHeaderImageAdmin(admin.ModelAdmin):
+
+    list_display = (
+        "image",
+        "is_active",
+        "created_at",
+    )
+
+    list_filter = (
+        "is_active",
+    )
+
+    ordering = (
+        "-created_at",
+    )
+
+@admin.register(DonationHeaderImage)
+class DonationHeaderImageAdmin(admin.ModelAdmin):
 
     list_display = (
         "image",

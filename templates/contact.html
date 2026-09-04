@@ -1,0 +1,442 @@
+{% extends "base.html" %}
+
+{% block title %}Contact | Com’Unity{% endblock %}
+
+{% block content %}
+
+<!-- =========================================================
+     HERO CONTACT
+========================================================= -->
+
+<section class="contact-header">
+
+    {% if contact_header %}
+        <img
+            src="{{ contact_header.image.url }}"
+            alt="Contactez Com’Unity"
+            class="contact-header-image"
+        >
+    {% endif %}
+
+    <div class="contact-header-overlay"></div>
+
+    <div class="contact-container">
+
+        <div class="contact-header-content">
+
+            <span class="contact-header-label">
+                CONTACTEZ-NOUS
+            </span>
+
+            <h1>
+                Échangeons<br>
+                pour aller
+                <span>plus loin.</span>
+            </h1>
+
+            <p>
+                Une question, une idée, un projet ou l’envie de collaborer ?
+                Notre équipe est à votre écoute. Ensemble, construisons
+                des solutions durables pour des communautés plus fortes.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     INFORMATIONS DE CONTACT
+========================================================= -->
+
+<section class="contact-info-section">
+
+    <div class="contact-container">
+
+        <div class="contact-info-grid">
+
+
+            <!-- ADRESSE -->
+
+            <article class="contact-info-card">
+
+                <div class="contact-info-icon">
+                    <i class="fa-solid fa-location-dot"></i>
+                </div>
+
+                <h3>
+                    Notre adresse
+                </h3>
+
+                <p>
+                    Cameroun
+                </p>
+
+            </article>
+
+
+            <!-- TELEPHONE -->
+
+            <article class="contact-info-card">
+
+                <div class="contact-info-icon">
+                    <i class="fa-solid fa-phone"></i>
+                </div>
+
+                <h3>
+                    Téléphone
+                </h3>
+
+                <p>
+                    +237 680 507 683
+                    <br>
+                    +237 699 421 701
+                </p>
+
+            </article>
+
+
+            <!-- EMAIL -->
+
+            <article class="contact-info-card">
+
+                <div class="contact-info-icon">
+                    <i class="fa-regular fa-envelope"></i>
+                </div>
+
+                <h3>
+                    E-mail
+                </h3>
+
+                <p>
+                    christiandimemou@gmail.com
+                    <br>
+                    Réponse sous 24h
+                </p>
+
+            </article>
+
+
+            <!-- RESEAUX -->
+
+            <article class="contact-info-card">
+
+                <div class="contact-info-icon">
+                    <i class="fa-solid fa-share-nodes"></i>
+                </div>
+
+                <h3>
+                    Suivez-nous
+                </h3>
+
+                <div class="contact-socials">
+
+                    <a href="https://www.linkedin.com/company/comunity-jn-professionnel/" target="_blank" 
+                        aria-label="LinkedIn">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+
+                    <a href="https://www.facebook.com/share/1JGpvJs5xW/" target="_blank" 
+                        aria-label="Facebook">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+
+                    <a href="https://www.instagram.com/jordana_greta?igsh=MWZmZWhmbndjNWx2cA==" target="_blank" 
+                        aria-label="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+
+                    <a href="https://m.youtube.com/@ComUnity2026" target="_blank" 
+                        aria-label="YouTube">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     FORMULAIRE + LOCALISATION
+========================================================= -->
+
+<section class="contact-main-section">
+
+    <div class="contact-container">
+
+        <div class="contact-main-grid">
+
+
+            <!-- FORMULAIRE -->
+
+            <div class="contact-form-area">
+
+                <span class="contact-section-label">
+                    ENVOYEZ-NOUS UN MESSAGE
+                </span>
+
+                <h2>
+                    Nous sommes
+                    <span>à votre écoute.</span>
+                </h2>
+
+                <p class="contact-intro-text">
+                    Remplissez le formulaire ci-dessous et notre équipe
+                    vous répondra dans les plus brefs délais.
+                </p>
+
+
+                {% if success %}
+
+                    <div class="contact-success">
+
+                        <i class="fa-solid fa-circle-check"></i>
+
+                        <div>
+                            <strong>
+                                Message envoyé !
+                            </strong>
+
+                            <p>
+                                Merci pour votre message.
+                                Notre équipe reviendra vers vous rapidement.
+                            </p>
+                        </div>
+
+                    </div>
+
+                {% endif %}
+
+
+                <form method="post" class="contact-form">
+
+                    {% csrf_token %}
+
+
+                    <div class="contact-form-row">
+
+                        <div class="contact-form-group">
+
+                            <label for="{{ form.name.id_for_label }}">
+                                Nom
+                            </label>
+
+                            {{ form.name }}
+
+                        </div>
+
+
+                        <div class="contact-form-group">
+
+                            <label for="{{ form.email.id_for_label }}">
+                                Adresse e-mail
+                            </label>
+
+                            {{ form.email }}
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="contact-form-group">
+
+                        <label for="{{ form.subject.id_for_label }}">
+                            Sujet
+                        </label>
+
+                        {{ form.subject }}
+
+                    </div>
+
+
+                    <div class="contact-form-group">
+
+                        <label for="{{ form.message.id_for_label }}">
+                            Message
+                        </label>
+
+                        {{ form.message }}
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="contact-submit-button"
+                    >
+                        Envoyer mon message
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+
+                </form>
+
+            </div>
+
+
+            <!-- LOCALISATION -->
+
+            <aside class="contact-location-area">
+
+                <span class="contact-section-label">
+                    NOTRE LOCALISATION
+                </span>
+
+                <h2>
+                    Retrouvez-nous
+                    <span>sur la carte.</span>
+                </h2>
+
+                <p>
+                    Venez nous rendre visite ou utilisez la carte
+                    ci-dessous pour trouver facilement notre zone
+                    d’intervention.
+                </p>
+
+
+                <div class="contact-map">
+
+                    <div class="contact-map-pattern"></div>
+
+                    <div class="contact-map-marker">
+
+                        <i class="fa-solid fa-location-dot"></i>
+
+                    </div>
+
+                    <div class="contact-map-card">
+
+                        <strong>
+                            Com’Unity
+                        </strong>
+
+                        <span>
+                            Cameroun
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- HORAIRES -->
+
+                <div class="contact-hours">
+
+                    <div class="contact-hours-icon">
+                        <i class="fa-regular fa-clock"></i>
+                    </div>
+
+                    <div>
+
+                        <span>
+                            NOS HORAIRES
+                        </span>
+
+                        <strong>
+                            Lun. – Sam. : 8h00 – 18h00
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </aside>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     FAQ
+========================================================= -->
+
+<section class="contact-faq">
+
+    <div class="contact-container">
+
+        <div class="contact-faq-content">
+
+            <div>
+
+                <span class="contact-section-label">
+                    QUESTIONS FRÉQUENTES
+                </span>
+
+                <h2>
+                    Vous avez une question ?
+                </h2>
+
+                <p>
+                    Consultez notre foire aux questions pour trouver
+                    rapidement une réponse.
+                </p>
+
+            </div>
+
+            <a href="#" class="contact-outline-button">
+                Voir la FAQ
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     COLLABORATION
+========================================================= -->
+
+<section class="contact-collaboration">
+
+    <div class="contact-collaboration-blue"></div>
+    <div class="contact-collaboration-orange"></div>
+
+    <div class="contact-container">
+
+        <div class="contact-collaboration-content">
+
+            <div class="contact-collaboration-icon">
+                <i class="fa-solid fa-users"></i>
+            </div>
+
+            <div class="contact-collaboration-text">
+
+                <h2>
+                    Envie de collaborer avec nous ?
+                </h2>
+
+                <p>
+                    Associations, entreprises, institutions ou particuliers :
+                    parlons de vos idées et construisons ensemble des projets
+                    à impact.
+                </p>
+
+            </div>
+
+            <a href="#" class="contact-collaboration-button">
+                Démarrer une collaboration
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

@@ -1,7 +1,8 @@
 from django.shortcuts import render
 
 from .models import HomeImage, AboutImage, TeamMember, Project, ProjectHeaderImage, Service
-from .models import GalleryImage, VolunteerApplication, VolunteerHeaderImage
+from .models import GalleryImage, VolunteerApplication, VolunteerHeaderImage, ContactHeaderImage, DonationHeaderImage
+from .forms import ContactForm
 
 def home(request):
 
@@ -148,5 +149,57 @@ def volunteer(request):
         "volunteer.html",
         {
             "volunteer_header": volunteer_header,
+        }
+    )
+
+
+def contact(request):
+
+    contact_header = ContactHeaderImage.objects.filter(
+        is_active=True
+    ).first()
+
+    if request.method == "POST":
+
+        form = ContactForm(request.POST)
+
+        if form.is_valid():
+
+            form.save()
+
+            return render(
+                request,
+                "contact.html",
+                {
+                    "form": ContactForm(),
+                    "contact_header": contact_header,
+                    "success": True,
+                }
+            )
+
+    else:
+        form = ContactForm()
+
+    return render(
+        request,
+        "contact.html",
+        {
+            "form": form,
+            "contact_header": contact_header,
+        }
+    )
+
+
+def donation(request):
+
+    donation_header = DonationHeaderImage.objects.filter(
+        is_active=True
+    ).first()
+
+    return render(
+        request,
+        "donation.html",
+        {
+            "donation_header": donation_header,
         }
     )

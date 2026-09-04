@@ -432,3 +432,94 @@ class VolunteerHeaderImage(models.Model):
 
     def __str__(self):
         return "Image en-tête — Devenir bénévole"
+    
+
+class ContactHeaderImage(models.Model):
+
+    image = models.ImageField(
+        upload_to="contact/",
+        verbose_name="Image de l'en-tête"
+    )
+
+    is_active = models.BooleanField(
+        default=True,
+        verbose_name="Image active"
+    )
+
+    created_at = models.DateTimeField(
+        auto_now_add=True,
+        verbose_name="Date d'ajout"
+    )
+
+    class Meta:
+        verbose_name = "Image en-tête Contact"
+        verbose_name_plural = "Image en-tête Contact"
+        ordering = ["-created_at"]
+
+    def __str__(self):
+        return "Image en-tête — Contact"
+    
+
+class Contact(models.Model):
+
+    name = models.CharField(
+        max_length=150,
+        verbose_name="Nom complet"
+    )
+
+    email = models.EmailField(
+        verbose_name="Adresse e-mail"
+    )
+
+    subject = models.CharField(
+        max_length=200,
+        verbose_name="Objet"
+    )
+
+    message = models.TextField(
+        verbose_name="Message"
+    )
+
+    created_at = models.DateTimeField(
+        auto_now_add=True,
+        verbose_name="Date d'envoi"
+    )
+
+    is_read = models.BooleanField(
+        default=False,
+        verbose_name="Message lu"
+    )
+
+    class Meta:
+        ordering = ["-created_at"]
+        verbose_name = "Message de contact"
+        verbose_name_plural = "Messages de contact"
+
+    def __str__(self):
+        return f"{self.name} — {self.subject}"
+    
+
+class DonationHeaderImage(models.Model):
+
+    image = models.ImageField(
+        upload_to="donation/",
+        verbose_name="Image de l'en-tête"
+    )
+
+    is_active = models.BooleanField(
+        default=True,
+        verbose_name="Image active"
+    )
+
+    created_at = models.DateTimeField(
+        auto_now_add=True,
+        verbose_name="Date d'ajout"
+    )
+
+    class Meta:
+        verbose_name = "Image en-tête — Faire un don"
+        verbose_name_plural = "Image en-tête — Faire un don"
+        ordering = ["-created_at"]
+
+    def __str__(self):
+        return "Image en-tête — Faire un don"

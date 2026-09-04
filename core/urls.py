@@ -37,4 +37,17 @@ urlpatterns = [
     name="volunteer"
     ),
 
+    path(
+    "contact/",
+    views.contact,
+    name="contact"
+    ),
+
+    path(
+    "faire-un-don/",
+    views.donation,
+    name="donation"
+    ),
+
 ]
+
