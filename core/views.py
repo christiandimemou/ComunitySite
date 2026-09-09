@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 
 from .models import HomeImage, AboutImage, TeamMember, Project, ProjectHeaderImage, Service
 from .models import GalleryImage, VolunteerApplication, VolunteerHeaderImage, ContactHeaderImage, DonationHeaderImage
@@ -201,5 +201,29 @@ def donation(request):
         "donation.html",
         {
             "donation_header": donation_header,
+        }
+    )
+
+
+def project_detail(request, slug):
+    project = get_object_or_404(
+        Project,
+        slug=slug,
+        is_active=True
+    )
+
+    related_projects = Project.objects.filter(
+        is_active=True,
+        category=project.category
+    ).exclude(
+        id=project.id
+    )[:3]
+
+    return render(
+        request,
+        "project_detail.html",
+        {
+            "project": project,
+            "related_projects": related_projects,
         }
     )

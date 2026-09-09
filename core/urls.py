@@ -20,6 +20,12 @@ urlpatterns = [
     ),
 
     path(
+    "projets/<slug:slug>/", 
+     views.project_detail, 
+     name="project_detail"
+     ),
+
+    path(
     "services/",
     views.services,
     name="services"
@@ -48,6 +54,8 @@ urlpatterns = [
     views.donation,
     name="donation"
     ),
+
+    
 
 ]
 

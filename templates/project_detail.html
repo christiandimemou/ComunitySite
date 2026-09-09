@@ -1,0 +1,422 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}{{ project.title }} | Com’Unity{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/project_detail.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="project-detail-page">
+
+    <!-- =====================================================
+         HERO / EN-TÊTE DU PROJET
+    ====================================================== -->
+
+    <section class="project-detail-hero">
+
+        <!-- PARTIE GAUCHE -->
+        <div class="project-detail-hero-content">
+
+            <div class="project-detail-hero-inner">
+
+                <a href="{% url 'projects' %}" class="project-back-link">
+                    <i class="fas fa-arrow-left"></i>
+                    Retour aux projets
+                </a>
+
+                <span class="project-category">
+                    <i class="fas fa-layer-group"></i>
+                    {{ project.get_category_display }}
+                </span>
+
+                <h1>
+                    {{ project.title }}
+                </h1>
+
+                <div class="project-title-line"></div>
+
+                <p class="project-short-description">
+                    {{ project.short_description }}
+                </p>
+
+                <div class="project-meta">
+
+                    <span class="project-status {{ project.status }}">
+                        <span class="status-dot"></span>
+                        {{ project.get_status_display }}
+                    </span>
+
+                    {% if project.project_date %}
+                    <span class="project-meta-item">
+                        <i class="far fa-calendar"></i>
+                        {{ project.project_date|date:"Y" }}
+                    </span>
+                    {% endif %}
+
+                    {% if project.location %}
+                    <span class="project-meta-item">
+                        <i class="fas fa-location-dot"></i>
+                        {{ project.location }}
+                    </span>
+                    {% endif %}
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- PARTIE DROITE : IMAGE -->
+        <div class="project-detail-hero-image">
+
+            {% if project.image %}
+            <img
+                src="{{ project.image.url }}"
+                alt="{{ project.title }}"
+            >
+            {% endif %}
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         CONTENU PRINCIPAL
+    ====================================================== -->
+
+    <section class="project-main-content">
+
+        <div class="project-container">
+
+            <div class="project-main-grid">
+
+                <!-- =================================================
+                     COLONNE GAUCHE
+                ================================================== -->
+
+                <article class="project-about">
+
+                    <span class="section-label">
+                        À PROPOS DU PROJET
+                    </span>
+
+                    <h2>
+                        Un engagement pour un environnement durable
+                    </h2>
+
+                    <div class="project-description">
+                        {{ project.description|linebreaks }}
+                    </div>
+
+
+                    <!-- =============================================
+                         3 POINTS CLÉS
+                    ============================================== -->
+
+                    <div class="project-highlights">
+
+                        <div class="highlight-item">
+
+                            <div class="highlight-icon">
+                                <i class="fas fa-leaf"></i>
+                            </div>
+
+                            <div class="highlight-content">
+                                <h3>
+                                    Éducation environnementale
+                                </h3>
+
+                                <p>
+                                    Sensibiliser les communautés et transmettre
+                                    les connaissances nécessaires à la protection
+                                    de notre environnement.
+                                </p>
+                            </div>
+
+                        </div>
+
+
+                        <div class="highlight-item">
+
+                            <div class="highlight-icon">
+                                <i class="fas fa-people-group"></i>
+                            </div>
+
+                            <div class="highlight-content">
+                                <h3>
+                                    Mobilisation des communautés
+                                </h3>
+
+                                <p>
+                                    Encourager l'engagement collectif et la
+                                    participation citoyenne autour des enjeux
+                                    environnementaux.
+                                </p>
+                            </div>
+
+                        </div>
+
+
+                        <div class="highlight-item">
+
+                            <div class="highlight-icon">
+                                <i class="fas fa-hands-holding-circle"></i>
+                            </div>
+
+                            <div class="highlight-content">
+                                <h3>
+                                    Actions concrètes sur le terrain
+                                </h3>
+
+                                <p>
+                                    Transformer la sensibilisation en actions
+                                    concrètes au service des territoires et
+                                    des communautés.
+                                </p>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- =============================================
+                         COMMENTAIRE
+                    ============================================== -->
+
+                    <div class="project-quote">
+
+                        <div class="quote-icon">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+
+                        <p>
+                            Un environnement sain aujourd’hui,
+                            c’est un avenir meilleur demain.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <!-- =================================================
+                     COLONNE DROITE
+                ================================================== -->
+
+                <aside class="project-sidebar">
+
+                    <!-- CADRE INFORMATIONS -->
+
+                    <div class="project-info-card">
+
+                        <span class="info-card-label">
+                            INFORMATIONS
+                        </span>
+
+
+                        <div class="info-list">
+
+                            <div class="info-item">
+
+                                <div class="info-icon">
+                                    <i class="fas fa-layer-group"></i>
+                                </div>
+
+                                <div class="info-text">
+                                    <span>Catégorie</span>
+                                    <strong>
+                                        {{ project.get_category_display }}
+                                    </strong>
+                                </div>
+
+                            </div>
+
+
+                            <div class="info-item">
+
+                                <div class="info-icon">
+                                    <i class="fas fa-circle-check"></i>
+                                </div>
+
+                                <div class="info-text">
+                                    <span>Statut</span>
+                                    <strong>
+                                        {{ project.get_status_display }}
+                                    </strong>
+                                </div>
+
+                            </div>
+
+
+                            {% if project.project_date %}
+
+                            <div class="info-item">
+
+                                <div class="info-icon">
+                                    <i class="far fa-calendar"></i>
+                                </div>
+
+                                <div class="info-text">
+                                    <span>Date</span>
+                                    <strong>
+                                        {{ project.project_date|date:"d/m/Y" }}
+                                    </strong>
+                                </div>
+
+                            </div>
+
+                            {% endif %}
+
+
+                            {% if project.location %}
+
+                            <div class="info-item">
+
+                                <div class="info-icon">
+                                    <i class="fas fa-location-dot"></i>
+                                </div>
+
+                                <div class="info-text">
+                                    <span>Lieu</span>
+                                    <strong>
+                                        {{ project.location }}
+                                    </strong>
+                                </div>
+
+                            </div>
+
+                            {% endif %}
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- =============================================
+                         IMAGE SOUS LE CADRE INFORMATION
+                    ============================================== -->
+
+                    <div class="project-sidebar-image">
+
+                        {% if project.image %}
+                        <img
+                            src="{{ project.image.url }}"
+                            alt="{{ project.title }}"
+                        >
+                        {% endif %}
+
+                    </div>
+
+
+                    <!-- =============================================
+                         BOUTON
+                    ============================================== -->
+
+                    <a
+                        href="{% url 'projects' %}"
+                        class="project-all-link"
+                    >
+                        <i class="fas fa-arrow-left"></i>
+                        Voir tous les projets
+                    </a>
+
+                </aside>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         PROJETS ASSOCIÉS
+    ====================================================== -->
+
+    {% if related_projects %}
+
+    <section class="related-projects-section">
+
+        <div class="project-container">
+
+            <div class="related-heading">
+
+                <span class="section-label">
+                    CONTINUER LA DÉCOUVERTE
+                </span>
+
+                <h2>
+                    D’autres projets qui pourraient vous intéresser
+                </h2>
+
+            </div>
+
+
+            <div class="related-projects-grid">
+
+                {% for related in related_projects %}
+
+                <article class="related-project-card">
+
+                    {% if related.image %}
+
+                    <div class="related-image">
+
+                        <img
+                            src="{{ related.image.url }}"
+                            alt="{{ related.title }}"
+                        >
+
+                    </div>
+
+                    {% endif %}
+
+
+                    <div class="related-content">
+
+                        <span class="related-category">
+                            {{ related.get_category_display }}
+                        </span>
+
+                        <h3>
+                            {{ related.title }}
+                        </h3>
+
+                        <p>
+                            {{ related.short_description }}
+                        </p>
+
+                        <a
+                            href="{% url 'project_detail' related.slug %}"
+                            class="related-link"
+                        >
+                            En savoir plus
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+
+                    </div>
+
+                </article>
+
+                {% endfor %}
+
+            </div>
+
+        </div>
+
+    </section>
+
+    {% endif %}
+
+
+    
+
+</div>
+
+{% endblock %}

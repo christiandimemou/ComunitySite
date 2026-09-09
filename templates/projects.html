@@ -192,15 +192,9 @@ Projets | Com’Unity
                     </div>
 
 
-                    <a
-                        href="#"
-                        class="project-link"
-                    >
-
+                    <a href="{% url 'project_detail' project.slug %}" class="project-link">
                         En savoir plus
-
                         <i class="fas fa-arrow-right"></i>
-
                     </a>
 
                 </div>
@@ -361,7 +355,7 @@ Projets | Com’Unity
             <div class="about-cta-buttons">
 
                 <a
-                    href="#"
+                    href="{% url 'volunteer' %}"
                     class="hero-button hero-button-primary"
                 >
 
@@ -373,7 +367,7 @@ Projets | Com’Unity
 
 
                 <a
-                    href="#"
+                    href="{% url 'donation' %}"
                     class="hero-button hero-button-secondary"
                 >
 
