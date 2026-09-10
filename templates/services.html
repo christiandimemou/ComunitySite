@@ -204,19 +204,10 @@ Services | Com’Unity
                 {% endif %}
 
 
-                <a
-                    href="#"
-                    class="service-button"
-                >
-
-                    <span>
-                        En savoir plus
-                    </span>
-
+                <a href="{% url 'service_detail' service.slug %}" class="service-link">
+                    En savoir plus
                     <i class="fas fa-arrow-right"></i>
-
                 </a>
-
             </div>
 
         </article>

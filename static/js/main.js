@@ -218,3 +218,61 @@ document.addEventListener("DOMContentLoaded", function () {
     );
 
 });
+
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const faqItems = document.querySelectorAll(".faq-item");
+
+    faqItems.forEach(function (item) {
+
+        const question = item.querySelector(".faq-question");
+
+        if (!question) {
+            return;
+        }
+
+        question.addEventListener("click", function () {
+
+            const isOpen = item.classList.contains("open");
+
+            /*
+             * Fermer toutes les questions
+             */
+            faqItems.forEach(function (otherItem) {
+
+                otherItem.classList.remove("open");
+
+                const otherQuestion =
+                    otherItem.querySelector(".faq-question");
+
+                if (otherQuestion) {
+                    otherQuestion.setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
+                }
+
+            });
+
+
+            /*
+             * Si la question cliquée était fermée,
+             * on l'ouvre.
+             */
+            if (!isOpen) {
+
+                item.classList.add("open");
+
+                question.setAttribute(
+                    "aria-expanded",
+                    "true"
+                );
+
+            }
+
+        });
+
+    });
+
+});

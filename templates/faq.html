@@ -1,0 +1,606 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}
+    FAQ | Com’Unity
+{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/faq.css' %}">
+{% endblock %}
+
+
+{% block content %}
+
+<div class="faq-page">
+
+    <!-- =====================================================
+         HERO FAQ
+    ====================================================== -->
+
+    <section class="faq-hero">
+
+        <!-- PARTIE GAUCHE -->
+        <div class="faq-hero-content">
+
+            <a href="{% url 'contact' %}" class="faq-back-link">
+                <i class="fas fa-arrow-left"></i>
+                <span>Retour à la page contact</span>
+            </a>
+
+            <div class="faq-hero-label">
+                <i class="fas fa-circle-question"></i>
+                FAQ
+            </div>
+
+            <h1>
+                Vos questions
+                <span>nos réponses</span>
+            </h1>
+
+            <div class="faq-hero-line"></div>
+
+            <p>
+                Trouvez ici les réponses aux questions les plus
+                fréquentes sur nos actions, nos services, nos
+                modalités de soutien et bien plus encore.
+            </p>
+
+        </div>
+
+
+        <!-- PARTIE DROITE : IMAGE -->
+        <div class="faq-hero-image">
+
+            {% if faq_header %}
+                <img
+                    src="{{ faq_header.image.url }}"
+                    alt="Com’Unity - Questions fréquentes"
+                >
+            {% endif %}
+
+            <div class="faq-hero-image-overlay"></div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         CONTENU PRINCIPAL
+    ====================================================== -->
+
+    <section class="faq-main">
+
+        <div class="faq-container">
+
+            <div class="faq-layout">
+
+
+                <!-- =================================================
+                     COLONNE FAQ
+                ================================================== -->
+
+                <div class="faq-content">
+
+                    <div class="faq-section-heading">
+
+                        <span class="faq-section-label">
+                            QUESTIONS FRÉQUENTES
+                        </span>
+
+                        <h2>
+                            Tout ce que vous devez savoir
+                        </h2>
+
+                        <p>
+                            Nous avons regroupé ici les réponses aux
+                            questions les plus courantes. Si vous ne
+                            trouvez pas l’information que vous cherchez,
+                            n’hésitez pas à nous contacter.
+                        </p>
+
+                    </div>
+
+
+                    <!-- =============================================
+                         ACCORDÉON
+                    ============================================== -->
+
+                    <div class="faq-accordion">
+
+
+                        <!-- QUESTION 1 -->
+                        <div class="faq-item open">
+
+                            <button
+                                type="button"
+                                class="faq-question"
+                                aria-expanded="true"
+                            >
+
+                                <span class="faq-number">
+                                    1
+                                </span>
+
+                                <span class="faq-question-text">
+                                    Quels sont les domaines d’intervention de Com’Unity ?
+                                </span>
+
+                                <span class="faq-arrow">
+                                    <i class="fas fa-chevron-down"></i>
+                                </span>
+
+                            </button>
+
+
+                            <div class="faq-answer">
+
+                                <p>
+                                    Com’Unity intervient dans plusieurs domaines clés
+                                    pour contribuer au développement durable et inclusif
+                                    des territoires :
+                                </p>
+
+                                <ul>
+                                    <li>
+                                        Éducation et sensibilisation environnementale
+                                    </li>
+
+                                    <li>
+                                        Accompagnement des projets
+                                    </li>
+
+                                    <li>
+                                        Mobilisation des communautés
+                                    </li>
+
+                                    <li>
+                                        Actions concrètes sur le terrain
+                                    </li>
+                                </ul>
+
+                                <p>
+                                    Nous adaptons nos actions aux besoins spécifiques
+                                    de chaque territoire et de chaque communauté.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- QUESTION 2 -->
+                        <div class="faq-item">
+
+                            <button
+                                type="button"
+                                class="faq-question"
+                                aria-expanded="false"
+                            >
+
+                                <span class="faq-number">
+                                    2
+                                </span>
+
+                                <span class="faq-question-text">
+                                    Comment puis-je soutenir vos actions ?
+                                </span>
+
+                                <span class="faq-arrow">
+                                    <i class="fas fa-chevron-down"></i>
+                                </span>
+
+                            </button>
+
+                            <div class="faq-answer">
+
+                                <p>
+                                    Vous pouvez soutenir Com’Unity de plusieurs
+                                    manières : devenir bénévole, participer à nos
+                                    activités, relayer nos actions, contribuer à
+                                    nos projets ou effectuer un don.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- QUESTION 3 -->
+                        <div class="faq-item">
+
+                            <button
+                                type="button"
+                                class="faq-question"
+                                aria-expanded="false"
+                            >
+
+                                <span class="faq-number">
+                                    3
+                                </span>
+
+                                <span class="faq-question-text">
+                                    Qui peut bénéficier de vos services ?
+                                </span>
+
+                                <span class="faq-arrow">
+                                    <i class="fas fa-chevron-down"></i>
+                                </span>
+
+                            </button>
+
+                            <div class="faq-answer">
+
+                                <p>
+                                    Nos actions s’adressent notamment aux citoyens,
+                                    aux jeunes, aux femmes, aux associations, aux
+                                    porteurs d’initiatives, aux organisations de
+                                    l’économie sociale et solidaire ainsi qu’aux
+                                    acteurs engagés dans le développement de leurs
+                                    territoires.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- QUESTION 4 -->
+                        <div class="faq-item">
+
+                            <button
+                                type="button"
+                                class="faq-question"
+                                aria-expanded="false"
+                            >
+
+                                <span class="faq-number">
+                                    4
+                                </span>
+
+                                <span class="faq-question-text">
+                                    Comment devenir bénévole ?
+                                </span>
+
+                                <span class="faq-arrow">
+                                    <i class="fas fa-chevron-down"></i>
+                                </span>
+
+                            </button>
+
+                            <div class="faq-answer">
+
+                                <p>
+                                    Vous pouvez rejoindre Com’Unity en consultant
+                                    notre espace dédié au bénévolat et en remplissant
+                                    le formulaire de candidature. Notre équipe vous
+                                    recontactera ensuite pour échanger avec vous.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- QUESTION 5 -->
+                        <div class="faq-item">
+
+                            <button
+                                type="button"
+                                class="faq-question"
+                                aria-expanded="false"
+                            >
+
+                                <span class="faq-number">
+                                    5
+                                </span>
+
+                                <span class="faq-question-text">
+                                    Où intervenez-vous ?
+                                </span>
+
+                                <span class="faq-arrow">
+                                    <i class="fas fa-chevron-down"></i>
+                                </span>
+
+                            </button>
+
+                            <div class="faq-answer">
+
+                                <p>
+                                    Com’Unity agit au plus près des territoires et
+                                    des communautés, avec une ambition de contribuer
+                                    à des transformations durables, inclusives et
+                                    solidaires en Afrique.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- QUESTION 6 -->
+                        <div class="faq-item">
+
+                            <button
+                                type="button"
+                                class="faq-question"
+                                aria-expanded="false"
+                            >
+
+                                <span class="faq-number">
+                                    6
+                                </span>
+
+                                <span class="faq-question-text">
+                                    Comment faire un don ?
+                                </span>
+
+                                <span class="faq-arrow">
+                                    <i class="fas fa-chevron-down"></i>
+                                </span>
+
+                            </button>
+
+                            <div class="faq-answer">
+
+                                <p>
+                                    Vous pouvez accéder à notre espace
+                                    <strong>Faire un don</strong> afin de découvrir
+                                    les modalités disponibles pour contribuer
+                                    financièrement aux actions de Com’Unity.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- QUESTION 7 -->
+                        <div class="faq-item">
+
+                            <button
+                                type="button"
+                                class="faq-question"
+                                aria-expanded="false"
+                            >
+
+                                <span class="faq-number">
+                                    7
+                                </span>
+
+                                <span class="faq-question-text">
+                                    Proposez-vous des partenariats avec les entreprises ?
+                                </span>
+
+                                <span class="faq-arrow">
+                                    <i class="fas fa-chevron-down"></i>
+                                </span>
+
+                            </button>
+
+                            <div class="faq-answer">
+
+                                <p>
+                                    Oui. Com’Unity peut collaborer avec des
+                                    entreprises, institutions, associations et
+                                    autres acteurs souhaitant soutenir ou construire
+                                    des initiatives à impact social, environnemental
+                                    ou territorial.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+                <!-- =================================================
+                     SIDEBAR
+                ================================================== -->
+
+                <aside class="faq-sidebar">
+
+
+                    <!-- BESOIN D'AIDE -->
+                    <div class="faq-help-card">
+
+                        <div class="faq-help-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+
+                        <span class="faq-help-label">
+                            BESOIN D’AIDE ?
+                        </span>
+
+                        <h3>
+                            Notre équipe
+                            <span>est là pour vous</span>
+                        </h3>
+
+                        <p>
+                            Si vous n’avez pas trouvé la réponse à votre
+                            question, n’hésitez pas à nous contacter.
+                            Nous vous répondrons dans les plus brefs délais.
+                        </p>
+
+
+                        <!-- TELEPHONE -->
+                        <div class="faq-contact-item">
+
+                            <div class="faq-contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+
+                            <div>
+                                <strong>
+                                    (+237) 653258866/693729586
+                                </strong>
+
+                                <span>
+                                    Lun - Sam : 8h00 - 18h00
+                                </span>
+                            </div>
+
+                        </div>
+
+
+                        <!-- EMAIL -->
+                        <div class="faq-contact-item">
+
+                            <div class="faq-contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+
+                            <div>
+                                <strong>
+                                    lateamcomunity@gmail.com
+                                </strong>
+
+                                <span>
+                                    Nous répondons sous 24h
+                                </span>
+                            </div>
+
+                        </div>
+
+
+                        <!-- LOCALISATION -->
+                        <div class="faq-contact-item">
+
+                            <div class="faq-contact-icon">
+                                <i class="fas fa-location-dot"></i>
+                            </div>
+
+                            <div>
+                                <strong>
+                                    Yaoundé, Cameroun
+                                </strong>
+
+                                <span>
+                                    Notre siège social
+                                </span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- AUTRES INFORMATIONS -->
+                    <div class="faq-other-card">
+
+                        <div class="faq-other-heading">
+
+                            <div class="faq-other-icon">
+                                <i class="fas fa-file-lines"></i>
+                            </div>
+
+                            <span>
+                                AUTRES INFORMATIONS
+                            </span>
+
+                        </div>
+
+
+                        <a href="{% url 'services' %}" class="faq-other-link">
+                            <span>Nos services</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+
+
+                        <a href="{% url 'projects' %}" class="faq-other-link">
+                            <span>Nos projets</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+
+
+                        <a href="{% url 'volunteer' %}" class="faq-other-link">
+                            <span>Devenir bénévole</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+
+
+                        <a href="{% url 'donation' %}" class="faq-other-link">
+                            <span>Faire un don</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+
+                    </div>
+
+                </aside>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         CTA FINAL
+    ====================================================== -->
+
+    <section class="faq-cta">
+
+        <div class="faq-cta-main">
+
+            <div class="faq-cta-icon">
+                <i class="fas fa-comments"></i>
+            </div>
+
+            <div class="faq-cta-content">
+
+                <span>
+                    UNE AUTRE QUESTION ?
+                </span>
+
+                <h2>
+                    Nous sommes là pour vous !
+                </h2>
+
+                <p>
+                    Contactez-nous directement, notre équipe se fera
+                    un plaisir de vous répondre et de vous accompagner.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="faq-cta-action">
+
+            <div class="faq-cta-action-icon">
+                <i class="fas fa-envelope"></i>
+            </div>
+
+            <strong>
+                Écrivez-nous
+            </strong>
+
+            <a href="{% url 'contact' %}" class="faq-cta-button">
+                Nous contacter
+                <i class="fas fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+    </section>
+
+</div>
+
+{% endblock %}
+
+
+{% block extra_js %}
+
+<script src="{% static 'js/faq.js' %}"></script>
+
+{% endblock %}

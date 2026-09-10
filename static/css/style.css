@@ -9942,3 +9942,2490 @@ main {
         min-height: 180px;
     }
 }
+
+
+
+/* =========================================================
+   PAGE DÉTAIL SERVICE — COM'UNITY
+========================================================= */
+
+.service-detail-page {
+    width: 100%;
+    overflow: hidden;
+    background: #ffffff;
+    color: #1c2b32;
+    font-family: "Montserrat", sans-serif;
+}
+
+.service-detail-page *,
+.service-detail-page *::before,
+.service-detail-page *::after {
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   CONTENEUR
+========================================================= */
+
+.service-detail-container {
+    width: min(1180px, 90%);
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.service-detail-hero {
+    display: grid;
+    grid-template-columns: 54% 46%;
+    min-height: 500px;
+    margin-top: 0;
+}
+
+
+/* =========================================================
+   HERO — PARTIE TEXTE
+========================================================= */
+
+.service-detail-hero-content {
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background: #00788D;
+    color: #ffffff;
+}
+
+.service-detail-hero-content::before {
+    content: "";
+    position: absolute;
+
+    width: 390px;
+    height: 390px;
+
+    top: -180px;
+    left: -160px;
+
+    border-radius: 50%;
+
+    background: rgba(236, 84, 1, 0.10);
+}
+
+.service-detail-hero-content::after {
+    content: "";
+    position: absolute;
+
+    width: 280px;
+    height: 280px;
+
+    right: -120px;
+    bottom: -130px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.045);
+}
+
+
+/* =========================================================
+   HERO — CONTENU
+========================================================= */
+
+.service-detail-hero-inner {
+    position: relative;
+    z-index: 3;
+
+    width: min(620px, 100%);
+
+    margin-left: auto;
+
+    padding: 85px 55px 75px 8%;
+}
+
+
+/* =========================================================
+   RETOUR
+========================================================= */
+
+.service-back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+
+    margin-bottom: 25px;
+
+    color: rgba(255, 255, 255, 0.92);
+
+    text-decoration: none;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    transition: all 0.3s ease;
+}
+
+.service-back-link:hover {
+    color: #EC5401;
+    transform: translateX(-4px);
+}
+
+
+/* =========================================================
+   ICÔNE
+========================================================= */
+
+.service-detail-icon {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 15px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.15);
+
+    color: #ffffff;
+
+    font-size: 18px;
+}
+
+
+/* =========================================================
+   LABEL
+========================================================= */
+
+.service-detail-label {
+    display: block;
+
+    margin-bottom: 12px;
+
+    color: #EC5401;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+}
+
+
+/* =========================================================
+   TITRE
+========================================================= */
+
+.service-detail-hero h1 {
+    max-width: 570px;
+
+    margin: 0;
+
+    color: #ffffff;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: clamp(38px, 4.2vw, 56px);
+
+    line-height: 1.10;
+
+    font-weight: 800;
+
+    letter-spacing: -1px;
+
+    overflow-wrap: break-word;
+}
+
+
+/* =========================================================
+   TRAIT ORANGE
+========================================================= */
+
+.service-title-line {
+    width: 58px;
+    height: 4px;
+
+    margin: 20px 0;
+
+    background: #EC5401;
+}
+
+
+/* =========================================================
+   DESCRIPTION COURTE
+========================================================= */
+
+.service-detail-hero p {
+    max-width: 570px;
+
+    margin: 0;
+
+    color: rgba(255, 255, 255, 0.91);
+
+    font-size: 14px;
+    line-height: 1.75;
+
+    overflow-wrap: break-word;
+}
+
+
+/* =========================================================
+   IMAGE HERO
+========================================================= */
+
+.service-detail-hero-image {
+    position: relative;
+
+    min-height: 500px;
+
+    overflow: hidden;
+}
+
+.service-detail-hero-image::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 120, 141, 0.18),
+            transparent 35%
+        );
+
+    pointer-events: none;
+}
+
+.service-detail-hero-image img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    transition: transform 0.7s ease;
+}
+
+.service-detail-hero:hover
+.service-detail-hero-image img {
+    transform: scale(1.025);
+}
+
+
+/* =========================================================
+   CONTENU PRINCIPAL
+========================================================= */
+
+.service-detail-main {
+    padding: 85px 0 95px;
+
+    background: #ffffff;
+}
+
+
+/* =========================================================
+   GRILLE
+========================================================= */
+
+.service-detail-grid {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        330px;
+
+    gap: 70px;
+
+    align-items: start;
+}
+
+
+/* =========================================================
+   CONTENU GAUCHE
+========================================================= */
+
+.service-detail-content {
+    min-width: 0;
+}
+
+.service-section-label {
+    display: inline-block;
+
+    margin-bottom: 14px;
+
+    color: #EC5401;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 1.6px;
+}
+
+.service-detail-content h2 {
+    max-width: 700px;
+
+    margin: 0 0 25px;
+
+    color: #00788D;
+
+    font-size: clamp(30px, 3.2vw, 43px);
+
+    line-height: 1.18;
+
+    font-weight: 800;
+
+    overflow-wrap: break-word;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.service-description {
+    max-width: 700px;
+
+    color: #526168;
+
+    font-size: 15px;
+
+    line-height: 1.85;
+
+    overflow-wrap: break-word;
+}
+
+.service-description p {
+    margin: 0 0 18px;
+}
+
+.service-description p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =========================================================
+   POINTS FORTS
+========================================================= */
+
+.service-highlights {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 0;
+
+    margin-top: 38px;
+
+    padding: 25px 18px;
+
+    background: #eef8f9;
+
+    border-radius: 9px;
+}
+
+.service-highlight {
+    min-width: 0;
+
+    padding: 0 18px;
+
+    border-right:
+        1px solid rgba(0, 120, 141, 0.16);
+}
+
+.service-highlight:first-child {
+    padding-left: 14px;
+}
+
+.service-highlight:last-child {
+    border-right: none;
+}
+
+.highlight-icon {
+    width: 43px;
+    height: 43px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 13px;
+
+    border-radius: 50%;
+
+    background: #00788D;
+
+    color: #ffffff;
+
+    font-size: 17px;
+}
+
+.service-highlight h3 {
+    margin: 0 0 7px;
+
+    color: #00788D;
+
+    font-size: 13px;
+
+    line-height: 1.4;
+
+    font-weight: 800;
+
+    overflow-wrap: break-word;
+}
+
+.service-highlight p {
+    margin: 0;
+
+    color: #647278;
+
+    font-size: 11.5px;
+
+    line-height: 1.6;
+
+    overflow-wrap: break-word;
+}
+
+
+/* =========================================================
+   CITATION
+========================================================= */
+
+.service-quote {
+    display: flex;
+
+    gap: 18px;
+
+    margin-top: 25px;
+
+    padding: 25px 28px;
+
+    border-radius: 9px;
+
+    background: #eef8f9;
+}
+
+.quote-mark {
+    flex: 0 0 auto;
+
+    color: #EC5401;
+
+    font-size: 30px;
+}
+
+.quote-content {
+    min-width: 0;
+}
+
+.quote-content p {
+    margin: 0 0 12px;
+
+    color: #00788D;
+
+    font-size: 16px;
+
+    line-height: 1.55;
+
+    font-weight: 700;
+
+    font-style: italic;
+}
+
+.quote-content span {
+    color: #526168;
+
+    font-size: 11px;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+.service-detail-sidebar {
+    min-width: 0;
+}
+
+
+/* =========================================================
+   CARTE INFORMATIONS
+========================================================= */
+
+.service-info-card {
+    padding: 28px;
+
+    border-radius: 10px;
+
+    background: #eef8f9;
+}
+
+.service-info-label {
+    display: block;
+
+    margin-bottom: 18px;
+
+    color: #00788D;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.4px;
+}
+
+
+/* =========================================================
+   LISTE INFORMATIONS
+========================================================= */
+
+.service-info-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.service-info-item {
+    display: flex;
+
+    gap: 13px;
+
+    padding: 15px 0;
+
+    border-bottom:
+        1px solid rgba(0, 120, 141, 0.12);
+}
+
+.service-info-item:first-child {
+    padding-top: 0;
+}
+
+.service-info-item:last-child {
+    padding-bottom: 0;
+
+    border-bottom: none;
+}
+
+.service-info-icon {
+    flex: 0 0 38px;
+
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #ffffff;
+
+    color: #EC5401;
+
+    font-size: 14px;
+}
+
+.service-info-text {
+    min-width: 0;
+}
+
+.service-info-text strong {
+    display: block;
+
+    margin-bottom: 4px;
+
+    color: #00788D;
+
+    font-size: 12.5px;
+
+    line-height: 1.4;
+
+    font-weight: 800;
+
+    overflow-wrap: break-word;
+}
+
+.service-info-text span {
+    display: block;
+
+    color: #68767c;
+
+    font-size: 11px;
+
+    line-height: 1.55;
+
+    overflow-wrap: break-word;
+}
+
+
+/* =========================================================
+   IMAGE SIDEBAR
+========================================================= */
+
+.service-sidebar-image {
+    width: 100%;
+    height: 215px;
+
+    margin-top: 20px;
+
+    overflow: hidden;
+
+    border-radius: 10px;
+}
+
+.service-sidebar-image img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform 0.6s ease;
+}
+
+.service-sidebar-image:hover img {
+    transform: scale(1.05);
+}
+
+
+/* =========================================================
+   BOUTON CONTACT
+========================================================= */
+
+.service-contact-button {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 9px;
+
+    width: 100%;
+
+    margin-top: 15px;
+
+    padding: 14px 18px;
+
+    border-radius: 5px;
+
+    background: #EC5401;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    transition: all 0.3s ease;
+}
+
+.service-contact-button:hover {
+    background: #00788D;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   RETOUR SERVICES
+========================================================= */
+
+.service-all-link {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    width: 100%;
+
+    margin-top: 12px;
+
+    padding: 13px 18px;
+
+    border:
+        2px solid #00788D;
+
+    border-radius: 5px;
+
+    color: #00788D;
+
+    text-decoration: none;
+
+    font-size: 11.5px;
+
+    font-weight: 700;
+
+    transition: all 0.3s ease;
+}
+
+.service-all-link:hover {
+    background: #00788D;
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   AUTRES SERVICES
+========================================================= */
+
+.related-services-section {
+    padding: 80px 0 90px;
+
+    background: #eef8f9;
+}
+
+.related-services-heading {
+    margin-bottom: 35px;
+}
+
+.related-services-heading h2 {
+    max-width: 750px;
+
+    margin: 0;
+
+    color: #00788D;
+
+    font-size: clamp(28px, 3vw, 40px);
+
+    line-height: 1.2;
+
+    font-weight: 800;
+
+    overflow-wrap: break-word;
+}
+
+
+/* =========================================================
+   GRILLE AUTRES SERVICES
+========================================================= */
+
+.related-services-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 20px;
+}
+
+
+/* =========================================================
+   CARTE SERVICE
+========================================================= */
+
+.related-service-card {
+    min-width: 0;
+
+    overflow: hidden;
+
+    border-radius: 9px;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.06);
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.related-service-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 18px 38px rgba(0, 0, 0, 0.10);
+}
+
+
+/* =========================================================
+   IMAGE AUTRE SERVICE
+========================================================= */
+
+.related-service-image {
+    width: 100%;
+    height: 145px;
+
+    overflow: hidden;
+}
+
+.related-service-image img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform 0.5s ease;
+}
+
+.related-service-card:hover
+.related-service-image img {
+    transform: scale(1.06);
+}
+
+
+/* =========================================================
+   CONTENU AUTRE SERVICE
+========================================================= */
+
+.related-service-content {
+    position: relative;
+
+    padding: 20px;
+}
+
+.related-service-icon {
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 11px;
+
+    border-radius: 50%;
+
+    background: #eef8f9;
+
+    color: #00788D;
+
+    font-size: 14px;
+}
+
+.related-service-content h3 {
+    margin: 0 0 9px;
+
+    color: #00788D;
+
+    font-size: 15px;
+
+    line-height: 1.35;
+
+    font-weight: 800;
+
+    overflow-wrap: break-word;
+}
+
+.related-service-content p {
+    margin: 0 0 15px;
+
+    color: #68767c;
+
+    font-size: 11px;
+
+    line-height: 1.6;
+
+    overflow-wrap: break-word;
+}
+
+.related-service-link {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    color: #EC5401;
+
+    text-decoration: none;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    transition: all 0.3s ease;
+}
+
+.related-service-link:hover {
+    gap: 11px;
+
+    color: #00788D;
+}
+
+
+/* =========================================================
+   CTA FINAL
+========================================================= */
+
+.service-detail-final-cta {
+    background: #00788D;
+
+    color: #ffffff;
+}
+
+.service-final-cta-inner {
+    display: grid;
+
+    grid-template-columns: 100px minmax(0, 1fr) 330px;
+
+    align-items: center;
+
+    width: min(1180px, 90%);
+
+    min-height: 230px;
+
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   CTA ICÔNE
+========================================================= */
+
+.service-final-cta-icon {
+    width: 64px;
+    height: 64px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border:
+        2px solid rgba(255, 255, 255, 0.75);
+
+    border-radius: 50%;
+
+    font-size: 23px;
+}
+
+
+/* =========================================================
+   CTA TEXTE
+========================================================= */
+
+.service-final-cta-text {
+    padding: 45px 45px 45px 0;
+}
+
+.service-final-cta-text > span {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #ffffff;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.4px;
+}
+
+.service-final-cta-text h2 {
+    max-width: 580px;
+
+    margin: 0 0 11px;
+
+    color: #ffffff;
+
+    font-size: clamp(25px, 3vw, 38px);
+
+    line-height: 1.12;
+
+    font-weight: 800;
+}
+
+.service-final-cta-text p {
+    max-width: 620px;
+
+    margin: 0;
+
+    color: rgba(255, 255, 255, 0.88);
+
+    font-size: 12px;
+
+    line-height: 1.65;
+
+    overflow-wrap: break-word;
+}
+
+
+/* =========================================================
+   CTA DROITE
+========================================================= */
+
+.service-final-cta-action {
+    min-height: 230px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 9px;
+
+    padding: 30px;
+
+    background: #EC5401;
+
+    text-align: center;
+}
+
+.cta-action-icon {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 2px;
+
+    border:
+        2px solid rgba(255, 255, 255, 0.8);
+
+    border-radius: 50%;
+
+    font-size: 18px;
+}
+
+.service-final-cta-action strong {
+    color: #ffffff;
+
+    font-size: 14px;
+
+    font-weight: 700;
+}
+
+.service-final-cta-action a {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-top: 5px;
+
+    padding: 10px 17px;
+
+    border-radius: 5px;
+
+    background: #ffffff;
+
+    color: #EC5401;
+
+    text-decoration: none;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    transition: all 0.3s ease;
+}
+
+.service-final-cta-action a:hover {
+    background: #00788D;
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   TABLETTE
+========================================================= */
+
+@media (max-width: 1050px) {
+
+    .service-detail-hero {
+        grid-template-columns: 55% 45%;
+    }
+
+    .service-detail-hero-inner {
+        padding-left: 7%;
+        padding-right: 35px;
+    }
+
+    .service-detail-grid {
+        grid-template-columns:
+            minmax(0, 1fr)
+            300px;
+
+        gap: 45px;
+    }
+
+    .related-services-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .service-final-cta-inner {
+        grid-template-columns:
+            80px minmax(0, 1fr)
+            290px;
+    }
+
+}
+
+
+/* =========================================================
+   TABLETTE PETITE
+========================================================= */
+
+@media (max-width: 800px) {
+
+    .service-detail-hero {
+        grid-template-columns: 1fr;
+    }
+
+    .service-detail-hero-content {
+        min-height: auto;
+    }
+
+    .service-detail-hero-inner {
+        width: 90%;
+
+        margin: 0 auto;
+
+        padding:
+            115px 0 65px;
+    }
+
+    .service-detail-hero-image {
+        min-height: 360px;
+        height: 360px;
+    }
+
+    .service-detail-grid {
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+    }
+
+    .service-highlights {
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+    }
+
+    .service-highlight {
+        padding: 0 0 20px;
+
+        border-right: none;
+
+        border-bottom:
+            1px solid rgba(0, 120, 141, 0.16);
+    }
+
+    .service-highlight:last-child {
+        padding-bottom: 0;
+
+        border-bottom: none;
+    }
+
+    .service-final-cta-inner {
+        grid-template-columns: 1fr;
+
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+    .service-final-cta-icon {
+        margin-bottom: 25px;
+    }
+
+    .service-final-cta-text {
+        padding: 0;
+
+        margin-bottom: 30px;
+    }
+
+    .service-final-cta-action {
+        min-height: 200px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .service-detail-container {
+        width: 90%;
+    }
+
+    .service-detail-hero-inner {
+        width: 90%;
+
+        padding-top: 105px;
+    }
+
+    .service-detail-hero h1 {
+        font-size: 36px;
+
+        line-height: 1.12;
+
+        letter-spacing: -0.7px;
+    }
+
+    .service-detail-hero p {
+        font-size: 13px;
+    }
+
+    .service-detail-hero-image {
+        height: 290px;
+        min-height: 290px;
+    }
+
+    .service-detail-main {
+        padding: 65px 0 75px;
+    }
+
+    .service-detail-content h2 {
+        font-size: 30px;
+    }
+
+    .service-description {
+        font-size: 14px;
+
+        line-height: 1.8;
+    }
+
+    .service-info-card {
+        padding: 24px;
+    }
+
+    .service-sidebar-image {
+        height: 210px;
+    }
+
+    .related-services-section {
+        padding: 65px 0 75px;
+    }
+
+    .related-services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .related-service-image {
+        height: 190px;
+    }
+
+    .service-final-cta-inner {
+        width: 90%;
+    }
+
+    .service-final-cta-text h2 {
+        font-size: 29px;
+    }
+
+}
+
+
+/* =========================================================
+   PETIT MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+    .service-detail-hero h1 {
+        font-size: 32px;
+    }
+
+    .service-detail-hero-inner {
+        padding-top: 100px;
+        padding-bottom: 55px;
+    }
+
+    .service-quote {
+        padding: 22px;
+    }
+
+    .quote-content p {
+        font-size: 15px;
+    }
+
+}
+
+
+/* =========================================================
+   COM'UNITY — FAQ
+   ========================================================= */
+
+   :root {
+    --faq-blue: #00788D;
+    --faq-orange: #EC5401;
+    --faq-dark: #14242A;
+    --faq-light: #F5FAFA;
+    --faq-border: rgba(0, 120, 141, 0.12);
+    --faq-gray: #667477;
+    --faq-white: #FFFFFF;
+}
+
+
+/* =========================================================
+   PAGE
+   ========================================================= */
+
+.faq-page {
+    width: 100%;
+    overflow: hidden;
+    background: var(--faq-white);
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.faq-hero {
+    position: relative;
+    display: grid;
+    grid-template-columns: 54% 46%;
+    min-height: 540px;
+    margin-top: 105px;
+    overflow: hidden;
+    background: var(--faq-blue);
+}
+
+
+/* =========================================================
+   HERO — GAUCHE
+   ========================================================= */
+
+.faq-hero-content {
+    position: relative;
+    z-index: 3;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 70px 9% 70px 8%;
+
+    color: var(--faq-white);
+
+    background: var(--faq-blue);
+}
+
+
+/* formes décoratives */
+
+.faq-hero-content::before {
+    content: "";
+    position: absolute;
+
+    width: 300px;
+    height: 300px;
+
+    top: -140px;
+    left: -100px;
+
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 50%;
+}
+
+.faq-hero-content::after {
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    right: -80px;
+    bottom: -80px;
+
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 50%;
+}
+
+
+/* =========================================================
+   RETOUR CONTACT
+   ========================================================= */
+
+.faq-back-link {
+    position: relative;
+    z-index: 2;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    width: fit-content;
+
+    margin-bottom: 38px;
+
+    color: rgba(255,255,255,0.82);
+
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.faq-back-link i {
+    font-size: 13px;
+}
+
+.faq-back-link:hover {
+    color: var(--faq-white);
+    transform: translateX(-4px);
+}
+
+
+/* =========================================================
+   LABEL FAQ
+   ========================================================= */
+
+.faq-hero-label {
+    position: relative;
+    z-index: 2;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+
+    width: fit-content;
+
+    margin-bottom: 18px;
+
+    color: var(--faq-orange);
+
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+}
+
+.faq-hero-label i {
+    font-size: 17px;
+}
+
+
+/* =========================================================
+   TITRE HERO
+   ========================================================= */
+
+.faq-hero h1 {
+    position: relative;
+    z-index: 2;
+
+    max-width: 650px;
+
+    margin: 0;
+
+    color: var(--faq-white);
+
+    font-family: "Montserrat", sans-serif;
+    font-size: clamp(42px, 5vw, 68px);
+    font-weight: 800;
+    line-height: 1.08;
+    letter-spacing: -1.5px;
+}
+
+.faq-hero h1 span {
+    display: block;
+}
+
+
+/* =========================================================
+   LIGNE ORANGE
+   ========================================================= */
+
+.faq-hero-line {
+    position: relative;
+    z-index: 2;
+
+    width: 70px;
+    height: 4px;
+
+    margin: 25px 0 25px;
+
+    background: var(--faq-orange);
+}
+
+
+/* =========================================================
+   TEXTE HERO
+   ========================================================= */
+
+.faq-hero-content > p {
+    position: relative;
+    z-index: 2;
+
+    max-width: 610px;
+
+    margin: 0;
+
+    color: rgba(255,255,255,0.88);
+
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   HERO — IMAGE
+   ========================================================= */
+
+.faq-hero-image {
+    position: relative;
+    min-height: 540px;
+    overflow: hidden;
+    background: #DCECEF;
+}
+
+.faq-hero-image img {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    display: block;
+}
+
+
+/* voile léger */
+
+.faq-hero-image-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 120, 141, 0.10),
+            transparent 35%
+        );
+}
+
+
+/* séparation diagonale */
+
+.faq-hero-image::before {
+    content: "";
+
+    position: absolute;
+
+    z-index: 2;
+
+    top: -5%;
+    left: -80px;
+
+    width: 160px;
+    height: 110%;
+
+    background: var(--faq-blue);
+
+    transform: skewX(-8deg);
+}
+
+
+/* =========================================================
+   SECTION PRINCIPALE
+   ========================================================= */
+
+.faq-main {
+    padding: 90px 0 100px;
+
+    background: var(--faq-white);
+}
+
+.faq-container {
+    width: min(1240px, 92%);
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   LAYOUT
+   ========================================================= */
+
+.faq-layout {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        340px;
+
+    gap: 70px;
+
+    align-items: start;
+}
+
+
+/* =========================================================
+   TITRE SECTION FAQ
+   ========================================================= */
+
+.faq-section-heading {
+    margin-bottom: 38px;
+}
+
+.faq-section-label {
+    position: relative;
+
+    display: inline-block;
+
+    margin-bottom: 15px;
+
+    color: var(--faq-orange);
+
+    font-size: 13px;
+    font-weight: 800;
+
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+}
+
+.faq-section-label::after {
+    content: "";
+
+    display: block;
+
+    width: 42px;
+    height: 3px;
+
+    margin-top: 8px;
+
+    background: var(--faq-orange);
+}
+
+.faq-section-heading h2 {
+    margin: 0 0 17px;
+
+    color: var(--faq-blue);
+
+    font-family: "Montserrat", sans-serif;
+    font-size: clamp(32px, 4vw, 48px);
+    font-weight: 800;
+
+    line-height: 1.15;
+}
+
+.faq-section-heading p {
+    max-width: 750px;
+
+    margin: 0;
+
+    color: var(--faq-gray);
+
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   ACCORDÉON
+   ========================================================= */
+
+.faq-accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+}
+
+
+/* ITEM */
+
+.faq-item {
+    overflow: hidden;
+
+    border: 1px solid var(--faq-border);
+    border-radius: 12px;
+
+    background: var(--faq-white);
+
+    box-shadow:
+        0 7px 25px rgba(0, 60, 70, 0.05);
+
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.faq-item:hover {
+    border-color: rgba(0, 120, 141, 0.25);
+}
+
+.faq-item.open {
+    border-color: rgba(236, 84, 1, 0.25);
+
+    box-shadow:
+        0 12px 30px rgba(0, 60, 70, 0.08);
+}
+
+
+/* QUESTION */
+
+.faq-question {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+
+    gap: 17px;
+
+    padding: 19px 22px;
+
+    border: 0;
+
+    background: #FBFDFD;
+
+    color: var(--faq-blue);
+
+    font-family: "Montserrat", sans-serif;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition:
+        background 0.25s ease;
+}
+
+.faq-item.open .faq-question {
+    background: #F3FAFA;
+}
+
+
+/* NUMÉRO */
+
+.faq-number {
+    width: 37px;
+    height: 37px;
+
+    flex: 0 0 37px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: var(--faq-orange);
+
+    color: var(--faq-white);
+
+    font-size: 14px;
+    font-weight: 800;
+}
+
+
+/* QUESTION TEXTE */
+
+.faq-question-text {
+    flex: 1;
+
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.45;
+}
+
+
+/* FLÈCHE */
+
+.faq-arrow {
+    width: 34px;
+    height: 34px;
+
+    flex: 0 0 34px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: var(--faq-blue);
+
+    border-radius: 50%;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease;
+}
+
+.faq-item.open .faq-arrow {
+    transform: rotate(180deg);
+
+    background: rgba(236,84,1,0.10);
+
+    color: var(--faq-orange);
+}
+
+
+/* =========================================================
+   RÉPONSE
+   ========================================================= */
+
+.faq-answer {
+    max-height: 0;
+
+    overflow: hidden;
+
+    padding: 0 76px;
+
+    opacity: 0;
+
+    background: #F8FCFC;
+
+    transition:
+        max-height 0.4s ease,
+        padding 0.4s ease,
+        opacity 0.3s ease;
+}
+
+.faq-item.open .faq-answer {
+    max-height: 600px;
+
+    padding: 3px 76px 25px;
+
+    opacity: 1;
+}
+
+.faq-answer p {
+    margin: 0 0 14px;
+
+    color: #5F6F73;
+
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.faq-answer p:last-child {
+    margin-bottom: 0;
+}
+
+.faq-answer ul {
+    margin: 10px 0 18px;
+    padding-left: 20px;
+}
+
+.faq-answer li {
+    margin-bottom: 8px;
+
+    color: #5F6F73;
+
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.faq-answer li::marker {
+    color: var(--faq-orange);
+}
+
+
+/* =========================================================
+   SIDEBAR
+   ========================================================= */
+
+.faq-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+
+/* =========================================================
+   CARTE BESOIN D'AIDE
+   ========================================================= */
+
+.faq-help-card {
+    padding: 34px 30px;
+
+    border-radius: 15px;
+
+    background: #EEF8F8;
+
+    border: 1px solid rgba(0,120,141,0.08);
+}
+
+
+/* ICÔNE */
+
+.faq-help-icon {
+    width: 52px;
+    height: 52px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 20px;
+
+    border-radius: 50%;
+
+    background: var(--faq-blue);
+
+    color: var(--faq-white);
+
+    font-size: 19px;
+}
+
+
+/* LABEL */
+
+.faq-help-label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: var(--faq-orange);
+
+    font-size: 12px;
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+}
+
+
+/* TITRE */
+
+.faq-help-card h3 {
+    margin: 0 0 15px;
+
+    color: var(--faq-blue);
+
+    font-size: 27px;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.faq-help-card h3 span {
+    display: block;
+}
+
+
+/* TEXTE */
+
+.faq-help-card > p {
+    margin: 0 0 25px;
+
+    color: var(--faq-gray);
+
+    font-size: 13px;
+    line-height: 1.75;
+}
+
+
+/* CONTACT ITEM */
+
+.faq-contact-item {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 13px;
+
+    padding: 17px 0;
+
+    border-top: 1px solid rgba(0,120,141,0.10);
+}
+
+.faq-contact-icon {
+    width: 34px;
+    height: 34px;
+
+    flex: 0 0 34px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: rgba(0,120,141,0.10);
+
+    color: var(--faq-blue);
+
+    font-size: 12px;
+}
+
+.faq-contact-item strong {
+    display: block;
+
+    margin-bottom: 3px;
+
+    color: var(--faq-dark);
+
+    font-size: 13px;
+    font-weight: 700;
+
+    word-break: break-word;
+}
+
+.faq-contact-item span {
+    display: block;
+
+    color: #829093;
+
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   AUTRES INFORMATIONS
+   ========================================================= */
+
+.faq-other-card {
+    padding: 27px 25px;
+
+    border-radius: 15px;
+
+    background: #F5FAFA;
+
+    border: 1px solid rgba(0,120,141,0.08);
+}
+
+.faq-other-heading {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 19px;
+}
+
+.faq-other-icon {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background: rgba(236,84,1,0.10);
+
+    color: var(--faq-orange);
+
+    font-size: 14px;
+}
+
+.faq-other-heading span {
+    color: var(--faq-orange);
+
+    font-size: 12px;
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+
+.faq-other-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 13px 0;
+
+    border-top: 1px solid rgba(0,120,141,0.09);
+
+    color: var(--faq-blue);
+
+    font-size: 13px;
+    font-weight: 600;
+
+    transition:
+        color 0.25s ease,
+        padding-left 0.25s ease;
+}
+
+.faq-other-link:hover {
+    color: var(--faq-orange);
+    padding-left: 5px;
+}
+
+.faq-other-link i {
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   CTA
+   ========================================================= */
+
+.faq-cta {
+    display: grid;
+
+    grid-template-columns: 1fr 360px;
+
+    min-height: 240px;
+
+    background: var(--faq-blue);
+}
+
+
+/* PARTIE GAUCHE */
+
+.faq-cta-main {
+    display: flex;
+    align-items: center;
+
+    gap: 27px;
+
+    padding: 55px max(6vw, 50px);
+}
+
+.faq-cta-icon {
+    width: 68px;
+    height: 68px;
+
+    flex: 0 0 68px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(255,255,255,0.25);
+
+    border-radius: 50%;
+
+    color: var(--faq-white);
+
+    font-size: 23px;
+}
+
+.faq-cta-content > span {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: var(--faq-orange);
+
+    font-size: 12px;
+    font-weight: 800;
+
+    letter-spacing: 1.7px;
+}
+
+.faq-cta-content h2 {
+    margin: 0 0 10px;
+
+    color: var(--faq-white);
+
+    font-size: clamp(29px, 3.2vw, 43px);
+    font-weight: 800;
+
+    line-height: 1.15;
+}
+
+.faq-cta-content p {
+    max-width: 650px;
+
+    margin: 0;
+
+    color: rgba(255,255,255,0.80);
+
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+
+/* PARTIE ORANGE */
+
+.faq-cta-action {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+
+    padding: 45px 50px;
+
+    background: var(--faq-orange);
+
+    overflow: hidden;
+}
+
+.faq-cta-action::before {
+    content: "";
+
+    position: absolute;
+
+    top: -50px;
+    left: -70px;
+
+    width: 150px;
+    height: 150px;
+
+    border: 1px solid rgba(255,255,255,0.15);
+
+    border-radius: 50%;
+}
+
+.faq-cta-action-icon {
+    margin-bottom: 9px;
+
+    color: var(--faq-white);
+
+    font-size: 24px;
+}
+
+.faq-cta-action strong {
+    margin-bottom: 17px;
+
+    color: var(--faq-white);
+
+    font-size: 20px;
+    font-weight: 700;
+}
+
+
+.faq-cta-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 11px;
+
+    padding: 13px 20px;
+
+    border-radius: 8px;
+
+    background: var(--faq-white);
+
+    color: var(--faq-orange);
+
+    font-size: 13px;
+    font-weight: 700;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.faq-cta-button:hover {
+    color: var(--faq-orange);
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,0.14);
+}
+
+
+/* =========================================================
+   RESPONSIVE — TABLETTE
+   ========================================================= */
+
+@media (max-width: 1050px) {
+
+    .faq-hero {
+        grid-template-columns: 52% 48%;
+    }
+
+    .faq-hero-content {
+        padding-left: 7%;
+        padding-right: 7%;
+    }
+
+    .faq-layout {
+        grid-template-columns: minmax(0, 1fr) 300px;
+        gap: 40px;
+    }
+
+    .faq-cta {
+        grid-template-columns: 1fr 310px;
+    }
+
+    .faq-cta-main {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+
+    .faq-cta-action {
+        padding-left: 35px;
+        padding-right: 35px;
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE — MOBILE
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+    .faq-hero {
+        display: block;
+
+        margin-top: 90px;
+    }
+
+    .faq-hero-content {
+        min-height: auto;
+
+        padding:
+            55px 7%
+            60px;
+    }
+
+    .faq-hero-image {
+        min-height: 360px;
+    }
+
+    .faq-hero-image::before {
+        display: none;
+    }
+
+    .faq-hero h1 {
+        font-size: clamp(38px, 9vw, 54px);
+    }
+
+    .faq-layout {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .faq-sidebar {
+        width: 100%;
+    }
+
+    .faq-cta {
+        grid-template-columns: 1fr;
+    }
+
+    .faq-cta-action {
+        min-height: 230px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .faq-main {
+        padding-top: 65px;
+        padding-bottom: 70px;
+    }
+
+    .faq-container {
+        width: 90%;
+    }
+
+    .faq-section-heading h2 {
+        font-size: 32px;
+    }
+
+    .faq-question {
+        gap: 11px;
+
+        padding: 16px;
+    }
+
+    .faq-number {
+        width: 34px;
+        height: 34px;
+
+        flex-basis: 34px;
+
+        font-size: 12px;
+    }
+
+    .faq-question-text {
+        font-size: 13px;
+    }
+
+    .faq-arrow {
+        width: 30px;
+        height: 30px;
+
+        flex-basis: 30px;
+
+        font-size: 11px;
+    }
+
+    .faq-answer {
+        padding-left: 61px;
+        padding-right: 20px;
+    }
+
+    .faq-item.open .faq-answer {
+        padding-left: 61px;
+        padding-right: 20px;
+    }
+
+    .faq-help-card {
+        padding: 28px 23px;
+    }
+
+    .faq-cta-main {
+        flex-direction: column;
+        align-items: flex-start;
+
+        padding: 45px 7%;
+
+        gap: 20px;
+    }
+
+    .faq-cta-action {
+        padding: 40px 7%;
+    }
+
+}
+
+
+/* =========================================================
+   PETITS ÉCRANS
+   ========================================================= */
+
+@media (max-width: 400px) {
+
+    .faq-hero-content {
+        padding-top: 45px;
+        padding-bottom: 50px;
+    }
+
+    .faq-back-link {
+        font-size: 12px;
+    }
+
+    .faq-hero-label {
+        font-size: 12px;
+    }
+
+    .faq-hero h1 {
+        font-size: 36px;
+    }
+
+    .faq-hero-content > p {
+        font-size: 14px;
+    }
+
+    .faq-answer {
+        padding-left: 55px;
+    }
+
+    .faq-item.open .faq-answer {
+        padding-left: 55px;
+    }
+
+}

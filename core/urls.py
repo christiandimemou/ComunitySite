@@ -32,6 +32,12 @@ urlpatterns = [
     ),
 
     path(
+    "services/<slug:slug>/", 
+    views.service_detail, 
+    name="service_detail"
+    ),
+
+    path(
     "galerie/",
     views.gallery,
     name="gallery"
@@ -47,6 +53,12 @@ urlpatterns = [
     "contact/",
     views.contact,
     name="contact"
+    ),
+
+    path(
+    "faq/", 
+    views.faq, 
+    name="faq"
     ),
 
     path(

@@ -1,0 +1,488 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}{{ service.title }} | Com’Unity{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/service_detail.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="service-detail-page">
+
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
+    <section class="service-detail-hero">
+
+        <div class="service-detail-hero-content">
+
+            <div class="service-detail-hero-inner">
+
+                <a href="{% url 'services' %}" class="service-back-link">
+                    <i class="fas fa-arrow-left"></i>
+                    Retour aux services
+                </a>
+
+                <div class="service-detail-icon">
+                    <i class="fas {{ service.icon }}"></i>
+                </div>
+
+                <span class="service-detail-label">
+                    SERVICE COM’UNITY
+                </span>
+
+                <h1>
+                    {{ service.title }}
+                </h1>
+
+                <div class="service-title-line"></div>
+
+                <p>
+                    {{ service.short_description }}
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="service-detail-hero-image">
+
+            {% if service.image %}
+                <img
+                    src="{{ service.image.url }}"
+                    alt="{{ service.title }}"
+                >
+            {% endif %}
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         CONTENU PRINCIPAL
+    ====================================================== -->
+    <section class="service-detail-main">
+
+        <div class="service-detail-container">
+
+            <div class="service-detail-grid">
+
+                <!-- =================================================
+                     CONTENU GAUCHE
+                ================================================== -->
+                <article class="service-detail-content">
+
+                    <span class="service-section-label">
+                        À PROPOS DU SERVICE
+                    </span>
+
+                    <h2>
+                        Un accompagnement sur mesure
+                        pour vos projets
+                    </h2>
+
+
+                    <div class="service-description">
+                        {{ service.description|linebreaks }}
+                    </div>
+
+
+                    <!-- POINTS FORTS -->
+                    <div class="service-highlights">
+
+                        <div class="service-highlight">
+
+                            <div class="highlight-icon">
+                                <i class="fas fa-laptop-code"></i>
+                            </div>
+
+                            <h3>
+                                Accompagnement personnalisé
+                            </h3>
+
+                            <p>
+                                Des solutions adaptées
+                                à vos objectifs.
+                            </p>
+
+                        </div>
+
+
+                        <div class="service-highlight">
+
+                            <div class="highlight-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+
+                            <h3>
+                                Expertise et réseau
+                            </h3>
+
+                            <p>
+                                Une équipe engagée
+                                à vos côtés.
+                            </p>
+
+                        </div>
+
+
+                        <div class="service-highlight">
+
+                            <div class="highlight-icon">
+                                <i class="fas fa-leaf"></i>
+                            </div>
+
+                            <h3>
+                                Impact durable
+                            </h3>
+
+                            <p>
+                                Des projets au service
+                                des communautés.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- CITATION -->
+                    <div class="service-quote">
+
+                        <div class="quote-mark">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+
+                        <div class="quote-content">
+
+                            <p>
+                                Ensemble, transformons vos idées
+                                en actions durables.
+                            </p>
+
+                            <span>
+                                Com’Unity
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- =================================================
+                     SIDEBAR DROITE
+                ================================================== -->
+                <aside class="service-detail-sidebar">
+
+                    <div class="service-info-card">
+
+                        <span class="service-info-label">
+                            CE SERVICE COMPREND
+                        </span>
+
+
+                        {% if service.intervention_list %}
+
+                        <div class="service-info-list">
+
+                            {% for intervention in service.intervention_list %}
+
+                            <div class="service-info-item">
+
+                                <div class="service-info-icon">
+
+                                    {% if forloop.counter == 1 %}
+                                        <i class="fas fa-handshake"></i>
+                                    {% elif forloop.counter == 2 %}
+                                        <i class="fas fa-users"></i>
+                                    {% elif forloop.counter == 3 %}
+                                        <i class="fas fa-seedling"></i>
+                                    {% elif forloop.counter == 4 %}
+                                        <i class="fas fa-lightbulb"></i>
+                                    {% else %}
+                                        <i class="fas fa-circle-check"></i>
+                                    {% endif %}
+
+                                </div>
+
+                                <div class="service-info-text">
+
+                                    <strong>
+                                        {{ intervention }}
+                                    </strong>
+
+                                    <span>
+                                        Une intervention adaptée
+                                        à vos besoins.
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                            {% endfor %}
+
+                        </div>
+
+                        {% else %}
+
+                        <div class="service-info-list">
+
+                            <div class="service-info-item">
+
+                                <div class="service-info-icon">
+                                    <i class="fas fa-handshake"></i>
+                                </div>
+
+                                <div class="service-info-text">
+
+                                    <strong>
+                                        Accompagnement
+                                    </strong>
+
+                                    <span>
+                                        Un accompagnement adapté
+                                        à vos besoins.
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="service-info-item">
+
+                                <div class="service-info-icon">
+                                    <i class="fas fa-users"></i>
+                                </div>
+
+                                <div class="service-info-text">
+
+                                    <strong>
+                                        Approche participative
+                                    </strong>
+
+                                    <span>
+                                        Une démarche centrée sur
+                                        les acteurs et les communautés.
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="service-info-item">
+
+                                <div class="service-info-icon">
+                                    <i class="fas fa-seedling"></i>
+                                </div>
+
+                                <div class="service-info-text">
+
+                                    <strong>
+                                        Impact durable
+                                    </strong>
+
+                                    <span>
+                                        Des solutions pensées pour
+                                        produire un impact concret.
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        {% endif %}
+
+                    </div>
+
+
+                    <!-- IMAGE SIDEBAR -->
+                    {% if service.image %}
+
+                    <div class="service-sidebar-image">
+
+                        <img
+                            src="{{ service.image.url }}"
+                            alt="{{ service.title }}"
+                        >
+
+                    </div>
+
+                    {% endif %}
+
+
+                    <!-- CONTACT -->
+                    <a
+                        href="{% url 'contact' %}"
+                        class="service-contact-button"
+                    >
+                        <i class="fas fa-paper-plane"></i>
+                        Nous contacter
+                    </a>
+
+
+                    <!-- RETOUR SERVICES -->
+                    <a
+                        href="{% url 'services' %}"
+                        class="service-all-link"
+                    >
+                        <i class="fas fa-arrow-left"></i>
+                        Voir tous les services
+                    </a>
+
+                </aside>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         AUTRES SERVICES
+    ====================================================== -->
+    {% if related_services %}
+
+    <section class="related-services-section">
+
+        <div class="service-detail-container">
+
+            <div class="related-services-heading">
+
+                <span class="service-section-label">
+                    CONTINUER LA DÉCOUVERTE
+                </span>
+
+                <h2>
+                    Découvrez également nos autres services
+                </h2>
+
+            </div>
+
+
+            <div class="related-services-grid">
+
+                {% for related in related_services %}
+
+                <article class="related-service-card">
+
+                    {% if related.image %}
+
+                    <div class="related-service-image">
+
+                        <img
+                            src="{{ related.image.url }}"
+                            alt="{{ related.title }}"
+                        >
+
+                    </div>
+
+                    {% endif %}
+
+
+                    <div class="related-service-content">
+
+                        <div class="related-service-icon">
+                            <i class="fas {{ related.icon }}"></i>
+                        </div>
+
+                        <h3>
+                            {{ related.title }}
+                        </h3>
+
+                        <p>
+                            {{ related.short_description }}
+                        </p>
+
+                        <a
+                            href="{% url 'service_detail' related.slug %}"
+                            class="related-service-link"
+                        >
+                            En savoir plus
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+
+                    </div>
+
+                </article>
+
+                {% endfor %}
+
+            </div>
+
+        </div>
+
+    </section>
+
+    {% endif %}
+
+
+    <!-- =====================================================
+         CTA FINAL
+    ====================================================== -->
+    <section class="service-detail-final-cta">
+
+        <div class="service-final-cta-inner">
+
+            <div class="service-final-cta-icon">
+
+                <i class="fas fa-leaf"></i>
+
+            </div>
+
+
+            <div class="service-final-cta-text">
+
+                <span>
+                    VOUS AVEZ UN PROJET ?
+                </span>
+
+                <h2>
+                    Construisons ensemble
+                    des solutions à impact.
+                </h2>
+
+                <p>
+                    Com’Unity accompagne les acteurs et les initiatives
+                    qui contribuent à construire des territoires plus
+                    durables, inclusifs, solidaires et résilients.
+                </p>
+
+            </div>
+
+
+            <div class="service-final-cta-action">
+
+                <div class="cta-action-icon">
+                    <i class="fas fa-heart"></i>
+                </div>
+
+                <strong>
+                    Parlons de votre projet
+                </strong>
+
+                <a href="{% url 'contact' %}">
+                    Nous contacter
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</div>
+
+{% endblock %}

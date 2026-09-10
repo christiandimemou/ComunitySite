@@ -78,6 +78,29 @@ def services(request):
     )
 
 
+def service_detail(request, slug):
+    service = get_object_or_404(
+        Service,
+        slug=slug,
+        is_active=True
+    )
+
+    related_services = Service.objects.filter(
+        is_active=True
+    ).exclude(
+        id=service.id
+    ).order_by("order")[:4]
+
+    return render(
+        request,
+        "service_detail.html",
+        {
+            "service": service,
+            "related_services": related_services,
+        }
+    )
+
+
 def gallery(request):
 
     gallery_images = GalleryImage.objects.filter(
@@ -225,5 +248,19 @@ def project_detail(request, slug):
         {
             "project": project,
             "related_projects": related_projects,
+        }
+    )
+
+
+def faq(request):
+    faq_header = ContactHeaderImage.objects.filter(
+        is_active=True
+    ).first()
+
+    return render(
+        request,
+        "faq.html",
+        {
+            "faq_header": faq_header,
         }
     )
