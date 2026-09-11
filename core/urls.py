@@ -3,7 +3,7 @@ from django.urls import path
 from . import views
 
 from core.views import transition_ecologique, economie_sociale_solidaire, education_citoyenne, mobilisation_communautaire
-from core.views import accompagnement
+from core.views import accompagnement, mise_en_reseau, actualites, actualite_detail, rapports_annuels
 
 urlpatterns = [
 
@@ -97,6 +97,30 @@ urlpatterns = [
     "accompagnement/",
     accompagnement,
     name="accompagnement"
+    ),
+
+    path(
+    "mise-en-reseau/",
+    mise_en_reseau,
+    name="mise_en_reseau"
+    ),
+
+    path(
+    "actualites/",
+    actualites,
+    name="actualites"
+    ),
+
+    path(
+    "actualites/<slug:slug>/",
+    actualite_detail,
+    name="actualite_detail"
+    ),
+
+    path(
+    "rapports-annuels/",
+    rapports_annuels,
+    name="rapports_annuels"
     ),
 
     

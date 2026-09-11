@@ -1,0 +1,658 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+
+{% block title %}
+Mise en réseau | Com’Unity
+{% endblock %}
+
+
+{% block content %}
+
+
+<!-- =====================================================
+     HERO
+====================================================== -->
+
+<section class="reseau-hero">
+
+    {% if action_image %}
+
+        <img
+            src="{{ action_image.image.url }}"
+            alt="Mise en réseau - Com’Unity"
+            class="reseau-hero-image"
+        >
+
+    {% endif %}
+
+
+    <div class="reseau-hero-overlay"></div>
+
+
+    <div class="reseau-container reseau-hero-container">
+
+        <div class="reseau-hero-content">
+
+            <span class="reseau-label">
+                NOS ACTIONS
+            </span>
+
+            <h1>
+                Créer des liens,
+                <span>faire émerger des synergies.</span>
+            </h1>
+
+            <p>
+                Com’Unity met en relation les acteurs du changement
+                afin de favoriser les collaborations, le partage
+                d’expériences et l’émergence de nouvelles initiatives.
+            </p>
+
+            <a
+                href="{% url 'contact' %}"
+                class="reseau-hero-button"
+            >
+                Rejoindre le réseau
+
+                <i class="fas fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+
+        <div class="reseau-hero-symbol">
+
+            <div class="reseau-symbol-circle">
+
+                <i class="fas fa-network-wired"></i>
+
+            </div>
+
+            <span>
+                CONNECTER
+            </span>
+
+            <span>
+                COLLABORER
+            </span>
+
+            <span>
+                AGIR
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     INTRODUCTION
+====================================================== -->
+
+<section class="reseau-introduction">
+
+    <div class="reseau-container">
+
+        <div class="reseau-introduction-grid">
+
+
+            <div class="reseau-introduction-heading">
+
+                <span class="section-label">
+                    NOTRE APPROCHE
+                </span>
+
+                <h2>
+                    Parce que le changement
+                    se construit ensemble.
+                </h2>
+
+            </div>
+
+
+            <div class="reseau-introduction-text">
+
+                <p class="reseau-lead">
+                    Aucun acteur ne peut répondre seul aux défis
+                    auxquels nos territoires sont confrontés.
+                </p>
+
+                <p>
+                    Com’Unity contribue à créer des passerelles entre
+                    associations, organisations, institutions,
+                    entreprises, porteurs de projets, citoyens et
+                    autres acteurs engagés.
+                </p>
+
+                <p>
+                    Cette mise en relation permet de partager les
+                    connaissances, mutualiser les ressources et
+                    identifier des complémentarités susceptibles
+                    de renforcer l’impact des initiatives locales.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     ÉCOSYSTÈME
+====================================================== -->
+
+<section class="reseau-ecosystem">
+
+    <div class="reseau-container">
+
+        <div class="reseau-ecosystem-heading">
+
+            <span class="section-label">
+                UN ÉCOSYSTÈME D'ACTEURS
+            </span>
+
+            <h2>
+                Relier les énergies
+                autour d'objectifs communs.
+            </h2>
+
+            <p>
+                Notre démarche repose sur la complémentarité
+                des acteurs et la capacité de chacun à apporter
+                une expertise, une ressource ou une expérience
+                utile au collectif.
+            </p>
+
+        </div>
+
+
+        <div class="reseau-ecosystem-visual">
+
+
+            <!-- LIGNES -->
+
+            <div class="network-line network-line-one"></div>
+
+            <div class="network-line network-line-two"></div>
+
+            <div class="network-line network-line-three"></div>
+
+            <div class="network-line network-line-four"></div>
+
+
+            <!-- CENTRE -->
+
+            <div class="network-center">
+
+                <div class="network-center-icon">
+
+                    <i class="fas fa-handshake"></i>
+
+                </div>
+
+                <strong>
+                    Com’Unity
+                </strong>
+
+                <span>
+                    COORDINATION
+                </span>
+
+            </div>
+
+
+            <!-- ACTEURS -->
+
+            <div class="network-node network-node-one">
+
+                <i class="fas fa-users"></i>
+
+                <span>
+                    Communautés
+                </span>
+
+            </div>
+
+
+            <div class="network-node network-node-two">
+
+                <i class="fas fa-building-columns"></i>
+
+                <span>
+                    Institutions
+                </span>
+
+            </div>
+
+
+            <div class="network-node network-node-three">
+
+                <i class="fas fa-lightbulb"></i>
+
+                <span>
+                    Porteurs de projets
+                </span>
+
+            </div>
+
+
+            <div class="network-node network-node-four">
+
+                <i class="fas fa-people-group"></i>
+
+                <span>
+                    Associations
+                </span>
+
+            </div>
+
+
+            <div class="network-node network-node-five">
+
+                <i class="fas fa-briefcase"></i>
+
+                <span>
+                    Entreprises
+                </span>
+
+            </div>
+
+
+            <div class="network-node network-node-six">
+
+                <i class="fas fa-graduation-cap"></i>
+
+                <span>
+                    Experts
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CE QUE LE RÉSEAU PERMET
+====================================================== -->
+
+<section class="reseau-benefices">
+
+    <div class="reseau-container">
+
+        <div class="reseau-benefices-top">
+
+            <div>
+
+                <span class="section-label">
+                    LES FORCES DU RÉSEAU
+                </span>
+
+                <h2>
+                    Transformer les connexions
+                    en opportunités d'action.
+                </h2>
+
+            </div>
+
+            <p>
+                La mise en réseau permet de dépasser les
+                initiatives isolées et de construire des
+                réponses collectives plus cohérentes.
+            </p>
+
+        </div>
+
+
+        <div class="reseau-benefices-grid">
+
+
+            <!-- 01 -->
+
+            <article class="reseau-benefice">
+
+                <span class="reseau-benefice-number">
+                    01
+                </span>
+
+                <div class="reseau-benefice-icon">
+
+                    <i class="fas fa-share-nodes"></i>
+
+                </div>
+
+                <h3>
+                    Partager
+                </h3>
+
+                <p>
+                    Faciliter le partage de connaissances,
+                    d'expériences, d'outils et de bonnes
+                    pratiques entre les acteurs.
+                </p>
+
+            </article>
+
+
+
+            <!-- 02 -->
+
+            <article class="reseau-benefice">
+
+                <span class="reseau-benefice-number">
+                    02
+                </span>
+
+                <div class="reseau-benefice-icon">
+
+                    <i class="fas fa-puzzle-piece"></i>
+
+                </div>
+
+                <h3>
+                    Compléter
+                </h3>
+
+                <p>
+                    Identifier les compétences et ressources
+                    complémentaires afin de renforcer les
+                    projets et initiatives.
+                </p>
+
+            </article>
+
+
+
+            <!-- 03 -->
+
+            <article class="reseau-benefice">
+
+                <span class="reseau-benefice-number">
+                    03
+                </span>
+
+                <div class="reseau-benefice-icon">
+
+                    <i class="fas fa-arrows-to-circle"></i>
+
+                </div>
+
+                <h3>
+                    Mutualiser
+                </h3>
+
+                <p>
+                    Encourager la mutualisation des ressources
+                    et des moyens lorsque cela permet
+                    d'améliorer l'efficacité des actions.
+                </p>
+
+            </article>
+
+
+
+            <!-- 04 -->
+
+            <article class="reseau-benefice">
+
+                <span class="reseau-benefice-number">
+                    04
+                </span>
+
+                <div class="reseau-benefice-icon">
+
+                    <i class="fas fa-rocket"></i>
+
+                </div>
+
+                <h3>
+                    Amplifier
+                </h3>
+
+                <p>
+                    Donner davantage de visibilité aux
+                    initiatives et favoriser leur capacité
+                    à produire un impact durable.
+                </p>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     TYPES DE COLLABORATION
+====================================================== -->
+
+<section class="reseau-collaboration">
+
+    <div class="reseau-container">
+
+        <div class="reseau-collaboration-heading">
+
+            <span class="section-label section-label-light">
+                COLLABORER AVEC COM’UNITY
+            </span>
+
+            <h2>
+                Plusieurs façons
+                de construire ensemble.
+            </h2>
+
+        </div>
+
+
+        <div class="reseau-collaboration-list">
+
+
+            <div class="reseau-collaboration-item">
+
+                <span>
+                    01
+                </span>
+
+                <div>
+
+                    <h3>
+                        Partenariats
+                    </h3>
+
+                    <p>
+                        Construire des collaborations autour
+                        d'objectifs et d'actions communs.
+                    </p>
+
+                </div>
+
+                <i class="fas fa-arrow-right"></i>
+
+            </div>
+
+
+            <div class="reseau-collaboration-item">
+
+                <span>
+                    02
+                </span>
+
+                <div>
+
+                    <h3>
+                        Échanges de compétences
+                    </h3>
+
+                    <p>
+                        Mettre en commun les savoir-faire et
+                        expertises utiles aux initiatives.
+                    </p>
+
+                </div>
+
+                <i class="fas fa-arrow-right"></i>
+
+            </div>
+
+
+            <div class="reseau-collaboration-item">
+
+                <span>
+                    03
+                </span>
+
+                <div>
+
+                    <h3>
+                        Rencontres et événements
+                    </h3>
+
+                    <p>
+                        Créer des espaces de rencontre,
+                        de dialogue et de coopération.
+                    </p>
+
+                </div>
+
+                <i class="fas fa-arrow-right"></i>
+
+            </div>
+
+
+            <div class="reseau-collaboration-item">
+
+                <span>
+                    04
+                </span>
+
+                <div>
+
+                    <h3>
+                        Initiatives communes
+                    </h3>
+
+                    <p>
+                        Faire émerger et porter ensemble
+                        des projets répondant aux besoins
+                        des territoires.
+                    </p>
+
+                </div>
+
+                <i class="fas fa-arrow-right"></i>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     ENGAGEMENT
+====================================================== -->
+
+<section class="reseau-engagement">
+
+    <div class="reseau-container">
+
+        <div class="reseau-engagement-box">
+
+            <div class="reseau-engagement-icon">
+
+                <i class="fas fa-link"></i>
+
+            </div>
+
+
+            <div class="reseau-engagement-content">
+
+                <span class="section-label">
+                    NOTRE ENGAGEMENT
+                </span>
+
+                <h2>
+                    Faire du réseau un véritable
+                    levier de transformation.
+                </h2>
+
+                <p>
+                    Com’Unity souhaite contribuer à un écosystème
+                    dans lequel les acteurs du changement peuvent
+                    se rencontrer, apprendre les uns des autres,
+                    coopérer et faire émerger des solutions
+                    adaptées aux réalités locales.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CTA
+====================================================== -->
+
+<section class="reseau-cta">
+
+    <div class="reseau-container">
+
+        <div class="reseau-cta-content">
+
+            <span class="section-label">
+                REJOIGNEZ LA DYNAMIQUE
+            </span>
+
+            <h2>
+                Votre réseau peut aussi
+                contribuer au changement.
+            </h2>
+
+            <p>
+                Vous êtes une organisation, une institution,
+                une entreprise, une association ou un acteur
+                engagé ? Échangeons et construisons ensemble
+                de nouvelles synergies.
+            </p>
+
+            <a
+                href="{% url 'contact' %}"
+                class="reseau-cta-button"
+            >
+                Entrer en contact
+
+                <i class="fas fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+{% endblock %}

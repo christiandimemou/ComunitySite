@@ -4,6 +4,8 @@ from .models import HomeImage, AboutImage, TeamMember, Project, ProjectHeaderIma
 
 from .models import GalleryImage, VolunteerApplication, VolunteerHeaderImage, ContactHeaderImage, DonationHeaderImage
 
+from .models import Actualite, ActualiteHeaderImage, RapportAnnuel, RapportHeaderImage
+
 
 @admin.register(HomeImage)
 class HomeImageAdmin(admin.ModelAdmin):
@@ -270,3 +272,86 @@ class ActionPageImageAdmin(admin.ModelAdmin):
     search_fields = (
         "action",
     )
+
+@admin.register(Actualite)
+class ActualiteAdmin(admin.ModelAdmin):
+
+    list_display = (
+        "title",
+        "category",
+        "publication_date",
+        "is_featured",
+        "is_active",
+    )
+
+    list_filter = (
+        "category",
+        "is_featured",
+        "is_active",
+    )
+
+    search_fields = (
+        "title",
+        "short_description",
+        "content",
+    )
+
+    prepopulated_fields = {
+        "slug": ("title",)
+    }
+
+    ordering = (
+        "-publication_date",
+    )
+
+@admin.register(ActualiteHeaderImage)
+class ActualiteHeaderImageAdmin(admin.ModelAdmin):
+
+    list_display = (
+        "image",
+        "is_active",
+        "created_at",
+    )
+
+    list_filter = (
+        "is_active",
+    )
+
+
+@admin.register(RapportAnnuel)
+class RapportAnnuelAdmin(admin.ModelAdmin):
+
+    list_display = (
+        "title",
+        "year",
+        "is_active",
+        "created_at",
+    )
+
+    list_filter = (
+        "year",
+        "is_active",
+    )
+
+    search_fields = (
+        "title",
+        "description",
+    )
+
+    ordering = (
+        "-year",
+    )
+
+@admin.register(RapportHeaderImage)
+class RapportHeaderImageAdmin(admin.ModelAdmin):
+
+    list_display = (
+        "image",
+        "is_active",
+        "created_at",
+    )
+
+    list_filter = (
+        "is_active",
+    )
+

@@ -12,6 +12,8 @@ from .models import (
     ActionPageImage,
 )
 
+from .models import Actualite, ActualiteHeaderImage, RapportAnnuel, RapportHeaderImage
+
 def home(request):
 
     home_image = HomeImage.objects.filter(
@@ -346,6 +348,86 @@ def accompagnement(request):
         "accompagnement.html",
         {
             "action_image": action_image,
+        }
+    )
+
+def mise_en_reseau(request):
+
+    action_image = ActionPageImage.objects.filter(
+        action="mise_en_reseau",
+        is_active=True
+    ).first()
+
+    return render(
+        request,
+        "mise_en_reseau.html",
+        {
+            "action_image": action_image,
+        }
+    )
+
+def actualites(request):
+
+    actualites_list = Actualite.objects.filter(
+        is_active=True
+    )
+
+    featured_actualite = actualites_list.filter(
+        is_featured=True
+    ).first()
+
+    actualites_secondaires = actualites_list.exclude(
+        pk=featured_actualite.pk
+    ) if featured_actualite else actualites_list
+
+    actualite_header = ActualiteHeaderImage.objects.filter(
+        is_active=True
+    ).first()
+
+    return render(
+        request,
+        "actualites.html",
+        {
+            "actualites": actualites_list,
+            "featured_actualite": featured_actualite,
+            "actualites_secondaires": actualites_secondaires,
+            "actualite_header": actualite_header,
+        }
+    )
+
+
+def actualite_detail(request, slug):
+
+    actualite = get_object_or_404(
+        Actualite,
+        slug=slug,
+        is_active=True
+    )
+
+    return render(
+        request,
+        "actualite_detail.html",
+        {
+            "actualite": actualite,
+        }
+    )
+
+def rapports_annuels(request):
+
+    rapports = RapportAnnuel.objects.filter(
+        is_active=True
+    ).order_by("-year")
+
+    rapport_header = RapportHeaderImage.objects.filter(
+        is_active=True
+    ).first()
+
+    return render(
+        request,
+        "rapports_annuels.html",
+        {
+            "rapports": rapports,
+            "rapport_header": rapport_header,
         }
     )
 

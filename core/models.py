@@ -564,3 +564,179 @@ class ActionPageImage(models.Model):
 
     def __str__(self):
         return self.get_action_display()
+    
+
+class Actualite(models.Model):
+
+    CATEGORIES = [
+        ("association", "Vie de l'association"),
+        ("environnement", "Environnement"),
+        ("citoyennete", "Éducation citoyenne"),
+        ("ess", "Économie sociale et solidaire"),
+        ("evenement", "Événement"),
+        ("partenariat", "Partenariat"),
+    ]
+
+    title = models.CharField(
+        max_length=200,
+        verbose_name="Titre"
+    )
+
+    slug = models.SlugField(
+        unique=True,
+        verbose_name="Slug"
+    )
+
+    category = models.CharField(
+        max_length=30,
+        choices=CATEGORIES,
+        default="association",
+        verbose_name="Catégorie"
+    )
+
+    image = models.ImageField(
+        upload_to="actualites/",
+        verbose_name="Image"
+    )
+
+    short_description = models.TextField(
+        verbose_name="Résumé"
+    )
+
+    content = models.TextField(
+        verbose_name="Contenu de l'article"
+    )
+
+    author = models.CharField(
+        max_length=100,
+        blank=True,
+        verbose_name="Auteur"
+    )
+
+    publication_date = models.DateTimeField(
+        auto_now_add=True,
+        verbose_name="Date de publication"
+    )
+
+    is_featured = models.BooleanField(
+        default=False,
+        verbose_name="Mettre à la une"
+    )
+
+    is_active = models.BooleanField(
+        default=True,
+        verbose_name="Publié"
+    )
+
+    created_at = models.DateTimeField(
+        auto_now_add=True
+    )
+
+    updated_at = models.DateTimeField(
+        auto_now=True
+    )
+
+    class Meta:
+        ordering = ["-publication_date"]
+        verbose_name = "Actualité"
+        verbose_name_plural = "Actualités"
+
+    def __str__(self):
+        return self.title
+    
+
+class ActualiteHeaderImage(models.Model):
+
+    image = models.ImageField(
+        upload_to="actualites/header/",
+        verbose_name="Image d'en-tête"
+    )
+
+    is_active = models.BooleanField(
+        default=True,
+        verbose_name="Image active"
+    )
+
+    created_at = models.DateTimeField(
+        auto_now_add=True
+    )
+
+    def __str__(self):
+        return "Image d'en-tête - Actualités"
+
+    class Meta:
+        verbose_name = "Image d'en-tête Actualités"
+        verbose_name_plural = "Image d'en-tête Actualités"
+
+
+class RapportAnnuel(models.Model):
+
+    title = models.CharField(
+        max_length=200,
+        verbose_name="Titre du rapport"
+    )
+
+    year = models.PositiveIntegerField(
+        verbose_name="Année"
+    )
+
+    description = models.TextField(
+        verbose_name="Description"
+    )
+
+    cover = models.ImageField(
+        upload_to="rapports/couvertures/",
+        blank=True,
+        null=True,
+        verbose_name="Image de couverture"
+    )
+
+    pdf = models.FileField(
+        upload_to="rapports/pdf/",
+        verbose_name="Document PDF"
+    )
+
+    is_active = models.BooleanField(
+        default=True,
+        verbose_name="Afficher sur le site"
+    )
+
+    created_at = models.DateTimeField(
+        auto_now_add=True
+    )
+
+    updated_at = models.DateTimeField(
+        auto_now=True
+    )
+
+    class Meta:
+        ordering = ["-year"]
+        verbose_name = "Rapport annuel"
+        verbose_name_plural = "Rapports annuels"
+
+    def __str__(self):
+        return f"{self.title} - {self.year}"
+    
+
+class RapportHeaderImage(models.Model):
+
+    image = models.ImageField(
+        upload_to="rapports/header/",
+        verbose_name="Image d'en-tête"
+    )
+
+    is_active = models.BooleanField(
+        default=True,
+        verbose_name="Image active"
+    )
+
+    created_at = models.DateTimeField(
+        auto_now_add=True
+    )
+
+    def __str__(self):
+        return "Image d'en-tête - Rapports annuels"
+
+    class Meta:
+        verbose_name = "Image d'en-tête des rapports"
+        verbose_name_plural = "Image d'en-tête des rapports"

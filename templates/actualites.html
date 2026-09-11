@@ -1,0 +1,353 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+
+{% block title %}
+Actualités | Com’Unity
+{% endblock %}
+
+
+{% block content %}
+
+
+<!-- =====================================================
+     EN-TÊTE
+====================================================== -->
+
+<section class="news-header">
+
+    {% if actualite_header %}
+
+        <img
+            src="{{ actualite_header.image.url }}"
+            alt="Actualités - Com’Unity"
+            class="news-header-image"
+        >
+
+    {% endif %}
+
+    <div class="news-header-overlay"></div>
+
+    <div class="news-container">
+
+        <div class="news-header-content">
+
+            <span class="news-label">
+                ACTUALITÉS
+            </span>
+
+            <h1>
+                Les nouvelles qui
+                <span>font vivre Com’Unity.</span>
+            </h1>
+
+            <p>
+                Découvrez les initiatives, événements,
+                rencontres et actualités qui rythment
+                la vie de Com’Unity.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     À LA UNE
+====================================================== -->
+
+{% if featured_actualite %}
+
+<section class="news-featured">
+
+    <div class="news-container">
+
+        <div class="news-section-heading">
+
+            <span class="section-label">
+                À LA UNE
+            </span>
+
+            <h2>
+                Les actualités du moment.
+            </h2>
+
+        </div>
+
+
+        <article class="featured-news-card">
+
+            <div class="featured-news-image">
+
+                {% if featured_actualite.image %}
+
+                    <img
+                        src="{{ featured_actualite.image.url }}"
+                        alt="{{ featured_actualite.title }}"
+                    >
+
+                {% endif %}
+
+            </div>
+
+
+            <div class="featured-news-content">
+
+                <div class="news-meta">
+
+                    <span class="news-category">
+                        {{ featured_actualite.get_category_display }}
+                    </span>
+
+                    <span class="news-date">
+                        {{ featured_actualite.publication_date|date:"d F Y" }}
+                    </span>
+
+                </div>
+
+
+                <h3>
+                    {{ featured_actualite.title }}
+                </h3>
+
+
+                <p>
+                    {{ featured_actualite.short_description }}
+                </p>
+
+
+                <a
+                    href="{% url 'actualite_detail' featured_actualite.slug %}"
+                    class="news-button"
+                >
+                    Lire l'article
+
+                    <i class="fas fa-arrow-right"></i>
+
+                </a>
+
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+{% endif %}
+
+
+
+<!-- =====================================================
+     TOUTES LES ACTUALITÉS
+====================================================== -->
+
+<section class="news-list">
+
+    <div class="news-container">
+
+        <div class="news-list-heading">
+
+            <div>
+
+                <span class="section-label">
+                    NOS PUBLICATIONS
+                </span>
+
+                <h2>
+                    Toutes nos actualités.
+                </h2>
+
+            </div>
+
+            <p>
+                Retrouvez ici les dernières nouvelles,
+                initiatives et événements de Com’Unity.
+            </p>
+
+        </div>
+
+
+        <div class="news-grid">
+
+            {% for actualite in actualites_secondaires %}
+
+            <article class="news-card">
+
+
+                <div class="news-card-image">
+
+                    {% if actualite.image %}
+
+                        <img
+                            src="{{ actualite.image.url }}"
+                            alt="{{ actualite.title }}"
+                        >
+
+                    {% endif %}
+
+                    <span class="news-card-category">
+                        {{ actualite.get_category_display }}
+                    </span>
+
+                </div>
+
+
+                <div class="news-card-content">
+
+                    <div class="news-card-date">
+
+                        <i class="far fa-calendar"></i>
+
+                        {{ actualite.publication_date|date:"d F Y" }}
+
+                    </div>
+
+
+                    <h3>
+                        {{ actualite.title }}
+                    </h3>
+
+
+                    <p>
+                        {{ actualite.short_description }}
+                    </p>
+
+
+                    <a
+                        href="{% url 'actualite_detail' actualite.slug %}"
+                        class="news-read-more"
+                    >
+                        Lire la suite
+
+                        <i class="fas fa-arrow-right"></i>
+
+                    </a>
+
+                </div>
+
+            </article>
+
+            {% empty %}
+
+                {% if not featured_actualite %}
+
+                <div class="news-empty">
+
+                    <i class="far fa-newspaper"></i>
+
+                    <h3>
+                        Nos actualités arrivent bientôt.
+                    </h3>
+
+                    <p>
+                        Com’Unity partagera prochainement
+                        ici ses nouvelles, initiatives
+                        et événements.
+                    </p>
+
+                </div>
+
+                {% endif %}
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     SUIVEZ-NOUS
+====================================================== -->
+
+<section class="news-connect">
+
+    <div class="news-container">
+
+        <div class="news-connect-inner">
+
+            <div>
+
+                <span class="section-label section-label-light">
+                    RESTEZ CONNECTÉS
+                </span>
+
+                <h2>
+                    Ne manquez aucune
+                    de nos actualités.
+                </h2>
+
+                <p>
+                    Suivez Com’Unity et restez informés
+                    de nos projets, événements et actions
+                    sur le terrain.
+                </p>
+
+            </div>
+
+
+            <div class="news-connect-icon">
+
+                <i class="fas fa-bullhorn"></i>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CTA
+====================================================== -->
+
+<section class="news-cta">
+
+    <div class="news-container">
+
+        <div class="news-cta-content">
+
+            <span class="section-label">
+                PARTICIPEZ À LA DYNAMIQUE
+            </span>
+
+            <h2>
+                Une actualité à partager
+                avec nous ?
+            </h2>
+
+            <p>
+                Vous souhaitez nous faire découvrir une initiative,
+                proposer une collaboration ou simplement échanger
+                avec Com’Unity ?
+            </p>
+
+            <a
+                href="{% url 'contact' %}"
+                class="news-cta-button"
+            >
+                Nous contacter
+
+                <i class="fas fa-arrow-right"></i>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+{% endblock %}

@@ -1,0 +1,378 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+
+{% block title %}
+Rapports annuels | Com’Unity
+{% endblock %}
+
+
+{% block content %}
+
+
+<!-- =====================================================
+     EN-TÊTE
+====================================================== -->
+
+<section class="reports-header">
+
+    {% if rapport_header %}
+
+        <img
+            src="{{ rapport_header.image.url }}"
+            alt="Rapports annuels - Com’Unity"
+            class="reports-header-image"
+        >
+
+    {% endif %}
+
+    <div class="reports-header-overlay"></div>
+
+    <div class="reports-container">
+
+        <div class="reports-header-content">
+
+            <span class="reports-label">
+                RAPPORTS ANNUELS
+            </span>
+
+            <h1>
+                Comprendre notre action,
+                <span>mesurer notre impact.</span>
+            </h1>
+
+            <p>
+                Découvrez les rapports annuels de Com’Unity,
+                retraçant nos actions, nos résultats et les
+                avancées réalisées au service de nos territoires.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     INTRODUCTION
+====================================================== -->
+
+<section class="reports-introduction">
+
+    <div class="reports-container">
+
+        <div class="reports-introduction-grid">
+
+            <div class="reports-introduction-title">
+
+                <span class="section-label">
+                    NOTRE TRANSPARENCE
+                </span>
+
+                <h2>
+                    Rendre compte de
+                    notre engagement.
+                </h2>
+
+            </div>
+
+
+            <div class="reports-introduction-text">
+
+                <p>
+                    Chaque année, Com’Unity revient sur les actions
+                    menées, les projets réalisés et les résultats
+                    obtenus auprès des communautés.
+                </p>
+
+                <p>
+                    Nos rapports annuels permettent de mieux
+                    comprendre notre démarche, de suivre notre
+                    évolution et de partager avec nos partenaires,
+                    bénéficiaires et citoyens les résultats de
+                    notre engagement.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     RAPPORTS
+====================================================== -->
+
+<section class="reports-list">
+
+    <div class="reports-container">
+
+
+        <div class="reports-heading">
+
+            <div>
+
+                <span class="section-label">
+                    NOS PUBLICATIONS
+                </span>
+
+                <h2>
+                    Les rapports de Com’Unity.
+                </h2>
+
+            </div>
+
+            <p>
+                Consultez les rapports annuels présentant
+                les principales réalisations et évolutions
+                de l'association.
+            </p>
+
+        </div>
+
+
+
+        <div class="reports-grid">
+
+            {% for rapport in rapports %}
+
+            <article class="report-card">
+
+
+                <!-- COUVERTURE -->
+
+                <div class="report-cover">
+
+                    {% if rapport.cover %}
+
+                        <img
+                            src="{{ rapport.cover.url }}"
+                            alt="{{ rapport.title }}"
+                        >
+
+                    {% else %}
+
+                        <div class="report-cover-placeholder">
+
+                            <i class="fas fa-file-lines"></i>
+
+                            <span>
+                                RAPPORT
+                            </span>
+
+                        </div>
+
+                    {% endif %}
+
+
+                    <div class="report-year">
+
+                        {{ rapport.year }}
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- CONTENU -->
+
+                <div class="report-content">
+
+                    <span class="report-type">
+                        RAPPORT ANNUEL
+                    </span>
+
+                    <h3>
+                        {{ rapport.title }}
+                    </h3>
+
+                    <p>
+                        {{ rapport.description }}
+                    </p>
+
+
+                    <div class="report-actions">
+
+                        {% if rapport.pdf %}
+
+                            <a
+                                href="{{ rapport.pdf.url }}"
+                                target="_blank"
+                                class="report-view-button"
+                            >
+
+                                <i class="fas fa-eye"></i>
+
+                                Consulter
+
+                            </a>
+
+
+                            <a
+                                href="{{ rapport.pdf.url }}"
+                                download
+                                class="report-download-button"
+                                aria-label="Télécharger le rapport"
+                            >
+
+                                <i class="fas fa-download"></i>
+
+                            </a>
+
+                        {% endif %}
+
+                    </div>
+
+                </div>
+
+            </article>
+
+            {% empty %}
+
+            <div class="reports-empty">
+
+                <div class="reports-empty-icon">
+
+                    <i class="fas fa-file-circle-xmark"></i>
+
+                </div>
+
+                <h3>
+                    Nos rapports seront bientôt disponibles.
+                </h3>
+
+                <p>
+                    Com’Unity publiera prochainement ses rapports
+                    annuels afin de partager les résultats de ses
+                    actions et son évolution.
+                </p>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     TRANSPARENCE
+====================================================== -->
+
+<section class="reports-impact">
+
+    <div class="reports-container">
+
+        <div class="reports-impact-inner">
+
+
+            <div class="reports-impact-icon">
+
+                <i class="fas fa-chart-line"></i>
+
+            </div>
+
+
+            <div class="reports-impact-content">
+
+                <span class="section-label section-label-light">
+                    NOTRE DÉMARCHE
+                </span>
+
+                <h2>
+                    Des actions,
+                    des résultats,
+                    un impact mesurable.
+                </h2>
+
+                <p>
+                    Au-delà des activités réalisées, Com’Unity
+                    souhaite mesurer et valoriser les changements
+                    produits dans les territoires et auprès des
+                    communautés accompagnées.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CTA
+====================================================== -->
+
+<section class="reports-cta">
+
+    <div class="reports-container">
+
+        <div class="reports-cta-content">
+
+            <span class="section-label">
+                DÉCOUVREZ NOS ACTIONS
+            </span>
+
+            <h2>
+                Les rapports racontent
+                notre parcours.
+            </h2>
+
+            <p>
+                Découvrez maintenant les projets et initiatives
+                qui donnent vie à l'engagement de Com’Unity
+                sur le terrain.
+            </p>
+
+
+            <div class="reports-cta-buttons">
+
+                <a
+                    href="{% url 'projects' %}"
+                    class="reports-primary-button"
+                >
+
+                    Découvrir nos projets
+
+                    <i class="fas fa-arrow-right"></i>
+
+                </a>
+
+
+                <a
+                    href="{% url 'contact' %}"
+                    class="reports-secondary-button"
+                >
+
+                    Nous contacter
+
+                    <i class="fas fa-envelope"></i>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+{% endblock %}
