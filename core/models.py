@@ -523,3 +523,44 @@ class DonationHeaderImage(models.Model):
 
     def __str__(self):
         return "Image en-tête — Faire un don"
+
+
+class ActionPageImage(models.Model):
+
+    ACTION_CHOICES = [
+        ("transition", "Transition écologique"),
+        ("ess", "Économie sociale et solidaire"),
+        ("education", "Éducation citoyenne"),
+        ("mobilisation", "Mobilisation communautaire"),
+        ("accompagnement", "Accompagnement"),
+        ("reseau", "Mise en réseau"),
+    ]
+
+    action = models.CharField(
+        max_length=30,
+        choices=ACTION_CHOICES,
+        unique=True
+    )
+
+    image = models.ImageField(
+        upload_to="actions/"
+    )
+
+    is_active = models.BooleanField(
+        default=True
+    )
+
+    created_at = models.DateTimeField(
+        auto_now_add=True
+    )
+
+    updated_at = models.DateTimeField(
+        auto_now=True
+    )
+
+    class Meta:
+        verbose_name = "Image de page d'action"
+        verbose_name_plural = "Images des pages d'action"
+
+    def __str__(self):
+        return self.get_action_display()

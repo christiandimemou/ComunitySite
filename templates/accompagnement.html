@@ -1,0 +1,696 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+
+{% block title %}
+Accompagnement | Com’Unity
+{% endblock %}
+
+
+{% block content %}
+
+
+<!-- =====================================================
+     HERO
+====================================================== -->
+
+<section class="accompagnement-hero">
+
+    {% if action_image %}
+
+        <img
+            src="{{ action_image.image.url }}"
+            alt="Accompagnement - Com’Unity"
+            class="accompagnement-hero-image"
+        >
+
+    {% endif %}
+
+
+    <div class="accompagnement-hero-overlay"></div>
+
+
+    <div class="accompagnement-container accompagnement-hero-container">
+
+        <div class="accompagnement-hero-content">
+
+            <span class="accompagnement-label">
+                NOS ACTIONS
+            </span>
+
+            <h1>
+                Accompagner
+                <span>pour faire grandir.</span>
+            </h1>
+
+            <p>
+                Com’Unity accompagne les acteurs et les initiatives
+                locales afin de renforcer leurs capacités,
+                structurer leurs projets et favoriser leur autonomie.
+            </p>
+
+            <a
+                href="{% url 'contact' %}"
+                class="accompagnement-hero-button"
+            >
+                Parlons de votre projet
+                <i class="fas fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+
+        <div class="accompagnement-hero-number">
+
+            <strong>
+                05
+            </strong>
+
+            <span>
+                ACCOMPAGNEMENT
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     INTRODUCTION
+====================================================== -->
+
+<section class="accompagnement-intro">
+
+    <div class="accompagnement-container">
+
+        <div class="accompagnement-intro-grid">
+
+
+            <div class="accompagnement-intro-title">
+
+                <span class="section-label">
+                    NOTRE VISION
+                </span>
+
+                <h2>
+                    Donner aux initiatives
+                    les moyens de
+                    devenir durables.
+                </h2>
+
+            </div>
+
+
+            <div class="accompagnement-intro-description">
+
+                <p class="accompagnement-lead">
+                    Une bonne idée ne suffit pas toujours.
+                    Elle a besoin d’un environnement favorable,
+                    de compétences et d’un accompagnement adapté
+                    pour devenir une véritable solution.
+                </p>
+
+                <p>
+                    Com’Unity intervient aux côtés des porteurs
+                    d’initiatives, des organisations et des
+                    communautés pour les aider à transformer leurs
+                    ambitions en projets structurés et réalisables.
+                </p>
+
+                <p>
+                    Notre accompagnement repose sur une approche
+                    participative qui privilégie l’autonomie,
+                    la transmission des compétences et la recherche
+                    de solutions adaptées aux réalités locales.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PARCOURS D'ACCOMPAGNEMENT
+====================================================== -->
+
+<section class="accompagnement-path">
+
+    <div class="accompagnement-container">
+
+        <div class="accompagnement-path-heading">
+
+            <div>
+
+                <span class="section-label">
+                    NOTRE MÉTHODE
+                </span>
+
+                <h2>
+                    Un accompagnement
+                    construit autour
+                    de vos besoins.
+                </h2>
+
+            </div>
+
+            <p>
+                Chaque initiative possède ses propres réalités.
+                Notre démarche s’adapte donc au niveau de maturité,
+                aux objectifs et aux ressources disponibles.
+            </p>
+
+        </div>
+
+
+        <div class="accompagnement-path-list">
+
+
+            <!-- ÉTAPE 01 -->
+
+            <article class="accompagnement-step">
+
+                <div class="accompagnement-step-marker">
+
+                    <span>
+                        01
+                    </span>
+
+                </div>
+
+
+                <div class="accompagnement-step-content">
+
+                    <div class="accompagnement-step-icon">
+
+                        <i class="fas fa-magnifying-glass"></i>
+
+                    </div>
+
+                    <h3>
+                        Comprendre
+                    </h3>
+
+                    <p>
+                        Analyse du contexte, des besoins,
+                        des difficultés rencontrées et des
+                        objectifs poursuivis.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- ÉTAPE 02 -->
+
+            <article class="accompagnement-step">
+
+                <div class="accompagnement-step-marker">
+
+                    <span>
+                        02
+                    </span>
+
+                </div>
+
+
+                <div class="accompagnement-step-content">
+
+                    <div class="accompagnement-step-icon">
+
+                        <i class="fas fa-compass"></i>
+
+                    </div>
+
+                    <h3>
+                        Orienter
+                    </h3>
+
+                    <p>
+                        Identification des priorités et
+                        définition d’une trajectoire adaptée
+                        aux besoins de l’initiative.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- ÉTAPE 03 -->
+
+            <article class="accompagnement-step">
+
+                <div class="accompagnement-step-marker">
+
+                    <span>
+                        03
+                    </span>
+
+                </div>
+
+
+                <div class="accompagnement-step-content">
+
+                    <div class="accompagnement-step-icon">
+
+                        <i class="fas fa-screwdriver-wrench"></i>
+
+                    </div>
+
+                    <h3>
+                        Renforcer
+                    </h3>
+
+                    <p>
+                        Transmission d’outils, de méthodes et
+                        de compétences permettant de consolider
+                        les capacités d’action.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- ÉTAPE 04 -->
+
+            <article class="accompagnement-step">
+
+                <div class="accompagnement-step-marker">
+
+                    <span>
+                        04
+                    </span>
+
+                </div>
+
+
+                <div class="accompagnement-step-content">
+
+                    <div class="accompagnement-step-icon">
+
+                        <i class="fas fa-chart-line"></i>
+
+                    </div>
+
+                    <h3>
+                        Suivre
+                    </h3>
+
+                    <p>
+                        Suivi de l’évolution des actions et
+                        ajustement de l’accompagnement selon
+                        les résultats obtenus.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     DOMAINES D'ACCOMPAGNEMENT
+====================================================== -->
+
+<section class="accompagnement-domaines">
+
+    <div class="accompagnement-container">
+
+        <div class="accompagnement-domaines-header">
+
+            <span class="section-label">
+                NOS DOMAINES D'INTERVENTION
+            </span>
+
+            <h2>
+                Un accompagnement
+                au service des acteurs
+                du changement.
+            </h2>
+
+        </div>
+
+
+        <div class="accompagnement-domaines-grid">
+
+
+            <!-- PROJET -->
+
+            <article class="accompagnement-domain-card">
+
+                <div class="accompagnement-domain-number">
+                    01
+                </div>
+
+                <div class="accompagnement-domain-icon">
+                    <i class="fas fa-diagram-project"></i>
+                </div>
+
+                <h3>
+                    Structuration de projets
+                </h3>
+
+                <p>
+                    Appui à la clarification des objectifs,
+                    à la structuration des activités et à
+                    l’organisation des différentes étapes
+                    d’un projet.
+                </p>
+
+                <span class="accompagnement-domain-line"></span>
+
+            </article>
+
+
+
+            <!-- COMPÉTENCES -->
+
+            <article class="accompagnement-domain-card">
+
+                <div class="accompagnement-domain-number">
+                    02
+                </div>
+
+                <div class="accompagnement-domain-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+
+                <h3>
+                    Renforcement des capacités
+                </h3>
+
+                <p>
+                    Développement des compétences nécessaires
+                    pour permettre aux acteurs locaux de gagner
+                    en autonomie et en efficacité.
+                </p>
+
+                <span class="accompagnement-domain-line"></span>
+
+            </article>
+
+
+
+            <!-- ORGANISATION -->
+
+            <article class="accompagnement-domain-card">
+
+                <div class="accompagnement-domain-number">
+                    03
+                </div>
+
+                <div class="accompagnement-domain-icon">
+                    <i class="fas fa-sitemap"></i>
+                </div>
+
+                <h3>
+                    Appui organisationnel
+                </h3>
+
+                <p>
+                    Accompagnement des organisations dans
+                    l’amélioration de leur fonctionnement,
+                    de leur organisation et de leurs pratiques.
+                </p>
+
+                <span class="accompagnement-domain-line"></span>
+
+            </article>
+
+
+
+            <!-- INITIATIVES -->
+
+            <article class="accompagnement-domain-card">
+
+                <div class="accompagnement-domain-number">
+                    04
+                </div>
+
+                <div class="accompagnement-domain-icon">
+                    <i class="fas fa-seedling"></i>
+                </div>
+
+                <h3>
+                    Soutien aux initiatives locales
+                </h3>
+
+                <p>
+                    Valorisation et accompagnement d’initiatives
+                    qui contribuent positivement au développement
+                    des communautés et des territoires.
+                </p>
+
+                <span class="accompagnement-domain-line"></span>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CITATION / VISION
+====================================================== -->
+
+<section class="accompagnement-quote">
+
+    <div class="accompagnement-quote-shape"></div>
+
+    <div class="accompagnement-container">
+
+        <div class="accompagnement-quote-content">
+
+            <span class="section-label section-label-light">
+                NOTRE ENGAGEMENT
+            </span>
+
+            <blockquote>
+                « Accompagner, ce n’est pas faire à la place.
+                C’est donner les moyens de faire. »
+            </blockquote>
+
+            <p>
+                Nous cherchons à faire émerger des acteurs capables
+                de poursuivre leurs actions de manière autonome,
+                avec des compétences renforcées et des outils
+                adaptés à leur environnement.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CE QUE NOUS APPORTONS
+====================================================== -->
+
+<section class="accompagnement-apports">
+
+    <div class="accompagnement-container">
+
+        <div class="accompagnement-apports-grid">
+
+
+            <div class="accompagnement-apports-title">
+
+                <span class="section-label">
+                    NOTRE VALEUR AJOUTÉE
+                </span>
+
+                <h2>
+                    Un soutien concret
+                    à chaque étape.
+                </h2>
+
+                <p>
+                    L’objectif est de permettre aux initiatives
+                    accompagnées de disposer des ressources
+                    nécessaires pour avancer avec confiance.
+                </p>
+
+            </div>
+
+
+            <div class="accompagnement-apports-list">
+
+
+                <div class="accompagnement-apport">
+
+                    <span>
+                        01
+                    </span>
+
+                    <div>
+
+                        <h3>
+                            Une approche personnalisée
+                        </h3>
+
+                        <p>
+                            Un accompagnement construit selon
+                            les besoins spécifiques de chaque
+                            initiative.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="accompagnement-apport">
+
+                    <span>
+                        02
+                    </span>
+
+                    <div>
+
+                        <h3>
+                            Des outils pratiques
+                        </h3>
+
+                        <p>
+                            Des méthodes et ressources directement
+                            mobilisables dans les activités.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="accompagnement-apport">
+
+                    <span>
+                        03
+                    </span>
+
+                    <div>
+
+                        <h3>
+                            La transmission des compétences
+                        </h3>
+
+                        <p>
+                            Une priorité donnée à l’apprentissage
+                            et à l’autonomisation des acteurs.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="accompagnement-apport">
+
+                    <span>
+                        04
+                    </span>
+
+                    <div>
+
+                        <h3>
+                            Un suivi dans la durée
+                        </h3>
+
+                        <p>
+                            Une relation d’accompagnement qui
+                            permet de suivre les progrès et
+                            d’ajuster les actions.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CTA
+====================================================== -->
+
+<section class="accompagnement-cta">
+
+    <div class="accompagnement-container">
+
+        <div class="accompagnement-cta-box">
+
+            <div>
+
+                <span class="section-label">
+                    VOUS PORTEZ UNE INITIATIVE ?
+                </span>
+
+                <h2>
+                    Construisons ensemble
+                    la prochaine étape.
+                </h2>
+
+            </div>
+
+
+            <div class="accompagnement-cta-action">
+
+                <p>
+                    Vous avez un projet, une initiative ou un besoin
+                    d’accompagnement ? Échangeons sur vos objectifs
+                    et les possibilités de collaboration.
+                </p>
+
+                <a
+                    href="{% url 'contact' %}"
+                    class="accompagnement-button"
+                >
+                    Nous contacter
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+{% endblock %}

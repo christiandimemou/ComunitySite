@@ -1,0 +1,672 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+
+{% block title %}
+Éducation citoyenne | Com’Unity
+{% endblock %}
+
+
+{% block content %}
+
+
+<!-- =====================================================
+     HERO — ÉDUCATION CITOYENNE
+====================================================== -->
+
+<section class="education-hero">
+
+    {% if action_image %}
+
+        <img
+            src="{{ action_image.image.url }}"
+            alt="Éducation citoyenne - Com’Unity"
+            class="education-hero-image"
+        >
+
+    {% endif %}
+
+
+    <div class="education-hero-overlay"></div>
+
+
+    <div class="education-hero-container">
+
+        <div class="education-hero-content">
+
+            <span class="education-hero-label">
+                NOS ACTIONS
+            </span>
+
+
+            <h1>
+                Éducation
+                <span>citoyenne</span>
+            </h1>
+
+
+            <p>
+                Faire émerger des citoyens engagés, responsables
+                et capables de contribuer activement à la transformation
+                de leurs communautés.
+            </p>
+
+
+            <div class="education-hero-bottom">
+
+                <span></span>
+
+                <strong>
+                    ENGAGEMENT · RESPONSABILITÉ · PARTICIPATION
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="education-hero-number">
+            03
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     INTRODUCTION
+====================================================== -->
+
+<section class="education-introduction">
+
+    <div class="education-container">
+
+        <div class="education-intro-grid">
+
+
+            <!-- TITRE -->
+
+            <div class="education-intro-title">
+
+                <span class="section-label">
+                    NOTRE CONVICTION
+                </span>
+
+
+                <h2>
+                    Le changement commence
+                    par des citoyens
+                    qui s'engagent.
+                </h2>
+
+            </div>
+
+
+            <!-- TEXTE -->
+
+            <div class="education-intro-text">
+
+                <p class="education-intro-lead">
+                    Une communauté ne peut se transformer durablement
+                    que lorsque ses citoyens comprennent leur rôle
+                    et disposent des moyens nécessaires pour agir.
+                </p>
+
+
+                <p>
+                    Com’Unity place l’éducation citoyenne au cœur de
+                    son action afin de favoriser la compréhension des
+                    enjeux sociaux, environnementaux et territoriaux.
+                </p>
+
+
+                <p>
+                    Nous créons des espaces d’apprentissage, de dialogue
+                    et de participation permettant notamment aux jeunes
+                    et aux femmes de prendre pleinement part aux
+                    transformations de leurs territoires.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CITOYEN ACTEUR
+====================================================== -->
+
+<section class="education-actor">
+
+    <div class="education-container">
+
+        <div class="education-actor-header">
+
+            <div class="education-actor-title">
+
+                <span class="section-label">
+                    CITOYEN ACTEUR
+                </span>
+
+                <h2>
+                    Comprendre.
+                    Participer.
+                    Agir.
+                </h2>
+
+            </div>
+
+
+            <div class="education-actor-intro">
+
+                <p>
+                    Notre approche vise à transformer l’information
+                    en capacité d’action et la participation en
+                    véritable pouvoir citoyen.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- ÉTAPES -->
+
+        <div class="education-steps">
+
+
+            <article class="education-step">
+
+                <div class="education-step-number">
+                    01
+                </div>
+
+                <div class="education-step-content">
+
+                    <div class="education-step-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+
+                    <h3>
+                        Comprendre les enjeux
+                    </h3>
+
+                    <p>
+                        Donner aux citoyens les connaissances nécessaires
+                        pour mieux comprendre les enjeux qui touchent
+                        leur environnement et leur communauté.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+
+            <article class="education-step">
+
+                <div class="education-step-number">
+                    02
+                </div>
+
+                <div class="education-step-content">
+
+                    <div class="education-step-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+
+                    <h3>
+                        Créer le dialogue
+                    </h3>
+
+                    <p>
+                        Favoriser les échanges, les débats et les espaces
+                        de réflexion collective autour des problématiques
+                        de société.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+
+            <article class="education-step">
+
+                <div class="education-step-number">
+                    03
+                </div>
+
+                <div class="education-step-content">
+
+                    <div class="education-step-icon">
+                        <i class="fas fa-hand-fist"></i>
+                    </div>
+
+                    <h3>
+                        Passer à l’action
+                    </h3>
+
+                    <p>
+                        Encourager les citoyens à transformer leurs idées
+                        en initiatives concrètes au bénéfice de leurs
+                        communautés.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     DOMAINES
+====================================================== -->
+
+<section class="education-domains">
+
+    <div class="education-container">
+
+        <div class="education-domains-heading">
+
+            <span class="section-label">
+                NOS DOMAINES D'INTERVENTION
+            </span>
+
+            <h2>
+                Construire une culture
+                citoyenne forte.
+            </h2>
+
+        </div>
+
+
+        <div class="education-domains-grid">
+
+
+            <!-- JEUNESSE -->
+
+            <article class="education-domain education-domain-large">
+
+                <div class="education-domain-icon">
+                    <i class="fas fa-people-group"></i>
+                </div>
+
+                <span class="education-domain-number">
+                    01
+                </span>
+
+                <h3>
+                    Jeunesse et leadership
+                </h3>
+
+                <p>
+                    Accompagner les jeunes afin qu’ils développent
+                    leur capacité à prendre des initiatives et à
+                    devenir des acteurs engagés dans leur territoire.
+                </p>
+
+            </article>
+
+
+
+            <!-- PARTICIPATION -->
+
+            <article class="education-domain">
+
+                <div class="education-domain-icon">
+                    <i class="fas fa-hand-pointer"></i>
+                </div>
+
+                <span class="education-domain-number">
+                    02
+                </span>
+
+                <h3>
+                    Participation citoyenne
+                </h3>
+
+                <p>
+                    Encourager l’implication des citoyens dans les
+                    décisions et les initiatives qui concernent
+                    leur communauté.
+                </p>
+
+            </article>
+
+
+
+            <!-- RESPONSABILITE -->
+
+            <article class="education-domain">
+
+                <div class="education-domain-icon">
+                    <i class="fas fa-scale-balanced"></i>
+                </div>
+
+                <span class="education-domain-number">
+                    03
+                </span>
+
+                <h3>
+                    Responsabilité collective
+                </h3>
+
+                <p>
+                    Promouvoir des comportements responsables et
+                    renforcer la conscience des responsabilités
+                    individuelles et collectives.
+                </p>
+
+            </article>
+
+
+
+            <!-- EDUCATION -->
+
+            <article class="education-domain">
+
+                <div class="education-domain-icon">
+                    <i class="fas fa-book-open"></i>
+                </div>
+
+                <span class="education-domain-number">
+                    04
+                </span>
+
+                <h3>
+                    Éducation et sensibilisation
+                </h3>
+
+                <p>
+                    Organiser des activités pédagogiques, ateliers,
+                    formations et campagnes de sensibilisation
+                    adaptées aux réalités locales.
+                </p>
+
+            </article>
+
+
+
+            <!-- ENGAGEMENT -->
+
+            <article class="education-domain">
+
+                <div class="education-domain-icon">
+                    <i class="fas fa-heart"></i>
+                </div>
+
+                <span class="education-domain-number">
+                    05
+                </span>
+
+                <h3>
+                    Engagement communautaire
+                </h3>
+
+                <p>
+                    Créer les conditions favorables à une mobilisation
+                    collective autour des enjeux prioritaires des
+                    territoires.
+                </p>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PAROLE CITOYENNE
+====================================================== -->
+
+<section class="education-quote">
+
+    <div class="education-container">
+
+        <div class="education-quote-inner">
+
+            <div class="education-quote-mark">
+                “
+            </div>
+
+
+            <div class="education-quote-content">
+
+                <span class="section-label section-label-light">
+                    NOTRE AMBITION
+                </span>
+
+
+                <h2>
+                    Donner à chacun
+                    la possibilité
+                    de devenir acteur
+                    du changement.
+                </h2>
+
+
+                <p>
+                    Nous croyons qu’une citoyenneté active permet
+                    de construire des communautés plus fortes,
+                    plus solidaires et plus résilientes.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     IMPACT
+====================================================== -->
+
+<section class="education-impact">
+
+    <div class="education-container">
+
+        <div class="education-impact-heading">
+
+            <span class="section-label">
+                L'IMPACT RECHERCHÉ
+            </span>
+
+            <h2>
+                Des citoyens mieux informés,
+                plus engagés et plus autonomes.
+            </h2>
+
+        </div>
+
+
+        <div class="education-impact-list">
+
+
+            <div class="education-impact-item">
+
+                <span class="education-impact-icon">
+                    <i class="fas fa-check"></i>
+                </span>
+
+                <div>
+
+                    <h3>
+                        Renforcer les connaissances
+                    </h3>
+
+                    <p>
+                        Permettre aux citoyens de mieux comprendre
+                        les réalités de leur territoire.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="education-impact-item">
+
+                <span class="education-impact-icon">
+                    <i class="fas fa-check"></i>
+                </span>
+
+                <div>
+
+                    <h3>
+                        Développer le leadership
+                    </h3>
+
+                    <p>
+                        Encourager l’émergence de citoyens capables
+                        d’initier et de porter des changements.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="education-impact-item">
+
+                <span class="education-impact-icon">
+                    <i class="fas fa-check"></i>
+                </span>
+
+                <div>
+
+                    <h3>
+                        Favoriser la participation
+                    </h3>
+
+                    <p>
+                        Créer davantage d’espaces permettant aux
+                        citoyens de participer à la vie collective.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="education-impact-item">
+
+                <span class="education-impact-icon">
+                    <i class="fas fa-check"></i>
+                </span>
+
+                <div>
+
+                    <h3>
+                        Faire émerger des initiatives
+                    </h3>
+
+                    <p>
+                        Transformer l’engagement citoyen en actions
+                        concrètes au sein des communautés.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CTA
+====================================================== -->
+
+<section class="education-cta">
+
+    <div class="education-container">
+
+        <div class="education-cta-inner">
+
+            <div>
+
+                <span class="section-label">
+                    VOUS AUSSI
+                </span>
+
+
+                <h2>
+                    Devenez acteur
+                    du changement.
+                </h2>
+
+            </div>
+
+
+            <div class="education-cta-right">
+
+                <p>
+                    Chaque engagement compte. Rejoignez la dynamique
+                    Com’Unity et participez à la construction de
+                    communautés plus solidaires et responsables.
+                </p>
+
+
+                <div class="education-cta-buttons">
+
+                    <a
+                        href="{% url 'volunteer' %}"
+                        class="education-button education-button-primary"
+                    >
+                        Devenir bénévole
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+
+
+                    <a
+                        href="{% url 'contact' %}"
+                        class="education-button education-button-outline"
+                    >
+                        Nous contacter
+                        <i class="fas fa-envelope"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+{% endblock %}

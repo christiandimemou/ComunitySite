@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import HomeImage, AboutImage, TeamMember, Project, ProjectHeaderImage, Service
+from .models import HomeImage, AboutImage, TeamMember, Project, ProjectHeaderImage, Service, ActionPageImage
 
 from .models import GalleryImage, VolunteerApplication, VolunteerHeaderImage, ContactHeaderImage, DonationHeaderImage
 
@@ -253,3 +253,20 @@ class DonationHeaderImageAdmin(admin.ModelAdmin):
         "-created_at",
     )
 
+@admin.register(ActionPageImage)
+class ActionPageImageAdmin(admin.ModelAdmin):
+
+    list_display = (
+        "action",
+        "is_active",
+        "updated_at",
+    )
+
+    list_filter = (
+        "action",
+        "is_active",
+    )
+
+    search_fields = (
+        "action",
+    )

@@ -2,6 +2,8 @@ from django.urls import path
 
 from . import views
 
+from core.views import transition_ecologique, economie_sociale_solidaire, education_citoyenne, mobilisation_communautaire
+from core.views import accompagnement
 
 urlpatterns = [
 
@@ -65,6 +67,36 @@ urlpatterns = [
     "faire-un-don/",
     views.donation,
     name="donation"
+    ),
+
+    path(
+    "transition-ecologique/",
+    transition_ecologique,
+    name="transition_ecologique"
+    ),
+
+    path(
+    "economie-sociale-solidaire/",
+    economie_sociale_solidaire,
+    name="economie_sociale_solidaire"
+    ),
+
+    path(
+    "education-citoyenne/",
+    education_citoyenne,
+    name="education_citoyenne"
+    ),
+
+    path(
+    "mobilisation-communautaire/",
+    mobilisation_communautaire,
+    name="mobilisation_communautaire"
+    ),
+
+    path(
+    "accompagnement/",
+    accompagnement,
+    name="accompagnement"
     ),
 
     

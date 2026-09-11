@@ -1,0 +1,601 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+
+{% block title %}
+Économie sociale et solidaire | Com’Unity
+{% endblock %}
+
+
+{% block content %}
+
+
+<!-- =====================================================
+     HERO — ÉCONOMIE SOCIALE ET SOLIDAIRE
+====================================================== -->
+
+<section class="ess-hero">
+
+    {% if action_image %}
+
+        <img
+            src="{{ action_image.image.url }}"
+            alt="Économie sociale et solidaire - Com’Unity"
+            class="ess-hero-image"
+        >
+
+    {% endif %}
+
+
+    <div class="ess-hero-overlay"></div>
+
+
+    <div class="ess-hero-container">
+
+        <div class="ess-hero-content">
+
+            <span class="ess-hero-label">
+                NOS ACTIONS
+            </span>
+
+
+            <h1>
+                Économie sociale
+                <span>et solidaire</span>
+            </h1>
+
+
+            <div class="ess-hero-line"></div>
+
+
+            <p>
+                Faire de l'économie un levier d'autonomisation,
+                de solidarité et de transformation des territoires.
+            </p>
+
+
+        </div>
+
+
+        <div class="ess-hero-badge">
+
+            <i class="fas fa-hand-holding-heart"></i>
+
+            <span>
+                Une économie
+                au service de l’humain
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     INTRODUCTION — NOTRE VISION
+====================================================== -->
+
+<section class="ess-vision">
+
+    <div class="ess-container">
+
+        <div class="ess-vision-grid">
+
+
+            <!-- NUMÉRO -->
+
+            <div class="ess-vision-number">
+
+                <span>
+                    01
+                </span>
+
+                <div></div>
+
+                <p>
+                    NOTRE<br>
+                    VISION
+                </p>
+
+            </div>
+
+
+            <!-- CONTENU -->
+
+            <div class="ess-vision-content">
+
+                <span class="section-label">
+                    UNE ÉCONOMIE AUTREMENT
+                </span>
+
+
+                <h2>
+                    Créer de la valeur
+                    sans laisser personne
+                    de côté.
+                </h2>
+
+
+                <p>
+                    Pour Com’Unity, l’économie sociale et solidaire
+                    constitue un véritable outil de transformation
+                    sociale. Elle permet de placer les personnes,
+                    les communautés et leur bien-être au cœur des
+                    dynamiques économiques.
+                </p>
+
+
+                <p>
+                    Nous accompagnons les initiatives qui favorisent
+                    l’autonomie économique, la création d’activités
+                    responsables et la valorisation des savoir-faire
+                    locaux.
+                </p>
+
+
+                <div class="ess-vision-highlight">
+
+                    <i class="fas fa-quote-left"></i>
+
+                    <p>
+                        Une économie plus juste est une économie
+                        qui crée des opportunités pour tous.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     NOS DOMAINES D'ACTION
+====================================================== -->
+
+<section class="ess-pillars">
+
+    <div class="ess-container">
+
+
+        <div class="ess-pillars-header">
+
+            <div>
+
+                <span class="section-label">
+                    NOS DOMAINES D'ACTION
+                </span>
+
+                <h2>
+                    Donner aux initiatives
+                    les moyens de grandir.
+                </h2>
+
+            </div>
+
+
+            <p>
+                Nous travaillons avec les acteurs locaux pour
+                transformer les idées en activités créatrices
+                de valeur économique et sociale.
+            </p>
+
+        </div>
+
+
+
+        <div class="ess-pillars-list">
+
+
+            <!-- PILIER 01 -->
+
+            <article class="ess-pillar">
+
+                <div class="ess-pillar-top">
+
+                    <span class="ess-pillar-number">
+                        01
+                    </span>
+
+                    <div class="ess-pillar-icon">
+                        <i class="fas fa-store"></i>
+                    </div>
+
+                </div>
+
+
+                <div class="ess-pillar-body">
+
+                    <h3>
+                        Entrepreneuriat responsable
+                    </h3>
+
+                    <p>
+                        Encourager l'émergence d'activités économiques
+                        qui répondent aux besoins des communautés tout
+                        en respectant les principes sociaux et
+                        environnementaux.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- PILIER 02 -->
+
+            <article class="ess-pillar">
+
+                <div class="ess-pillar-top">
+
+                    <span class="ess-pillar-number">
+                        02
+                    </span>
+
+                    <div class="ess-pillar-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+
+                </div>
+
+
+                <div class="ess-pillar-body">
+
+                    <h3>
+                        Autonomisation économique
+                    </h3>
+
+                    <p>
+                        Renforcer les capacités des jeunes, des femmes
+                        et des acteurs locaux afin de favoriser leur
+                        autonomie et leur participation à la vie
+                        économique.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- PILIER 03 -->
+
+            <article class="ess-pillar">
+
+                <div class="ess-pillar-top">
+
+                    <span class="ess-pillar-number">
+                        03
+                    </span>
+
+                    <div class="ess-pillar-icon">
+                        <i class="fas fa-people-group"></i>
+                    </div>
+
+                </div>
+
+
+                <div class="ess-pillar-body">
+
+                    <h3>
+                        Valorisation des initiatives locales
+                    </h3>
+
+                    <p>
+                        Identifier, accompagner et faire connaître
+                        les initiatives qui contribuent au développement
+                        économique et social des territoires.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- PILIER 04 -->
+
+            <article class="ess-pillar">
+
+                <div class="ess-pillar-top">
+
+                    <span class="ess-pillar-number">
+                        04
+                    </span>
+
+                    <div class="ess-pillar-icon">
+                        <i class="fas fa-link"></i>
+                    </div>
+
+                </div>
+
+
+                <div class="ess-pillar-body">
+
+                    <h3>
+                        Coopération et solidarité
+                    </h3>
+
+                    <p>
+                        Créer des passerelles entre les porteurs de
+                        projets, les organisations et les partenaires
+                        afin de favoriser les échanges et les
+                        opportunités.
+                    </p>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     NOTRE APPROCHE
+====================================================== -->
+
+<section class="ess-approach">
+
+    <div class="ess-container">
+
+        <div class="ess-approach-layout">
+
+
+            <div class="ess-approach-title">
+
+                <span class="section-label">
+                    NOTRE APPROCHE
+                </span>
+
+
+                <h2>
+                    Accompagner,
+                    connecter,
+                    valoriser.
+                </h2>
+
+            </div>
+
+
+            <div class="ess-approach-content">
+
+                <div class="ess-approach-item">
+
+                    <span>
+                        01
+                    </span>
+
+                    <div>
+
+                        <h3>
+                            Identifier
+                        </h3>
+
+                        <p>
+                            Repérer les initiatives et les besoins
+                            économiques présents dans les territoires.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="ess-approach-item">
+
+                    <span>
+                        02
+                    </span>
+
+                    <div>
+
+                        <h3>
+                            Accompagner
+                        </h3>
+
+                        <p>
+                            Apporter des ressources, des connaissances
+                            et un accompagnement adapté aux porteurs
+                            d'initiatives.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="ess-approach-item">
+
+                    <span>
+                        03
+                    </span>
+
+                    <div>
+
+                        <h3>
+                            Valoriser
+                        </h3>
+
+                        <p>
+                            Donner davantage de visibilité aux projets
+                            et aux acteurs qui contribuent au changement.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="ess-approach-item">
+
+                    <span>
+                        04
+                    </span>
+
+                    <div>
+
+                        <h3>
+                            Mettre en réseau
+                        </h3>
+
+                        <p>
+                            Faciliter les rencontres et les collaborations
+                            pour faire émerger de nouvelles opportunités.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     IMPACT
+====================================================== -->
+
+<section class="ess-impact">
+
+    <div class="ess-container">
+
+        <div class="ess-impact-inner">
+
+
+            <div class="ess-impact-intro">
+
+                <span class="section-label section-label-light">
+                    NOTRE AMBITION
+                </span>
+
+
+                <h2>
+                    Des territoires
+                    économiquement
+                    plus résilients.
+                </h2>
+
+            </div>
+
+
+            <div class="ess-impact-text">
+
+                <p>
+                    En soutenant l'économie sociale et solidaire,
+                    Com’Unity souhaite contribuer à l'émergence
+                    d'un modèle économique plus inclusif, capable
+                    de répondre aux réalités des communautés.
+                </p>
+
+
+                <p>
+                    Notre ambition est de favoriser des dynamiques
+                    locales où chacun peut devenir acteur de son
+                    développement et contribuer à celui de son territoire.
+                </p>
+
+
+                <div class="ess-impact-signature">
+
+                    <i class="fas fa-arrow-right"></i>
+
+                    <span>
+                        Ensemble, créons des opportunités durables.
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CTA
+====================================================== -->
+
+<section class="ess-cta">
+
+    <div class="ess-container">
+
+        <div class="ess-cta-content">
+
+            <span class="section-label">
+                AGISSONS ENSEMBLE
+            </span>
+
+
+            <h2>
+                Vous portez une initiative
+                à impact ?
+            </h2>
+
+
+            <p>
+                Com’Unity accompagne les acteurs qui souhaitent
+                contribuer à une économie plus inclusive,
+                responsable et solidaire.
+            </p>
+
+
+            <div class="ess-cta-buttons">
+
+                <a
+                    href="{% url 'contact' %}"
+                    class="ess-button ess-button-primary"
+                >
+
+                    Nous contacter
+
+                    <i class="fas fa-arrow-right"></i>
+
+                </a>
+
+
+                <a
+                    href="{% url 'volunteer' %}"
+                    class="ess-button ess-button-outline"
+                >
+
+                    Devenir bénévole
+
+                    <i class="fas fa-heart"></i>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+{% endblock %}

@@ -3,6 +3,14 @@ from django.shortcuts import render, get_object_or_404
 from .models import HomeImage, AboutImage, TeamMember, Project, ProjectHeaderImage, Service
 from .models import GalleryImage, VolunteerApplication, VolunteerHeaderImage, ContactHeaderImage, DonationHeaderImage
 from .forms import ContactForm
+from .models import (
+    HomeImage,
+    AboutImage,
+    TeamMember,
+    Project,
+    ProjectHeaderImage,
+    ActionPageImage,
+)
 
 def home(request):
 
@@ -264,3 +272,80 @@ def faq(request):
             "faq_header": faq_header,
         }
     )
+
+
+def transition_ecologique(request):
+
+    action_image = ActionPageImage.objects.filter(
+        action="transition",
+        is_active=True
+    ).first()
+
+    return render(
+        request,
+        "transition_ecologique.html",
+        {
+            "action_image": action_image,
+        }
+    )
+
+def economie_sociale_solidaire(request):
+
+    action_image = ActionPageImage.objects.filter(
+        action="ess",
+        is_active=True
+    ).first()
+
+    return render(
+        request,
+        "economie_sociale_solidaire.html",
+        {
+            "action_image": action_image,
+        }
+    )
+
+def education_citoyenne(request):
+
+    action_image = ActionPageImage.objects.filter(
+        action="education",
+        is_active=True
+    ).first()
+
+    return render(
+        request,
+        "education_citoyenne.html",
+        {
+            "action_image": action_image,
+        }
+    )
+
+def mobilisation_communautaire(request):
+
+    action_image = ActionPageImage.objects.filter(
+        action="mobilisation",
+        is_active=True
+    ).first()
+
+    return render(
+        request,
+        "mobilisation_communautaire.html",
+        {
+            "action_image": action_image,
+        }
+    )
+
+def accompagnement(request):
+
+    action_image = ActionPageImage.objects.filter(
+        action="accompagnement",
+        is_active=True
+    ).first()
+
+    return render(
+        request,
+        "accompagnement.html",
+        {
+            "action_image": action_image,
+        }
+    )
+
