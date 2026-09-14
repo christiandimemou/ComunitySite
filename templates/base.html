@@ -138,6 +138,37 @@
 
     {% include "includes/footer.html" %}
 
+    <!-- =====================================================
+     NAVIGATION RAPIDE DE LA PAGE
+====================================================== -->
+
+<div class="page-scroll-controls">
+
+    <button
+        type="button"
+        class="page-scroll-button"
+        id="scrollUp"
+        aria-label="Remonter"
+        title="Remonter"
+    >
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+
+    <button
+        type="button"
+        class="page-scroll-button"
+        id="scrollDown"
+        aria-label="Descendre"
+        title="Descendre"
+    >
+        <i class="fas fa-chevron-down"></i>
+    </button>
+
+</div>
+
+
+<script src="{% static 'js/main.js' %}"></script>
 
     <!-- JavaScript principal -->
 
@@ -145,6 +176,227 @@
 
     {% block extra_js %}
     {% endblock %}
+
+<!-- =====================================================
+     BANDEAU COOKIES
+====================================================== -->
+
+<div
+    class="cookie-banner"
+    id="cookieBanner"
+    role="dialog"
+    aria-labelledby="cookieBannerTitle"
+    aria-describedby="cookieBannerText"
+>
+
+    <div class="cookie-banner-icon">
+
+        <i class="fas fa-cookie-bite"></i>
+
+    </div>
+
+
+    <div class="cookie-banner-content">
+
+        <h2 id="cookieBannerTitle">
+            Votre vie privée compte
+        </h2>
+
+        <p id="cookieBannerText">
+
+            Com’Unity utilise des cookies nécessaires au bon
+            fonctionnement du site. Avec votre accord, certains
+            cookies supplémentaires peuvent être utilisés pour
+            améliorer votre expérience et mesurer l'utilisation
+            du site.
+
+            <a href="{% url 'cookies' %}">
+                En savoir plus
+            </a>
+
+        </p>
+
+    </div>
+
+
+    <div class="cookie-banner-actions">
+
+        <button
+            type="button"
+            class="cookie-button cookie-button-refuse"
+            id="cookieRefuse"
+        >
+            Tout refuser
+        </button>
+
+
+        <button
+            type="button"
+            class="cookie-button cookie-button-settings"
+            id="cookieSettings"
+        >
+            Personnaliser
+        </button>
+
+
+        <button
+            type="button"
+            class="cookie-button cookie-button-accept"
+            id="cookieAccept"
+        >
+            Tout accepter
+        </button>
+
+    </div>
+
+</div>
+
+<!-- =====================================================
+     PANNEAU DE PERSONNALISATION
+====================================================== -->
+
+<div
+    class="cookie-settings"
+    id="cookieSettingsPanel"
+    aria-hidden="true"
+>
+
+    <div class="cookie-settings-box">
+
+        <button
+            type="button"
+            class="cookie-settings-close"
+            id="cookieSettingsClose"
+            aria-label="Fermer"
+        >
+            <i class="fas fa-xmark"></i>
+        </button>
+
+
+        <span class="cookie-settings-label">
+            GESTION DES COOKIES
+        </span>
+
+
+        <h2>
+            Personnaliser vos préférences
+        </h2>
+
+
+        <p>
+            Choisissez les catégories de cookies que vous
+            souhaitez autoriser. Les cookies nécessaires au
+            fonctionnement du site restent toujours actifs.
+        </p>
+
+
+        <!-- NÉCESSAIRES -->
+
+        <div class="cookie-option">
+
+            <div>
+
+                <h3>
+                    Cookies nécessaires
+                </h3>
+
+                <span>
+                    Indispensables au fonctionnement du site.
+                </span>
+
+            </div>
+
+            <span class="cookie-always-active">
+                Toujours actifs
+            </span>
+
+        </div>
+
+
+        <!-- ANALYTIQUES -->
+
+        <div class="cookie-option">
+
+            <div>
+
+                <h3>
+                    Cookies analytiques
+                </h3>
+
+                <span>
+                    Permettent de mesurer la fréquentation
+                    et d'améliorer le site.
+                </span>
+
+            </div>
+
+            <label class="cookie-switch">
+
+                <input
+                    type="checkbox"
+                    id="analyticsCookies"
+                >
+
+                <span class="cookie-slider"></span>
+
+            </label>
+
+        </div>
+
+
+        <!-- PRÉFÉRENCES -->
+
+        <div class="cookie-option">
+
+            <div>
+
+                <h3>
+                    Cookies de préférence
+                </h3>
+
+                <span>
+                    Permettent de mémoriser certaines préférences.
+                </span>
+
+            </div>
+
+            <label class="cookie-switch">
+
+                <input
+                    type="checkbox"
+                    id="preferenceCookies"
+                >
+
+                <span class="cookie-slider"></span>
+
+            </label>
+
+        </div>
+
+
+        <div class="cookie-settings-actions">
+
+            <button
+                type="button"
+                class="cookie-button cookie-button-refuse"
+                id="cookieSettingsRefuse"
+            >
+                Tout refuser
+            </button>
+
+            <button
+                type="button"
+                class="cookie-button cookie-button-accept"
+                id="cookieSettingsSave"
+            >
+                Enregistrer mes choix
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
 
 </body>
 

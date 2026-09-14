@@ -276,3 +276,323 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 });
+
+
+/* =====================================================
+   NAVIGATION RAPIDE — HAUT / BAS
+===================================================== */
+
+const scrollUp = document.getElementById("scrollUp");
+const scrollDown = document.getElementById("scrollDown");
+
+
+if (scrollUp) {
+
+    scrollUp.addEventListener("click", function () {
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+
+    });
+
+}
+
+
+if (scrollDown) {
+
+    scrollDown.addEventListener("click", function () {
+
+        window.scrollTo({
+            top: document.documentElement.scrollHeight,
+            behavior: "smooth"
+        });
+
+    });
+
+}
+
+
+/* =====================================================
+   GESTION DU CONSENTEMENT COOKIES
+===================================================== */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const cookieBanner =
+        document.getElementById("cookieBanner");
+
+    const cookieSettingsPanel =
+        document.getElementById("cookieSettingsPanel");
+
+    const cookieAccept =
+        document.getElementById("cookieAccept");
+
+    const cookieRefuse =
+        document.getElementById("cookieRefuse");
+
+    const cookieSettings =
+        document.getElementById("cookieSettings");
+
+    const cookieSettingsClose =
+        document.getElementById("cookieSettingsClose");
+
+    const cookieSettingsRefuse =
+        document.getElementById("cookieSettingsRefuse");
+
+    const cookieSettingsSave =
+        document.getElementById("cookieSettingsSave");
+
+
+    /* -------------------------------------------------
+       AFFICHAGE DU BANDEAU
+    ------------------------------------------------- */
+
+    const savedConsent =
+        localStorage.getItem("comunity_cookie_consent");
+
+
+    if (!savedConsent && cookieBanner) {
+
+        setTimeout(function () {
+
+            cookieBanner.classList.add("visible");
+
+        }, 500);
+
+    }
+
+
+    /* -------------------------------------------------
+       ENREGISTRER LE CHOIX
+    ------------------------------------------------- */
+
+    function saveConsent(
+        analytics,
+        preferences
+    ) {
+
+        const consent = {
+
+            necessary: true,
+
+            analytics: analytics,
+
+            preferences: preferences,
+
+            date: new Date().toISOString()
+
+        };
+
+
+        localStorage.setItem(
+            "comunity_cookie_consent",
+            JSON.stringify(consent)
+        );
+
+
+        if (cookieBanner) {
+
+            cookieBanner.classList.remove(
+                "visible"
+            );
+
+        }
+
+
+        if (cookieSettingsPanel) {
+
+            cookieSettingsPanel.classList.remove(
+                "visible"
+            );
+
+            cookieSettingsPanel.setAttribute(
+                "aria-hidden",
+                "true"
+            );
+
+        }
+
+    }
+
+
+    /* -------------------------------------------------
+       TOUT ACCEPTER
+    ------------------------------------------------- */
+
+    if (cookieAccept) {
+
+        cookieAccept.addEventListener(
+            "click",
+            function () {
+
+                saveConsent(
+                    true,
+                    true
+                );
+
+            }
+        );
+
+    }
+
+
+    /* -------------------------------------------------
+       TOUT REFUSER
+    ------------------------------------------------- */
+
+    if (cookieRefuse) {
+
+        cookieRefuse.addEventListener(
+            "click",
+            function () {
+
+                saveConsent(
+                    false,
+                    false
+                );
+
+            }
+        );
+
+    }
+
+
+    /* -------------------------------------------------
+       PERSONNALISER
+    ------------------------------------------------- */
+
+    if (cookieSettings) {
+
+        cookieSettings.addEventListener(
+            "click",
+            function () {
+
+                cookieSettingsPanel.classList.add(
+                    "visible"
+                );
+
+                cookieSettingsPanel.setAttribute(
+                    "aria-hidden",
+                    "false"
+                );
+
+            }
+        );
+
+    }
+
+
+    /* -------------------------------------------------
+       FERMER PERSONNALISATION
+    ------------------------------------------------- */
+
+    if (cookieSettingsClose) {
+
+        cookieSettingsClose.addEventListener(
+            "click",
+            function () {
+
+                cookieSettingsPanel.classList.remove(
+                    "visible"
+                );
+
+                cookieSettingsPanel.setAttribute(
+                    "aria-hidden",
+                    "true"
+                );
+
+            }
+        );
+
+    }
+
+
+    /* -------------------------------------------------
+       REFUS DEPUIS PERSONNALISATION
+    ------------------------------------------------- */
+
+    if (cookieSettingsRefuse) {
+
+        cookieSettingsRefuse.addEventListener(
+            "click",
+            function () {
+
+                saveConsent(
+                    false,
+                    false
+                );
+
+            }
+        );
+
+    }
+
+
+    /* -------------------------------------------------
+       ENREGISTRER LES PRÉFÉRENCES
+    ------------------------------------------------- */
+
+    if (cookieSettingsSave) {
+
+        cookieSettingsSave.addEventListener(
+            "click",
+            function () {
+
+                const analytics =
+                    document.getElementById(
+                        "analyticsCookies"
+                    ).checked;
+
+
+                const preferences =
+                    document.getElementById(
+                        "preferenceCookies"
+                    ).checked;
+
+
+                saveConsent(
+                    analytics,
+                    preferences
+                );
+
+            }
+        );
+
+    }
+
+});
+
+
+const manageCookies =
+    document.getElementById("manageCookies");
+
+if (manageCookies) {
+
+    manageCookies.addEventListener(
+        "click",
+        function (event) {
+
+            event.preventDefault();
+
+            const panel =
+                document.getElementById(
+                    "cookieSettingsPanel"
+                );
+
+            if (panel) {
+
+                panel.classList.add("visible");
+
+                panel.setAttribute(
+                    "aria-hidden",
+                    "false"
+                );
+
+            }
+
+        }
+    );
+
+}

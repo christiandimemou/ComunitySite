@@ -469,3 +469,10 @@ def politique_confidentialite(request):
         "politique_confidentialite.html"
     )
 
+def cookies(request):
+
+    return render(
+        request,
+        "cookies.html"
+    )
+

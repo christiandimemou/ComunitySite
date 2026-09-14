@@ -4,7 +4,7 @@ from . import views
 
 from core.views import transition_ecologique, economie_sociale_solidaire, education_citoyenne, mobilisation_communautaire
 from core.views import accompagnement, mise_en_reseau, actualites, actualite_detail, rapports_annuels, partenaires, mentions_legales
-from core.views import politique_confidentialite
+from core.views import politique_confidentialite, cookies
 
 urlpatterns = [
 
@@ -140,6 +140,12 @@ urlpatterns = [
     "politique-confidentialite/",
     politique_confidentialite,
     name="politique_confidentialite"
+    ),
+
+    path(
+    "cookies/",
+    cookies,
+    name="cookies"
     ),
 
     
