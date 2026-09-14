@@ -6,6 +6,7 @@ from .models import GalleryImage, VolunteerApplication, VolunteerHeaderImage, Co
 
 from .models import Actualite, ActualiteHeaderImage, RapportAnnuel, RapportHeaderImage
 
+from .models import Partenaire, PartenaireHeaderImage
 
 @admin.register(HomeImage)
 class HomeImageAdmin(admin.ModelAdmin):
@@ -354,4 +355,51 @@ class RapportHeaderImageAdmin(admin.ModelAdmin):
     list_filter = (
         "is_active",
     )
+
+
+@admin.register(Partenaire)
+class PartenaireAdmin(admin.ModelAdmin):
+
+    list_display = (
+        "name",
+        "partnership_type",
+        "order",
+        "is_active",
+        "created_at",
+    )
+
+    list_filter = (
+        "partnership_type",
+        "is_active",
+    )
+
+    search_fields = (
+        "name",
+        "description",
+    )
+
+    prepopulated_fields = {
+        "slug": ("name",)
+    }
+
+    ordering = (
+        "order",
+        "name",
+    )
+
+@admin.register(PartenaireHeaderImage)
+class PartenaireHeaderImageAdmin(admin.ModelAdmin):
+
+    list_display = (
+        "image",
+        "is_active",
+        "created_at",
+    )
+
+    list_filter = (
+        "is_active",
+    )
+
+
+
 

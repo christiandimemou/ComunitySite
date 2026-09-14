@@ -13,6 +13,8 @@ from .models import (
 )
 
 from .models import Actualite, ActualiteHeaderImage, RapportAnnuel, RapportHeaderImage
+from .models import Partenaire, PartenaireHeaderImage
+
 
 def home(request):
 
@@ -429,5 +431,41 @@ def rapports_annuels(request):
             "rapports": rapports,
             "rapport_header": rapport_header,
         }
+    )
+
+def partenaires(request):
+
+    partenaires_list = Partenaire.objects.filter(
+        is_active=True
+    ).order_by(
+        "order",
+        "name"
+    )
+
+    partenaire_header = PartenaireHeaderImage.objects.filter(
+        is_active=True
+    ).first()
+
+    return render(
+        request,
+        "partenaires.html",
+        {
+            "partenaires": partenaires_list,
+            "partenaire_header": partenaire_header,
+        }
+    )
+
+def mentions_legales(request):
+
+    return render(
+        request,
+        "mentions_legales.html"
+    )
+
+def politique_confidentialite(request):
+
+    return render(
+        request,
+        "politique_confidentialite.html"
     )
 

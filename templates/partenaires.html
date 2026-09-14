@@ -1,0 +1,461 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+
+{% block title %}
+Partenaires | Com’Unity
+{% endblock %}
+
+
+{% block content %}
+
+
+<!-- =====================================================
+     EN-TÊTE
+====================================================== -->
+
+<section class="partners-header">
+
+    {% if partenaire_header %}
+
+        <img
+            src="{{ partenaire_header.image.url }}"
+            alt="Partenaires - Com’Unity"
+            class="partners-header-image"
+        >
+
+    {% endif %}
+
+    <div class="partners-header-overlay"></div>
+
+    <div class="partners-container">
+
+        <div class="partners-header-content">
+
+            <span class="partners-label">
+                NOS PARTENAIRES
+            </span>
+
+            <h1>
+                Ensemble,
+                <span>amplifier notre impact.</span>
+            </h1>
+
+            <p>
+                Com’Unity construit des collaborations durables
+                avec des acteurs engagés qui partagent notre vision
+                d’un développement plus durable, inclusif et solidaire.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     INTRODUCTION
+====================================================== -->
+
+<section class="partners-introduction">
+
+    <div class="partners-container">
+
+        <div class="partners-introduction-grid">
+
+
+            <div class="partners-introduction-title">
+
+                <span class="section-label">
+                    NOS COLLABORATIONS
+                </span>
+
+                <h2>
+                    La force du collectif
+                    au service du changement.
+                </h2>
+
+            </div>
+
+
+            <div class="partners-introduction-text">
+
+                <p>
+                    Les transformations auxquelles nous aspirons
+                    nécessitent la mobilisation de nombreux acteurs.
+                    C’est pourquoi Com’Unity privilégie les
+                    collaborations fondées sur la confiance,
+                    la complémentarité et l’engagement.
+                </p>
+
+                <p>
+                    Nos partenaires contribuent à renforcer la portée
+                    de nos actions, à partager des expertises et à
+                    faire émerger de nouvelles solutions au bénéfice
+                    des communautés et des territoires.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PARTENAIRES
+====================================================== -->
+
+<section class="partners-list">
+
+    <div class="partners-container">
+
+
+        <div class="partners-heading">
+
+            <span class="section-label">
+                NOTRE ÉCOSYSTÈME
+            </span>
+
+            <h2>
+                Des acteurs engagés
+                à nos côtés.
+            </h2>
+
+            <p>
+                Découvrez les organisations et acteurs avec lesquels
+                Com’Unity développe des collaborations pour renforcer
+                son impact sur le terrain.
+            </p>
+
+        </div>
+
+
+
+        <div class="partners-grid">
+
+            {% for partenaire in partenaires %}
+
+            <article class="partner-card">
+
+
+                <div class="partner-logo">
+
+                    {% if partenaire.logo %}
+
+                        <img
+                            src="{{ partenaire.logo.url }}"
+                            alt="{{ partenaire.name }}"
+                        >
+
+                    {% else %}
+
+                        <i class="fas fa-handshake"></i>
+
+                    {% endif %}
+
+                </div>
+
+
+                <div class="partner-content">
+
+                    <span class="partner-type">
+
+                        {{ partenaire.get_partnership_type_display }}
+
+                    </span>
+
+
+                    <h3>
+                        {{ partenaire.name }}
+                    </h3>
+
+
+                    {% if partenaire.description %}
+
+                    <p>
+                        {{ partenaire.description }}
+                    </p>
+
+                    {% endif %}
+
+
+                    {% if partenaire.website %}
+
+                    <a
+                        href="{{ partenaire.website }}"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="partner-link"
+                    >
+
+                        Découvrir
+
+                        <i class="fas fa-arrow-up-right-from-square"></i>
+
+                    </a>
+
+                    {% endif %}
+
+                </div>
+
+            </article>
+
+            {% empty %}
+
+            <div class="partners-empty">
+
+                <div class="partners-empty-icon">
+
+                    <i class="fas fa-handshake"></i>
+
+                </div>
+
+                <h3>
+                    Nos partenaires seront bientôt présentés.
+                </h3>
+
+                <p>
+                    Cette section accueillera prochainement
+                    les organisations et acteurs engagés
+                    aux côtés de Com’Unity.
+                </p>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     TYPES DE PARTENARIATS
+====================================================== -->
+
+<section class="partners-types">
+
+    <div class="partners-container">
+
+        <div class="partners-types-heading">
+
+            <span class="section-label section-label-light">
+                NOS FORMES DE COLLABORATION
+            </span>
+
+            <h2>
+                Des partenariats adaptés
+                aux besoins du terrain.
+            </h2>
+
+        </div>
+
+
+        <div class="partners-types-grid">
+
+
+            <article class="partnership-type-card">
+
+                <span class="partnership-number">
+                    01
+                </span>
+
+                <i class="fas fa-building-columns"></i>
+
+                <h3>
+                    Partenariats institutionnels
+                </h3>
+
+                <p>
+                    Collaboration avec les institutions et acteurs
+                    publics pour soutenir les dynamiques territoriales.
+                </p>
+
+            </article>
+
+
+            <article class="partnership-type-card">
+
+                <span class="partnership-number">
+                    02
+                </span>
+
+                <i class="fas fa-gears"></i>
+
+                <h3>
+                    Partenariats techniques
+                </h3>
+
+                <p>
+                    Mobilisation d’expertises, de compétences et
+                    de ressources techniques au service des projets.
+                </p>
+
+            </article>
+
+
+            <article class="partnership-type-card">
+
+                <span class="partnership-number">
+                    03
+                </span>
+
+                <i class="fas fa-coins"></i>
+
+                <h3>
+                    Partenariats financiers
+                </h3>
+
+                <p>
+                    Soutien financier permettant de développer
+                    et de renforcer les initiatives de terrain.
+                </p>
+
+            </article>
+
+
+            <article class="partnership-type-card">
+
+                <span class="partnership-number">
+                    04
+                </span>
+
+                <i class="fas fa-people-group"></i>
+
+                <h3>
+                    Partenariats communautaires
+                </h3>
+
+                <p>
+                    Coopération avec les communautés et les acteurs
+                    locaux pour construire des solutions adaptées.
+                </p>
+
+            </article>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     DEVENIR PARTENAIRE
+====================================================== -->
+
+<section class="partners-collaborate">
+
+    <div class="partners-container">
+
+        <div class="partners-collaborate-inner">
+
+
+            <div class="partners-collaborate-content">
+
+                <span class="section-label">
+                    CONSTRUISONS ENSEMBLE
+                </span>
+
+                <h2>
+                    Et si votre organisation
+                    devenait notre prochain partenaire ?
+                </h2>
+
+                <p>
+                    Vous partagez notre vision et souhaitez contribuer
+                    à des initiatives porteuses de changement ?
+                    Échangeons sur les possibilités de collaboration.
+                </p>
+
+
+                <a
+                    href="{% url 'contact' %}"
+                    class="partners-primary-button"
+                >
+
+                    Devenir partenaire
+
+                    <i class="fas fa-arrow-right"></i>
+
+                </a>
+
+            </div>
+
+
+            <div class="partners-collaborate-visual">
+
+                <div class="partners-circle">
+
+                    <i class="fas fa-handshake"></i>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CTA
+====================================================== -->
+
+<section class="partners-cta">
+
+    <div class="partners-container">
+
+        <div class="partners-cta-content">
+
+            <span class="section-label">
+                ENSEMBLE, ALLONS PLUS LOIN
+            </span>
+
+            <h2>
+                Découvrez les projets
+                que nous construisons.
+            </h2>
+
+            <p>
+                Explorez les initiatives de Com’Unity et découvrez
+                comment nos actions contribuent à transformer
+                durablement les territoires.
+            </p>
+
+
+            <a
+                href="{% url 'projects' %}"
+                class="partners-cta-button"
+            >
+
+                Découvrir nos projets
+
+                <i class="fas fa-arrow-right"></i>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+{% endblock %}

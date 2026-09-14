@@ -3,7 +3,8 @@ from django.urls import path
 from . import views
 
 from core.views import transition_ecologique, economie_sociale_solidaire, education_citoyenne, mobilisation_communautaire
-from core.views import accompagnement, mise_en_reseau, actualites, actualite_detail, rapports_annuels
+from core.views import accompagnement, mise_en_reseau, actualites, actualite_detail, rapports_annuels, partenaires, mentions_legales
+from core.views import politique_confidentialite
 
 urlpatterns = [
 
@@ -121,6 +122,24 @@ urlpatterns = [
     "rapports-annuels/",
     rapports_annuels,
     name="rapports_annuels"
+    ),
+
+    path(
+    "partenaires/",
+    partenaires,
+    name="partenaires"
+    ),
+
+    path(
+    "mentions-legales/",
+    mentions_legales,
+    name="mentions_legales"
+    ),
+
+    path(
+    "politique-confidentialite/",
+    politique_confidentialite,
+    name="politique_confidentialite"
     ),
 
     

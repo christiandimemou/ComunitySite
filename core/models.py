@@ -740,3 +740,99 @@ class RapportHeaderImage(models.Model):
     class Meta:
         verbose_name = "Image d'en-tête des rapports"
         verbose_name_plural = "Image d'en-tête des rapports"
+
+
+class Partenaire(models.Model):
+
+    TYPES_PARTENARIAT = [
+        ("institutionnel", "Partenaire institutionnel"),
+        ("technique", "Partenaire technique"),
+        ("financier", "Partenaire financier"),
+        ("associatif", "Partenaire associatif"),
+        ("communautaire", "Partenaire communautaire"),
+        ("autre", "Autre"),
+    ]
+
+    name = models.CharField(
+        max_length=150,
+        verbose_name="Nom du partenaire"
+    )
+
+    slug = models.SlugField(
+        unique=True,
+        verbose_name="Slug"
+    )
+
+    logo = models.ImageField(
+        upload_to="partenaires/logos/",
+        verbose_name="Logo"
+    )
+
+    partnership_type = models.CharField(
+        max_length=30,
+        choices=TYPES_PARTENARIAT,
+        default="autre",
+        verbose_name="Type de partenariat"
+    )
+
+    description = models.TextField(
+        blank=True,
+        verbose_name="Description"
+    )
+
+    website = models.URLField(
+        blank=True,
+        verbose_name="Site internet"
+    )
+
+    is_active = models.BooleanField(
+        default=True,
+        verbose_name="Afficher sur le site"
+    )
+
+    order = models.PositiveIntegerField(
+        default=0,
+        verbose_name="Ordre d'affichage"
+    )
+
+    created_at = models.DateTimeField(
+        auto_now_add=True
+    )
+
+    updated_at = models.DateTimeField(
+        auto_now=True
+    )
+
+    class Meta:
+        ordering = ["order", "name"]
+        verbose_name = "Partenaire"
+        verbose_name_plural = "Partenaires"
+
+    def __str__(self):
+        return self.name
+    
+
+class PartenaireHeaderImage(models.Model):
+
+    image = models.ImageField(
+        upload_to="partenaires/header/",
+        verbose_name="Image d'en-tête"
+    )
+
+    is_active = models.BooleanField(
+        default=True,
+        verbose_name="Image active"
+    )
+
+    created_at = models.DateTimeField(
+        auto_now_add=True
+    )
+
+    def __str__(self):
+        return "Image d'en-tête - Partenaires"
+
+    class Meta:
+        verbose_name = "Image d'en-tête des partenaires"
+        verbose_name_plural = "Image d'en-tête des partenaires"
+
+
